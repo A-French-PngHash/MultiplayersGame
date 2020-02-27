@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+enum Teams {
+    case orange, blue, green, yellow, neutral
+}

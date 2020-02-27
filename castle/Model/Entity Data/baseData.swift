@@ -6,9 +6,10 @@
 //  Copyright © 2020 Titouan Blossier. All rights reserved.
 //
 import UIKit
-import Foundation
+import SpriteKit
 
-struct Base{
-    var team : Teams
-    var position : CGPoint
+class Base : SKSpriteNode{
+    var team : Teams!
+    var id : Int! //So other entity can identify this base
+    var poid : Int! = 6
 }
