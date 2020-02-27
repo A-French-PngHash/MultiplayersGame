@@ -71,7 +71,7 @@ class LoadManager {
     }
     
     //MARK: - Base
-    private func getBaseObjectFor(data : NSDictionary) -> Base{
+    private func getBaseObjectFor(data : Array<Castle>) -> Base{
         let team = getTeam(teamColor: data["team"] as! String)
         let position = posFor(x: CGFloat(truncating: data["posX"] as! NSNumber), y: CGFloat(truncating: data["posY"] as! NSNumber))
         let id = Int(truncating: data["Id"] as! NSNumber)
