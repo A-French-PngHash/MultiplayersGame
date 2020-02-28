@@ -13,7 +13,6 @@
 		5B4FED5823E8A6D300C300A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B4FED5623E8A6D300C300A0 /* Main.storyboard */; };
 		5B4FED5A23E8A6D500C300A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B4FED5923E8A6D500C300A0 /* Assets.xcassets */; };
 		5B4FED5D23E8A6D500C300A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B4FED5B23E8A6D500C300A0 /* LaunchScreen.storyboard */; };
-		5B4FED6C23E8A77900C300A0 /* maps.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B4FED6B23E8A77900C300A0 /* maps.plist */; };
 		5B623B0E240163FD001FB369 /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B623B0D240163FD001FB369 /* constants.swift */; };
 		5B623B1124016829001FB369 /* loadedMapData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B623B1024016829001FB369 /* loadedMapData.swift */; };
 		5B623B142401691C001FB369 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B623B132401691C001FB369 /* Game.swift */; };
@@ -34,7 +33,6 @@
 		5B4FED5923E8A6D500C300A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B4FED5C23E8A6D500C300A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B4FED5E23E8A6D500C300A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5B4FED6B23E8A77900C300A0 /* maps.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = maps.plist; sourceTree = "<group>"; };
 		5B623B0D240163FD001FB369 /* constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
 		5B623B1024016829001FB369 /* loadedMapData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadedMapData.swift; sourceTree = "<group>"; };
 		5B623B132401691C001FB369 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
@@ -129,7 +127,6 @@
 		5B4FED6823E8A70600C300A0 /* Level Data */ = {
 			isa = PBXGroup;
 			children = (
-				5B4FED6B23E8A77900C300A0 /* maps.plist */,
 				5B623B1024016829001FB369 /* loadedMapData.swift */,
 			);
 			path = "Level Data";
@@ -206,7 +203,6 @@
 				5B4FED5823E8A6D300C300A0 /* Main.storyboard in Resources */,
 				5B4FED5A23E8A6D500C300A0 /* Assets.xcassets in Resources */,
 				5B4FED5D23E8A6D500C300A0 /* LaunchScreen.storyboard in Resources */,
-				5B4FED6C23E8A77900C300A0 /* maps.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

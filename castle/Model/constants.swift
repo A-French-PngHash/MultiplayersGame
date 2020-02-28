@@ -22,5 +22,5 @@ enum BitMask {
 }
 
 enum Size {
-    static let maxSize : Int = 14
+    static let maxSize : Int = 13
 }

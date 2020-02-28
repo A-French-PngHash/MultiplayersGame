@@ -186,7 +186,7 @@ extension GameScene {
                         //print(result.2.y)
                         //print(self.scene?.frame.height)
                         
-                        unit.destinationPoint = CGPoint(x: result.2.x, y: result.2.y + 43)
+                        unit.destinationPoint = CGPoint(x: result.2.x, y: result.2.y + 37)
                         unit.position = game.base(id: beginId).position
                         unit.zPosition = Layer.unit
                         unit.fillColor = getColorFor(team: way.wayTeam)
