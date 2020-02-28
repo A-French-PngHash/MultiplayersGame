@@ -55,7 +55,6 @@ class GameScene: SKScene {
         for base in bases {
             
             let baseShape = SKSpriteNode(imageNamed: "hexagone\(base.team!)")
-            //let baseShape = SKShapeNode(rectOf: CGSize(width: base.poid * 2, height: base.poid * 2))
             baseShape.position = base.position
             baseShape.zPosition = Layer.base
             baseShape.size = CGSize(width: CGFloat(5 * Float(base.poid + 2)), height: CGFloat(4.5 * CGFloat(base.poid + 2)))
@@ -168,9 +167,6 @@ class GameScene: SKScene {
 extension GameScene {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
-            //print("gamescene : ", touch.location(in: self))
-            
-            //TODO: Mettre en place le nouveau système avec les begin id
             
             for i in nodes(at: touch.location(in: self)){
                 if let name = i.name {
@@ -178,18 +174,20 @@ extension GameScene {
                     let beginId = way.beginId
                     let result = game.sendUnit(beginId : beginId, way : way)
                     if result.0 {
+                        
+                        
                         reloadGraphical()
-                        let size = CGFloat(result.1) * 6.5
-                        let unit = Unit(ellipseOf: CGSize(width: size, height: size))
+                        
+                        let unit = Unit(imageNamed: "unit")
                         unit.poid = result.1
                         
-                        //print(result.2.y)
-                        //print(self.scene?.frame.height)
-                        
-                        unit.destinationPoint = CGPoint(x: result.2.x, y: result.2.y + 37)
+                        let size = CGFloat(result.1) * 6.5
+                        unit.size = CGSize(width: size, height: size)
+                        unit.destinationPoint = CGPoint(x: result.2.x, y: result.2.y + 23)
                         unit.position = game.base(id: beginId).position
                         unit.zPosition = Layer.unit
-                        unit.fillColor = getColorFor(team: way.wayTeam)
+                        unit.color = getColorFor(team: way.wayTeam)
+                        unit.colorBlendFactor = 1.0
                         unit.team = way.wayTeam
                         unit.alpha = 0.6
                         let borderBody = SKPhysicsBody(circleOfRadius: CGFloat(unit.poid))
@@ -201,14 +199,13 @@ extension GameScene {
                         
                         
                         let animationDuration = getAnimationDuration(way: way)
-                        //print(unit.destinationPoint as Any)
                         let moveAnimation = SKAction.move(to: unit.destinationPoint, duration: TimeInterval(animationDuration))
                         self.addChild(unit)
                         
                         let endAnimation = SKAction.run {
                             let result =  self.game.unitArrived(beginId: beginId, unit: unit, destinationId: way.destinationId)
 
-                            if result.0 { //Quelqun a gagné
+                            if result.0 {
                                 self.win(team: result.1)
                             }
                             
@@ -231,16 +228,14 @@ extension GameScene : SKPhysicsContactDelegate {
             if let second = contact.bodyB.node as? Unit {
                 if second.team != first.team {
                     if first.poid > second.poid {
-                        var newScale = Float(first.poid!)
                         first.poid -= second.poid
-                        newScale = Float(first.poid!) / newScale
-                        first.run(SKAction.scale(to: CGFloat(newScale), duration: 0))
+                        let size = CGFloat(first.poid) * 6.5
+                        first.size = CGSize(width: size, height: size)
                         second.removeFromParent()
                     } else if second.poid > first.poid{
-                        var newScale = Float(first.poid!)
                         second.poid -= first.poid
-                        newScale = Float(first.poid!) / newScale
-                        first.run(SKAction.scale(to: CGFloat(newScale), duration: 0))
+                        let size = CGFloat(second.poid) * 6.5
+                        second.size = CGSize(width: size, height: size)
                         first.removeFromParent()
                     } else {
                         first.removeFromParent()

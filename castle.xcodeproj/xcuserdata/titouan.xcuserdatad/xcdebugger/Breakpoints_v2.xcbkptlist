@@ -36,7 +36,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "castle/View/GameScene.swift"
-            timestampString = "604580777.264693"
+            timestampString = "604593725.550783"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "227"
@@ -52,13 +52,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "castle/View/GameScene.swift"
-            timestampString = "604580777.264986"
+            timestampString = "604593725.5510989"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "229"
             endingLineNumber = "229"
-            landmarkName = "didBegin(_:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -68,13 +68,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "castle/View/GameScene.swift"
-            timestampString = "604580777.265192"
+            timestampString = "604593725.551322"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "228"
             endingLineNumber = "228"
-            landmarkName = "GameScene"
-            landmarkType = "21">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -84,13 +84,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "castle/View/GameScene.swift"
-            timestampString = "604580777.265386"
+            timestampString = "604593725.551537"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "231"
             endingLineNumber = "231"
-            landmarkName = "didBegin(_:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -180,13 +180,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "castle/View/GameScene.swift"
-            timestampString = "604580777.265645"
+            timestampString = "604593725.551811"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "163"
             endingLineNumber = "163"
-            landmarkName = "win(team:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -196,13 +196,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "castle/View/GameScene.swift"
-            timestampString = "604533976.611511"
+            timestampString = "604593725.552032"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
             endingLineNumber = "33"
-            landmarkName = "didMove(to:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -212,13 +212,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "castle/View/GameScene.swift"
-            timestampString = "604580777.266151"
+            timestampString = "604593725.55224"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
             endingLineNumber = "34"
-            landmarkName = "didMove(to:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -228,7 +228,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "castle/Model/loadManager.swift"
-            timestampString = "604580777.266398"
+            timestampString = "604593725.552446"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "65"
@@ -244,7 +244,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "castle/Model/loadManager.swift"
-            timestampString = "604580777.266434"
+            timestampString = "604593725.55249"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "92"
@@ -260,7 +260,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "castle/Model/loadManager.swift"
-            timestampString = "604580777.266471"
+            timestampString = "604593725.552527"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "22"
@@ -388,13 +388,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "castle/View/GameScene.swift"
-            timestampString = "604533976.611564"
+            timestampString = "604593725.552644"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
             endingLineNumber = "34"
-            landmarkName = "didMove(to:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -404,12 +404,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "castle/Model/loadManager.swift"
-            timestampString = "604541798.051946"
+            timestampString = "604593725.55285"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "21"
             endingLineNumber = "21"
-            landmarkName = "getMapsFor(player:)"
+            landmarkName = "loadMapFor(player:size:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -420,12 +420,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "castle/Model/loadManager.swift"
-            timestampString = "604541798.052009"
+            timestampString = "604593725.5528899"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "65"
             endingLineNumber = "65"
-            landmarkName = "getWayObjectFor(data:bases:)"
+            landmarkName = "getBaseObjectFor(data:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -436,13 +436,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "castle/Model/loadManager.swift"
-            timestampString = "604541798.052053"
+            timestampString = "604593725.552925"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
-            landmarkName = "getTeam(teamColor:)"
-            landmarkType = "7">
+            startingLineNumber = "95"
+            endingLineNumber = "95">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -452,12 +450,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "castle/Model/loadManager.swift"
-            timestampString = "604541798.052093"
+            timestampString = "604593725.552961"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "22"
             endingLineNumber = "22"
-            landmarkName = "getMapsFor(player:)"
+            landmarkName = "loadMapFor(player:size:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

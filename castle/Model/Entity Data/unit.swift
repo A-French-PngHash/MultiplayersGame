@@ -8,7 +8,7 @@
 import SpriteKit
 import UIKit
 
-class Unit : SKShapeNode{
+class Unit : SKSpriteNode{
     var destinationPoint : CGPoint!
     var poid : Int!
     var team : Teams!
