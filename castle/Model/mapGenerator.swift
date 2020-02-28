@@ -21,19 +21,26 @@ class MapGenerator {
         while combinationPossible == false {
             castles = []
             ways = []
-            for i in 0...players * 3 - 1{ //Génération des emplacements
+            for i in 0...players * 2{ //Génération des emplacements
                 let castle = Castle()
                 var possible = false
                 while possible == false {
                     castle.x = Int.random(in: 100...900)
                     castle.y = Int.random(in: 100...900)
                     if castles.count != 0 {
+                        possible = true
                         for i in castles {
                             let xDistance = (castle.x - i.x) * (castle.x - i.x)
                             let yDistance = (castle.y - i.y) * (castle.y - i.y)
                             let distance = round(sqrt(Double(xDistance) + Double(yDistance)))
-                            if distance > 300{
-                                possible = true
+                            var max = 300
+                            if players == 4 {
+                                max = 250
+                            } else if players == 3 {
+                                max = 280
+                            }
+                            if distance < Double(max){
+                                possible = false
                             }
                         }
                     } else {
@@ -41,6 +48,7 @@ class MapGenerator {
                     }
                 }
                 castle.id = i
+                castle.team = .neutral
                 castles.append(castle)
             }
             
@@ -62,8 +70,11 @@ class MapGenerator {
                 }
             }
             
-            //On check si les rotues sont bien
-            var counter : Array<Int> = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+            //On check si les routes sont bien
+            var counter : Array<Int> = []
+            for _ in 0...castles.count - 1 {
+                counter.append(0)
+            }
             for way in ways {
                 counter[way.beginId] += 1
             }
@@ -74,9 +85,26 @@ class MapGenerator {
                     combinationPossible = false
                 }
             }
+            
+            if combinationPossible {//Pour eviter que la map ne soit un rond
+                var stayTwo = true
+                for i in counter {
+                    if i != 2 {
+                        stayTwo = false
+                    }
+                }
+                if stayTwo {
+                    combinationPossible = false
+                }
+            }
         }
         
         //Transforming it into a comprehensive map :
+        
+        let teams : Array<Teams> = [.green, .yellow, .orange, .blue]
+        for i in 0...players - 1 {
+            castles[i].team = teams[i]
+        }
         return(castles, ways)
     }
 }
@@ -85,6 +113,7 @@ class Castle {
     var x : Int!
     var y : Int!
     var id : Int!
+    var team : Teams!
 }
 class Ways {
     var beginId : Int!
