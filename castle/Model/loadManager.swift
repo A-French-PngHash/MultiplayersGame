@@ -18,9 +18,8 @@ class LoadManager {
     func loadMapFor(player : Int, size : CGSize) {
         
         self.data = MapGenerator.shared.generateMap(players: player)
-        
         self.size = size
-        //let data = getMapsFor(player: player) as! Dictionary<String, NSDictionary>
+        
         var bases : Array<Base> = []
         for i in data.0 {
             bases.append(getBaseObjectFor(data: i))
@@ -63,10 +62,6 @@ class LoadManager {
     //MARK: - Base
     private func getBaseObjectFor(data : Castle) -> Base{
         let team = data.team
-        print(data.x)
-        print(data.y)
-        print(Double(data.x) / 1000)
-        print(Double(data.y) / 1000)
         let position = posFor(x: CGFloat(Double(data.x) / 1000), y: CGFloat(Double(data.y) / 1000))
         let id = data.id
         let base = Base()

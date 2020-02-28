@@ -14,17 +14,21 @@ class MapGenerator {
     
     func generateMap(players : Int) -> (Array<Castle>, Array<Ways>){
         var combinationPossible = false
-        
         var castles : Array<Castle> = []
         var ways : Array<Ways> = []
-        
+        var compteur = 0
         while combinationPossible == false {
+            compteur += 1
+            print("generate \(compteur)")
             castles = []
             ways = []
-            for i in 0...players * 2{ //Génération des emplacements
+            var restart = false //Security break
+            for i in 0...players * 2 + 1{ //Génération des emplacements
                 let castle = Castle()
                 var possible = false
+                var count = 0 //Security break
                 while possible == false {
+                    count += 1
                     castle.x = Int.random(in: 100...900)
                     castle.y = Int.random(in: 100...900)
                     if castles.count != 0 {
@@ -33,79 +37,97 @@ class MapGenerator {
                             let xDistance = (castle.x - i.x) * (castle.x - i.x)
                             let yDistance = (castle.y - i.y) * (castle.y - i.y)
                             let distance = round(sqrt(Double(xDistance) + Double(yDistance)))
-                            var max = 300
-                            if players == 4 {
-                                max = 250
-                            } else if players == 3 {
-                                max = 280
+                            var max = 280
+                            if players == 2 {
+                                max = 380
+                            } else if players == 3{
+                                max = 335
                             }
+                            
+                            
                             if distance < Double(max){
                                 possible = false
+                            }
+                            if count == 100 {
+                                restart = true
+                                possible = true
+                                break
                             }
                         }
                     } else {
                         possible = true
                     }
                 }
-                castle.id = i
-                castle.team = .neutral
-                castles.append(castle)
+                if restart {
+                    break
+                } else {
+                    castle.id = i
+                    castle.team = .neutral
+                    castles.append(castle)
+                }
             }
             
-            
-            //On connecte les chateaux
-            for castle in castles {
-                for destination in castles {
-                    if destination.id != castle.id {
-                        let xDistance = (castle.x - destination.x) * (castle.x - destination.x)
-                        let yDistance = (castle.y - destination.y) * (castle.y - destination.y)
-                        let distance = round(sqrt(Double(xDistance) + Double(yDistance)))
-                        if distance < 400 { //On peut créer une route
-                            let way = Ways()
-                            way.beginId = castle.id
-                            way.destinationId = destination.id
-                            ways.append(way)
+            if restart == false { //Security break
+                //On connecte les chateaux
+                for castle in castles {
+                    for destination in castles {
+                        if destination.id != castle.id {
+                            let xDistance = (castle.x - destination.x) * (castle.x - destination.x)
+                            let yDistance = (castle.y - destination.y) * (castle.y - destination.y)
+                            let distance = round(sqrt(Double(xDistance) + Double(yDistance)))
+                            var max = 600
+                            if players == 3 {
+                                max = 450
+                            } else if players == 4{
+                                max = 400
+                            }
+                            if distance < Double(max) { //On peut créer une route
+                                let way = Ways()
+                                way.beginId = castle.id
+                                way.destinationId = destination.id
+                                ways.append(way)
+                            }
                         }
                     }
                 }
-            }
-            
-            //On check si les routes sont bien
-            var counter : Array<Int> = []
-            for _ in 0...castles.count - 1 {
-                counter.append(0)
-            }
-            for way in ways {
-                counter[way.beginId] += 1
-            }
-            print(counter)
-            combinationPossible = true
-            for i in counter {
-                if i < 2 || i > 2 * players{
-                    combinationPossible = false
+                
+                //On check si les routes sont bien
+                var counter : Array<Int> = []
+                for _ in 0...castles.count - 1 {
+                    counter.append(0)
                 }
-            }
-            
-            if combinationPossible {//Pour eviter que la map ne soit un rond
-                var stayTwo = true
+                for way in ways {
+                    counter[way.beginId] += 1
+                }
+                combinationPossible = true
                 for i in counter {
-                    if i != 2 {
-                        stayTwo = false
+                    if i < 2 || i > 2 * players{
+                        combinationPossible = false
+                        break
                     }
                 }
-                if stayTwo {
-                    combinationPossible = false
+                
+                if combinationPossible {//Pour eviter que la map ne soit un rond
+                    var stayTwo = true
+                    for i in counter {
+                        if i != 2 {
+                            stayTwo = false
+                        }
+                    }
+                    if stayTwo {
+                        combinationPossible = false
+                    }
+                    let teams : Array<Teams> = [.green, .yellow, .orange, .blue]
+                    for i in 0...players - 1 {
+                        castles[i].team = teams[i]
+                    }
+                    return(castles, ways)
                 }
+            } else { //End of security break. On restart la boucle
+                combinationPossible = false
             }
         }
-        
-        //Transforming it into a comprehensive map :
-        
-        let teams : Array<Teams> = [.green, .yellow, .orange, .blue]
-        for i in 0...players - 1 {
-            castles[i].team = teams[i]
-        }
-        return(castles, ways)
+        return([Castle](), [Ways]())
     }
 }
 
