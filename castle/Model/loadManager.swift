@@ -15,55 +15,44 @@ class LoadManager {
     var data : (Array<Castle>, Array<Ways>)!
     var size : CGSize!
     
-    //MARK: - Get the brute data
-    
-    private func getMapsFor(player : Int) -> NSDictionary{
-//        let dictionnary = NSDictionary(contentsOf: Bundle.main.url(forResource: "maps", withExtension: ".plist")!)! as! Dictionary<String, NSDictionary>
-//        let maps = dictionnary["\(player)playersMaps"]
-//        let mapNumber = Int.random(in: 0...maps!.count - 1)
-//        return maps![String(mapNumber)]! as! NSDictionary
-        
-    }
-    
     func loadMapFor(player : Int, size : CGSize) {
         
         self.data = MapGenerator.shared.generateMap(players: player)
-        
         self.size = size
-        //let data = getMapsFor(player: player) as! Dictionary<String, NSDictionary>
+        
         var bases : Array<Base> = []
         for i in data.0 {
             bases.append(getBaseObjectFor(data: i))
         }
         
         var ways : Array<Way> = []
-        for i in data["Ways"]!{
-            ways.append(getWayObjectFor(data: i.value as! NSDictionary, bases : bases))
+        for i in data.1{
+            ways.append(getWayObjectFor(data: i, bases : bases))
         }
         MapData.shared.ways = ways
         MapData.shared.bases = bases
     }
     
     //MARK: - Way
-    private func getWayObjectFor(data : NSDictionary, bases : Array<Base>) -> Way{
+    private func getWayObjectFor(data : Ways, bases : Array<Base>) -> Way{
         for base in bases {
-            let beginId = Int(truncating: data["beginId"] as! NSNumber)
+            let beginId = data.beginId
             if base.id == beginId{
                 let beginPoint = base.position
-                let destinationId = Int(truncating: data["destinationId"] as! NSNumber)
+                let destinationId = data.destinationId
                 var destinationPoint : CGPoint = CGPoint(x: 0, y: 0)
                 for i in bases {
                     if i.id == destinationId {
                         destinationPoint = i.position
                     }
                 }
-                let x = (beginPoint.x - destinationPoint.x) / 2 + destinationPoint.x
-                let y = (beginPoint.y - destinationPoint.y) / 2 + destinationPoint.y
+                let x = (beginPoint.x - destinationPoint.x ) / 2 + destinationPoint.x
+                let y = (beginPoint.y - destinationPoint.y ) / 2 + destinationPoint.y
                 
                 let endPoint = CGPoint(x: x, y: y)
             
                 let team = base.team
-                let way = Way(beginPoint: beginPoint, endPoint: endPoint, destinationPoint: destinationPoint, destinationId: destinationId, beginId : beginId, wayTeam: team!)
+                let way = Way(beginPoint: beginPoint, endPoint: endPoint, destinationPoint: destinationPoint, destinationId: destinationId!, beginId : beginId!, wayTeam: team!)
                 return way
             }
         }
@@ -71,10 +60,10 @@ class LoadManager {
     }
     
     //MARK: - Base
-    private func getBaseObjectFor(data : NSDictionary) -> Base{
-        let team = getTeam(teamColor: data["team"] as! String)
-        let position = posFor(x: CGFloat(truncating: data["posX"] as! NSNumber), y: CGFloat(truncating: data["posY"] as! NSNumber))
-        let id = Int(truncating: data["Id"] as! NSNumber)
+    private func getBaseObjectFor(data : Castle) -> Base{
+        let team = data.team
+        let position = posFor(x: CGFloat(Double(data.x) / 1000), y: CGFloat(Double(data.y) / 1000))
+        let id = data.id
         let base = Base()
         base.position = position
         base.id = id
