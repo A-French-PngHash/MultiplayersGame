@@ -1,5 +1,5 @@
 //
-//  GameViewController.swift
+//  MenuViewController.swift
 //  castle
 //
 //  Created by Titouan Blossier on 03/02/2020.
@@ -14,14 +14,12 @@ class MenuViewController: UIViewController {
     
     var scene : ChateauScene!
     var numberOfPlayer : Int!
-    var imageView : UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.backButton.isHidden = true
         self.replayButton.isHidden = true
         self.numberOfPlayer = 2
-        self.imageView = UIImageView(frame: CGRect(x: 200, y: 200, width: 20, height: 20))
         
         showMenu()
         updateButton()

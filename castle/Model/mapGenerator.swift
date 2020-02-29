@@ -23,7 +23,13 @@ class MapGenerator {
             castles = []
             ways = []
             var restart = false //Security break
-            for i in 0...players * 2 + 1{ //Génération des emplacements
+            var numberOfChateau = 6
+            if players == 3 {
+                numberOfChateau = 7
+            } else if players == 4 {
+                numberOfChateau = 9
+            }
+            for i in 0...numberOfChateau - 1{ //Génération des emplacements
                 let castle = Castle()
                 var possible = false
                 var count = 0 //Security break
@@ -37,7 +43,7 @@ class MapGenerator {
                             let xDistance = (castle.x - i.x) * (castle.x - i.x)
                             let yDistance = (castle.y - i.y) * (castle.y - i.y)
                             let distance = round(sqrt(Double(xDistance) + Double(yDistance)))
-                            var max = 280
+                            var max = 310
                             if players == 2 {
                                 max = 380
                             } else if players == 3{
