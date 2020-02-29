@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
-    <device id="retina5_5" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -10,16 +10,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Game View Controller-->
+        <!--Menu View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="castle" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BV1-FR-VrT" customClass="MenuViewController" customModule="castle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M5e-Qe-3dy">
-                                <rect key="frame" x="27" y="64" width="80" height="80"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M5e-Qe-3dy">
+                                <rect key="frame" x="20" y="66" width="80" height="80"/>
                                 <state key="normal" image="2players"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -31,7 +31,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AiO-gp-MSd">
-                                <rect key="frame" x="167" y="64" width="80" height="80"/>
+                                <rect key="frame" x="147.5" y="66" width="80" height="80"/>
                                 <state key="normal" image="3players"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -43,12 +43,12 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Multiplayers Game" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RyW-qp-pyV">
-                                <rect key="frame" x="102" y="20" width="210" height="36"/>
+                                <rect key="frame" x="82.5" y="20" width="210" height="36"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="25"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AtU-13-Pjt">
-                                <rect key="frame" x="5" y="672" width="58" height="59"/>
+                                <rect key="frame" x="5" y="603" width="58" height="59"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="58" id="gBn-zS-H25"/>
                                     <constraint firstAttribute="height" constant="59" id="uJN-QF-FaF"/>
@@ -59,7 +59,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jto-8r-JjT">
-                                <rect key="frame" x="351" y="672" width="58" height="59"/>
+                                <rect key="frame" x="312" y="603" width="58" height="59"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="59" id="Dbr-vD-GHw"/>
                                     <constraint firstAttribute="width" constant="58" id="Fan-0G-PSO"/>
@@ -70,13 +70,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created by Titouan Blossier" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fud-9a-Gxl">
-                                <rect key="frame" x="137.66666666666666" y="717" width="138.99999999999997" height="15"/>
+                                <rect key="frame" x="118" y="648" width="139" height="15"/>
                                 <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="11"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQN-Tk-YzG">
-                                <rect key="frame" x="307" y="64" width="80" height="80"/>
+                                <rect key="frame" x="275" y="66" width="80" height="80"/>
                                 <state key="normal" image="4players"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -93,24 +93,54 @@
                                     <action selector="Player:" destination="BV1-FR-VrT" eventType="touchUpInside" id="WtF-XL-XQM"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KPR-rX-IIj">
+                                <rect key="frame" x="15" y="196" width="90" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="Tnb-1h-dcR"/>
+                                    <constraint firstAttribute="height" constant="90" id="e5r-bH-rZT"/>
+                                </constraints>
+                                <state key="normal" image="castleIcon"/>
+                                <connections>
+                                    <action selector="startChateau:" destination="BV1-FR-VrT" eventType="touchUpInside" id="GbL-pC-KOB"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chateaux" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GTo-rZ-19f">
+                                <rect key="frame" x="23.5" y="294" width="73" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JmK-8V-9aB">
+                                <rect key="frame" x="79" y="201" width="22" height="22"/>
+                                <accessibility key="accessibilityConfiguration" identifier="chateau"/>
+                                <connections>
+                                    <segue destination="h9A-lE-oc9" kind="show" id="j8e-tO-ZCK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="M5e-Qe-3dy" firstAttribute="centerX" secondItem="KPR-rX-IIj" secondAttribute="centerX" id="3e7-fH-ugT"/>
                             <constraint firstItem="4qk-I5-YsI" firstAttribute="bottom" secondItem="fud-9a-Gxl" secondAttribute="bottom" constant="4" id="5qS-7r-Z62"/>
+                            <constraint firstItem="KPR-rX-IIj" firstAttribute="centerX" secondItem="GTo-rZ-19f" secondAttribute="centerX" id="7GC-dP-hQr"/>
                             <constraint firstItem="AtU-13-Pjt" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" constant="5" id="8h2-6M-bpQ"/>
-                            <constraint firstItem="AiO-gp-MSd" firstAttribute="leading" secondItem="M5e-Qe-3dy" secondAttribute="trailing" constant="60" id="FGM-PC-1KV"/>
+                            <constraint firstItem="dQN-Tk-YzG" firstAttribute="top" secondItem="RyW-qp-pyV" secondAttribute="bottom" constant="10" id="9hN-1W-nyb"/>
+                            <constraint firstItem="GTo-rZ-19f" firstAttribute="top" secondItem="KPR-rX-IIj" secondAttribute="bottom" constant="8" id="BZR-Bn-hrI"/>
                             <constraint firstItem="4qk-I5-YsI" firstAttribute="trailing" secondItem="Jto-8r-JjT" secondAttribute="trailing" constant="5" id="JJz-Tb-Hra"/>
-                            <constraint firstItem="AiO-gp-MSd" firstAttribute="top" secondItem="RyW-qp-pyV" secondAttribute="bottom" constant="8" id="KQi-rt-yvN"/>
+                            <constraint firstItem="GTo-rZ-19f" firstAttribute="top" secondItem="JmK-8V-9aB" secondAttribute="bottom" constant="71" id="LdA-OR-Y7e"/>
+                            <constraint firstItem="AiO-gp-MSd" firstAttribute="top" secondItem="RyW-qp-pyV" secondAttribute="bottom" constant="10" id="M1G-b5-QYU"/>
+                            <constraint firstItem="KPR-rX-IIj" firstAttribute="top" secondItem="M5e-Qe-3dy" secondAttribute="bottom" constant="50" id="Pa9-Ag-jsL"/>
                             <constraint firstItem="4qk-I5-YsI" firstAttribute="bottom" secondItem="AtU-13-Pjt" secondAttribute="bottom" constant="5" id="Rl3-wa-roO"/>
-                            <constraint firstItem="dQN-Tk-YzG" firstAttribute="leading" secondItem="AiO-gp-MSd" secondAttribute="trailing" constant="60" id="Tg1-jx-pIO"/>
-                            <constraint firstItem="AiO-gp-MSd" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="WTW-8N-meX"/>
+                            <constraint firstItem="4qk-I5-YsI" firstAttribute="trailing" secondItem="dQN-Tk-YzG" secondAttribute="trailing" constant="20" id="SsR-QS-jIe"/>
+                            <constraint firstItem="JmK-8V-9aB" firstAttribute="centerX" secondItem="M5e-Qe-3dy" secondAttribute="centerX" constant="30" id="T7r-AK-Ujy"/>
+                            <constraint firstItem="M5e-Qe-3dy" firstAttribute="top" secondItem="RyW-qp-pyV" secondAttribute="bottom" constant="10" id="Ue5-MB-8yQ"/>
                             <constraint firstItem="RyW-qp-pyV" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="dTW-8T-aXZ"/>
                             <constraint firstItem="fud-9a-Gxl" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="gHC-jF-Hhu"/>
                             <constraint firstItem="4qk-I5-YsI" firstAttribute="bottom" secondItem="Jto-8r-JjT" secondAttribute="bottom" constant="5" id="jBK-Yg-wGu"/>
                             <constraint firstItem="RyW-qp-pyV" firstAttribute="top" secondItem="4qk-I5-YsI" secondAttribute="top" id="lXV-X4-Yml"/>
-                            <constraint firstItem="M5e-Qe-3dy" firstAttribute="centerY" secondItem="AiO-gp-MSd" secondAttribute="centerY" id="pmj-U4-42n"/>
-                            <constraint firstItem="AiO-gp-MSd" firstAttribute="centerY" secondItem="dQN-Tk-YzG" secondAttribute="centerY" id="zJH-T0-diz"/>
+                            <constraint firstItem="M5e-Qe-3dy" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" constant="20" id="qGN-2t-yAh"/>
+                            <constraint firstItem="AiO-gp-MSd" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="xAg-Xm-3jP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                         <connections>
@@ -120,11 +150,14 @@
                     </view>
                     <connections>
                         <outlet property="backButton" destination="AtU-13-Pjt" id="nNM-VI-VIo"/>
-                        <outlet property="label" destination="RyW-qp-pyV" id="VlL-ya-Ilt"/>
                         <outlet property="replayButton" destination="Jto-8r-JjT" id="MaD-Em-mqe"/>
-                        <outletCollection property="button" destination="dQN-Tk-YzG" collectionClass="NSMutableArray" id="CmO-ye-qGb"/>
-                        <outletCollection property="button" destination="AiO-gp-MSd" collectionClass="NSMutableArray" id="bEK-yb-omu"/>
-                        <outletCollection property="button" destination="M5e-Qe-3dy" collectionClass="NSMutableArray" id="Veq-NQ-3od"/>
+                        <outletCollection property="menuLabel" destination="GTo-rZ-19f" collectionClass="NSMutableArray" id="eak-zb-Z8r"/>
+                        <outletCollection property="menuLabel" destination="RyW-qp-pyV" collectionClass="NSMutableArray" id="93K-wX-6ih"/>
+                        <outletCollection property="menuButton" destination="M5e-Qe-3dy" collectionClass="NSMutableArray" id="X1K-U7-fcL"/>
+                        <outletCollection property="menuButton" destination="AiO-gp-MSd" collectionClass="NSMutableArray" id="92n-0F-ZUt"/>
+                        <outletCollection property="menuButton" destination="dQN-Tk-YzG" collectionClass="NSMutableArray" id="CE9-ax-Sg2"/>
+                        <outletCollection property="menuButton" destination="KPR-rX-IIj" collectionClass="NSMutableArray" id="8eD-om-yOJ"/>
+                        <outletCollection property="menuButton" destination="JmK-8V-9aB" collectionClass="NSMutableArray" id="HXA-Ap-mpN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
@@ -134,12 +167,29 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="-95" y="-10"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="DL3-e7-LUY">
+            <objects>
+                <viewController id="h9A-lE-oc9" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PDO-xS-EOk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="WSZ-mc-mgh"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bkE-pD-2ja" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="790" y="-10"/>
         </scene>
     </scenes>
     <resources>
         <image name="2players" width="80" height="80"/>
         <image name="3players" width="80" height="80"/>
         <image name="4players" width="80" height="80"/>
+        <image name="castleIcon" width="151" height="151"/>
         <image name="reloadButton" width="184" height="186"/>
         <image name="retour" width="92" height="93"/>
     </resources>

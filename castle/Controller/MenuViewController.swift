@@ -10,63 +10,67 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
-class GameViewController: UIViewController {
+class MenuViewController: UIViewController {
     
-    var scene : GameScene!
+    var scene : ChateauScene!
     var numberOfPlayer : Int!
+    var imageView : UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.backButton.isHidden = true
         self.replayButton.isHidden = true
-        showPlayerButton()
+        self.numberOfPlayer = 2
+        self.imageView = UIImageView(frame: CGRect(x: 200, y: 200, width: 20, height: 20))
+        
+        showMenu()
+        updateButton()
         NotificationCenter.default.addObserver(self, selector: #selector(win), name: NSNotification.Name(rawValue: "win"), object: nil)
     }
     
     @IBOutlet weak var replayButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
-    @IBOutlet weak var label: UILabel!
-    @IBOutlet var button: [UIButton]!
+    @IBOutlet var menuButton: [UIButton]!
+    @IBOutlet var menuLabel: [UILabel]!
     
     @IBAction func twoPlayer(_ sender: Any) {
         numberOfPlayer = 2
-        displayScene()
+        updateButton()
     }
     @IBAction func threePlayer(_ sender: Any) {
         numberOfPlayer = 3
-        displayScene()
-        
+        updateButton()
     }
     @IBAction func Player(_ sender: Any) {
         numberOfPlayer = 4
-        displayScene()
+        updateButton()
     }
     
     @IBAction func replayButtonPressed(_ sender: Any) {
         removeScene()
-        displayScene()
+        displayChateauScene()
     }
     
     @IBAction func backbuttonPressed(_ sender: Any) {
         removeScene()
     }
     
+    @IBAction func startChateau(_ sender: Any) {
+        displayChateauScene()
+    }
+    
     @objc func win() {
         replayButton.isHidden = false
     }
 
-    private func displayScene() {
-        for i in button {
-            i.isHidden = true
-        }
+    private func displayChateauScene() {
+        hideMenu()
         backButton.isHidden = false
-        label.isHidden = true
         // Configure the view.
         let skView = self.view as! SKView
         skView.ignoresSiblingOrder = true
-
         // Create and configure the scene.
-        scene = GameScene(size: CGSize(width: 375, height: 667))
+        scene = ChateauScene(size: CGSize(width: self.view.frame.width, height: self.view.frame.height))
         scene.numberOfPlayer = self.numberOfPlayer
         scene.scaleMode = .aspectFill
         
@@ -74,9 +78,21 @@ class GameViewController: UIViewController {
         skView.presentScene(scene)
     }
     
-    private func showPlayerButton() {
-        for i in button {
+    private func showMenu() {
+        for i in menuButton {
             i.isHidden = false
+        }
+        for i in menuLabel {
+            i.isHidden = false
+        }
+    }
+    
+    private func hideMenu() {
+        for i in menuButton {
+            i.isHidden = true
+        }
+        for i in menuLabel {
+            i.isHidden = true
         }
     }
     
@@ -85,21 +101,19 @@ class GameViewController: UIViewController {
         scene.removeAllChildren()
         scene.timer.invalidate()
         scene.backgroundColor = .white
-        showPlayerButton()
+        showMenu()
         backButton.isHidden = true
         replayButton.isHidden = true
-        label.isHidden = false
     }
-}
-
-//MARK: - Tap Detection for testing
-
-extension GameViewController : UIGestureRecognizerDelegate {
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let touch = touches.first {
-            //print("point : \(touch.location(in: self.view))")
-            print("x : \(touch.location(in: self.view).x / self.view.frame.width)")
-            print("y : \(touch.location(in: self.view).y / self.view.frame.height)")
+    
+    private func updateButton() {
+        for i in 0...2 { //The first players button
+            if i + 2 == numberOfPlayer {
+                menuButton[i].imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+                
+            } else {
+                menuButton[i].imageEdgeInsets = UIEdgeInsets(top: 7, left: 7, bottom: 7, right: 7)
+            }
         }
     }
 }

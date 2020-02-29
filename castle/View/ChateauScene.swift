@@ -9,7 +9,7 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
-class GameScene: SKScene {
+class ChateauScene: SKScene {
     
     var numberOfPlayer : Int!
     private var game : Game!
@@ -164,10 +164,9 @@ class GameScene: SKScene {
     
 }
 
-extension GameScene {
+extension ChateauScene {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
-            
             for i in nodes(at: touch.location(in: self)){
                 if let name = i.name {
                     let way = ways[Int(name)!]
@@ -183,7 +182,8 @@ extension GameScene {
                         
                         let size = CGFloat(result.1) * 6.5
                         unit.size = CGSize(width: size, height: size)
-                        unit.destinationPoint = CGPoint(x: result.2.x, y: result.2.y + 23)
+                        print(CGFloat(23) / (self.view?.frame.height)!)
+                        unit.destinationPoint = CGPoint(x: result.2.x, y: result.2.y + 34)
                         unit.position = game.base(id: beginId).position
                         unit.zPosition = Layer.unit
                         unit.color = getColorFor(team: way.wayTeam)
@@ -199,10 +199,20 @@ extension GameScene {
                         
                         
                         let animationDuration = getAnimationDuration(way: way)
-                        let moveAnimation = SKAction.move(to: unit.destinationPoint, duration: TimeInterval(animationDuration))
+                        
+                        let path = UIBezierPath()
+                        path.move(to: unit.position)
+                        path.addLine(to: unit.destinationPoint)
+                        let moveAnimation = SKAction.follow(path.cgPath, asOffset: false, orientToPath: false, duration: TimeInterval(animationDuration))
+                        //let moveAnimation = SKAction.follow(path.cgPath, duration: TimeInterval(animationDuration))
+                        print(path)
+                        
+                        //let moveAnimation = SKAction.move(to: unit.destinationPoint, duration: TimeInterval(animationDuration))
+                        //print("destination : \(unit.destinationPoint)")
                         self.addChild(unit)
                         
                         let endAnimation = SKAction.run {
+                            print(unit.position)
                             let result =  self.game.unitArrived(beginId: beginId, unit: unit, destinationId: way.destinationId)
 
                             if result.0 {
@@ -222,7 +232,7 @@ extension GameScene {
     }
 }
 
-extension GameScene : SKPhysicsContactDelegate {
+extension ChateauScene : SKPhysicsContactDelegate {
     func didBegin(_ contact: SKPhysicsContact) {
         if let first = contact.bodyA.node as? Unit{
             if let second = contact.bodyB.node as? Unit {

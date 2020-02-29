@@ -8,8 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5B4FED4D23E8A6D300C300A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4FED4C23E8A6D300C300A0 /* AppDelegate.swift */; };
-		5B4FED5323E8A6D300C300A0 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4FED5223E8A6D300C300A0 /* GameScene.swift */; };
-		5B4FED5523E8A6D300C300A0 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4FED5423E8A6D300C300A0 /* GameViewController.swift */; };
+		5B4FED5323E8A6D300C300A0 /* ChateauScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4FED5223E8A6D300C300A0 /* ChateauScene.swift */; };
 		5B4FED5823E8A6D300C300A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B4FED5623E8A6D300C300A0 /* Main.storyboard */; };
 		5B4FED5A23E8A6D500C300A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B4FED5923E8A6D500C300A0 /* Assets.xcassets */; };
 		5B4FED5D23E8A6D500C300A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B4FED5B23E8A6D500C300A0 /* LaunchScreen.storyboard */; };
@@ -17,6 +16,7 @@
 		5B623B1124016829001FB369 /* loadedMapData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B623B1024016829001FB369 /* loadedMapData.swift */; };
 		5B623B142401691C001FB369 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B623B132401691C001FB369 /* Game.swift */; };
 		5B623B1724017329001FB369 /* unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B623B1624017329001FB369 /* unit.swift */; };
+		5BAD59F1240AAB3D00638F4E /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAD59F0240AAB3D00638F4E /* MenuViewController.swift */; };
 		5BBD935C23EC749400CFD739 /* loadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBD935B23EC749400CFD739 /* loadManager.swift */; };
 		5BBD935E23EC74D500CFD739 /* baseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBD935D23EC74D500CFD739 /* baseData.swift */; };
 		5BBD936123EC750C00CFD739 /* teams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBD936023EC750C00CFD739 /* teams.swift */; };
@@ -27,8 +27,7 @@
 /* Begin PBXFileReference section */
 		5B4FED4923E8A6D300C300A0 /* castle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = castle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B4FED4C23E8A6D300C300A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5B4FED5223E8A6D300C300A0 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		5B4FED5423E8A6D300C300A0 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		5B4FED5223E8A6D300C300A0 /* ChateauScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChateauScene.swift; sourceTree = "<group>"; };
 		5B4FED5723E8A6D300C300A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5B4FED5923E8A6D500C300A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B4FED5C23E8A6D500C300A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -37,6 +36,7 @@
 		5B623B1024016829001FB369 /* loadedMapData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadedMapData.swift; sourceTree = "<group>"; };
 		5B623B132401691C001FB369 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		5B623B1624017329001FB369 /* unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = unit.swift; sourceTree = "<group>"; };
+		5BAD59F0240AAB3D00638F4E /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		5BBD935B23EC749400CFD739 /* loadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadManager.swift; sourceTree = "<group>"; };
 		5BBD935D23EC74D500CFD739 /* baseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = baseData.swift; sourceTree = "<group>"; };
 		5BBD936023EC750C00CFD739 /* teams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = teams.swift; sourceTree = "<group>"; };
@@ -99,7 +99,7 @@
 		5B4FED6523E8A6F600C300A0 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5B4FED5223E8A6D300C300A0 /* GameScene.swift */,
+				5B4FED5223E8A6D300C300A0 /* ChateauScene.swift */,
 				5B4FED5B23E8A6D500C300A0 /* LaunchScreen.storyboard */,
 				5B4FED5623E8A6D300C300A0 /* Main.storyboard */,
 			);
@@ -109,7 +109,7 @@
 		5B4FED6623E8A6FA00C300A0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				5B4FED5423E8A6D300C300A0 /* GameViewController.swift */,
+				5BAD59F0240AAB3D00638F4E /* MenuViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -217,10 +217,10 @@
 				5BBD936123EC750C00CFD739 /* teams.swift in Sources */,
 				5BC1466B2408854500B1D84D /* mapGenerator.swift in Sources */,
 				5B623B142401691C001FB369 /* Game.swift in Sources */,
+				5BAD59F1240AAB3D00638F4E /* MenuViewController.swift in Sources */,
 				5B623B1124016829001FB369 /* loadedMapData.swift in Sources */,
 				5BBD936323EC75EA00CFD739 /* wayData.swift in Sources */,
-				5B4FED5323E8A6D300C300A0 /* GameScene.swift in Sources */,
-				5B4FED5523E8A6D300C300A0 /* GameViewController.swift in Sources */,
+				5B4FED5323E8A6D300C300A0 /* ChateauScene.swift in Sources */,
 				5BBD935C23EC749400CFD739 /* loadManager.swift in Sources */,
 				5BBD935E23EC74D500CFD739 /* baseData.swift in Sources */,
 				5B4FED4D23E8A6D300C300A0 /* AppDelegate.swift in Sources */,
