@@ -13,7 +13,7 @@
         <!--Menu View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="MenuViewController" customModule="castle" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BV1-FR-VrT" customClass="MenuViewController" customModule="Multiplayers_Game" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -172,7 +172,7 @@
         <!--Chateaux Info View Controller-->
         <scene sceneID="DL3-e7-LUY">
             <objects>
-                <viewController id="h9A-lE-oc9" customClass="ChateauxInfoViewController" customModule="castle" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="h9A-lE-oc9" customClass="ChateauxInfoViewController" customModule="Multiplayers_Game" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PDO-xS-EOk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -196,10 +196,10 @@
                                     <constraint firstAttribute="height" constant="193" id="lET-yF-lM8"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yOt-yd-KPd">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yOt-yd-KPd">
                                 <rect key="frame" x="5" y="268" width="365" height="394"/>
-                                <mutableString key="text">"Chateaux" est un jeu de stratégie à 2, 3 ou 4 joueurs. Votre but est de capturer toute les chateaux des autres joueurs. Chaque joueur a une couleur. Chaque map est généré aléatoirement, vous aurez donc tout le temps de nouvelles maps. L’image ci dessus est un exemple de map possible à deux joueurs. Pour capturer les autres chateau il faut cliquer sur les routes de votre couleur. Cliquer sur une route va envoyer la moitié des unités présentes dans votre chateau en direction de la base au bout de la route. Chaque chateau gagne une unité par seconde à l’exception des chateaux marron qui sont considérés comme neutre (jusqu’a ce que quelqu’un les capturent). ⚠️: Chaque chateau a une capacité d’accueil maximale, ne laissez donc pas trainé trop longtemps vos unités dans vos chateaux ;)
-Bon jeu !</mutableString>
+                                <string key="text">"Chateaux" est un jeu de stratégie à 2, 3 ou 4 joueurs. Votre but est de capturer toute les chateaux des autres joueurs. Chaque joueur a une couleur. Chaque map est généré aléatoirement, vous aurez donc tout le temps de nouvelles maps. L’image ci dessus est un exemple de map possible à deux joueurs. Pour capturer les autres chateau il faut cliquer sur les routes de votre couleur. Cliquer sur une route va envoyer la moitié des unités présentes dans votre chateau en direction de la base au bout de la route. Chaque chateau gagne une unité par seconde à l’exception des chateaux marron qui sont considérés comme neutre (jusqu’a ce que quelqu’un les capturent). ⚠️: Chaque chateau a une capacité d’accueil maximale, ne laissez donc pas trainé trop longtemps vos unités dans vos chateaux ;)
+Bon jeu !</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

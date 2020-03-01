@@ -26,7 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5B4FED4923E8A6D300C300A0 /* castle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = castle.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B4FED4923E8A6D300C300A0 /* Multiplayers Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Multiplayers Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B4FED4C23E8A6D300C300A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B4FED5223E8A6D300C300A0 /* ChateauScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChateauScene.swift; sourceTree = "<group>"; };
 		5B4FED5723E8A6D300C300A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -60,7 +60,7 @@
 		5B4FED4023E8A6D300C300A0 = {
 			isa = PBXGroup;
 			children = (
-				5B4FED4B23E8A6D300C300A0 /* castle */,
+				5B4FED4B23E8A6D300C300A0 /* Multiplayers Game */,
 				5B4FED4A23E8A6D300C300A0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,12 +68,12 @@
 		5B4FED4A23E8A6D300C300A0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5B4FED4923E8A6D300C300A0 /* castle.app */,
+				5B4FED4923E8A6D300C300A0 /* Multiplayers Game.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5B4FED4B23E8A6D300C300A0 /* castle */ = {
+		5B4FED4B23E8A6D300C300A0 /* Multiplayers Game */ = {
 			isa = PBXGroup;
 			children = (
 				5B4FED6723E8A70000C300A0 /* Supporting Files */,
@@ -81,7 +81,7 @@
 				5B4FED6523E8A6F600C300A0 /* View */,
 				5B4FED6423E8A6F100C300A0 /* Model */,
 			);
-			path = castle;
+			path = "Multiplayers Game";
 			sourceTree = "<group>";
 		};
 		5B4FED6423E8A6F100C300A0 /* Model */ = {
@@ -148,9 +148,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5B4FED4823E8A6D300C300A0 /* castle */ = {
+		5B4FED4823E8A6D300C300A0 /* Multiplayers Game */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5B4FED6123E8A6D500C300A0 /* Build configuration list for PBXNativeTarget "castle" */;
+			buildConfigurationList = 5B4FED6123E8A6D500C300A0 /* Build configuration list for PBXNativeTarget "Multiplayers Game" */;
 			buildPhases = (
 				5B4FED4523E8A6D300C300A0 /* Sources */,
 				5B4FED4623E8A6D300C300A0 /* Frameworks */,
@@ -160,9 +160,9 @@
 			);
 			dependencies = (
 			);
-			name = castle;
+			name = "Multiplayers Game";
 			productName = castle;
-			productReference = 5B4FED4923E8A6D300C300A0 /* castle.app */;
+			productReference = 5B4FED4923E8A6D300C300A0 /* Multiplayers Game.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -180,7 +180,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 5B4FED4423E8A6D300C300A0 /* Build configuration list for PBXProject "castle" */;
+			buildConfigurationList = 5B4FED4423E8A6D300C300A0 /* Build configuration list for PBXProject "Multiplayers Game" */;
 			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -193,7 +193,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5B4FED4823E8A6D300C300A0 /* castle */,
+				5B4FED4823E8A6D300C300A0 /* Multiplayers Game */,
 			);
 		};
 /* End PBXProject section */
@@ -377,7 +377,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3M2A92WN59;
-				INFOPLIST_FILE = "$(SRCROOT)/castle/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Multiplayers Game/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -397,7 +398,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3M2A92WN59;
-				INFOPLIST_FILE = "$(SRCROOT)/castle/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Multiplayers Game/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -413,7 +415,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5B4FED4423E8A6D300C300A0 /* Build configuration list for PBXProject "castle" */ = {
+		5B4FED4423E8A6D300C300A0 /* Build configuration list for PBXProject "Multiplayers Game" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5B4FED5F23E8A6D500C300A0 /* Debug */,
@@ -422,7 +424,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5B4FED6123E8A6D500C300A0 /* Build configuration list for PBXNativeTarget "castle" */ = {
+		5B4FED6123E8A6D500C300A0 /* Build configuration list for PBXNativeTarget "Multiplayers Game" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5B4FED6223E8A6D500C300A0 /* Debug */,
