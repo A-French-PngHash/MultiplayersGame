@@ -17,6 +17,9 @@ class ChateauScene: SKScene {
         get {
             return MapData.shared.ways
         }
+        set {
+            MapData.shared.ways = newValue
+        }
     }
     private var bases : Array<Base> {
         get {
@@ -25,6 +28,7 @@ class ChateauScene: SKScene {
     }
     private var basesSprite : Array<SKSpriteNode>!
     private var waysSprite : Array<SKShapeNode>!
+    private var arrowSprite : Array<SKSpriteNode>!
     private var unitSprites : Array<Unit>!
     var timer : Timer!
     
@@ -42,10 +46,11 @@ class ChateauScene: SKScene {
     
     //MARk: - Load map
     
-    func loadMap() {
+    private func loadMap() {
         LoadManager.shared.loadMapFor(player: self.numberOfPlayer, size: self.size)
         setupWays()
         setupBases()
+        setupArrows()
     }
     
     private func setupBases() {
@@ -102,12 +107,46 @@ class ChateauScene: SKScene {
             if way.wayTeam == .neutral {
                 wayShape.zPosition = Layer.neutralWay
             }
+            ways[waysSprite.count].angle = CGFloat(angle)
             let rotate = SKAction.rotate(toAngle: CGFloat(angle), duration: 0)
             wayShape.run(rotate)
             wayShape.name = String(waysSprite.count)
+            //wayShape.zRotation = CGFloat(angle)
             self.addChild(wayShape)
             
             waysSprite.append(wayShape)
+        }
+    }
+    
+    private func setupArrows() {
+        arrowSprite = []
+        for way in waysSprite {
+            let arrow = SKSpriteNode(imageNamed: "arrow")
+            arrow.position = way.position
+            arrow.zPosition = Layer.arrow
+            arrow.size = CGSize(width: 50, height: 20)
+            arrow.run(SKAction.rotate(toAngle: ways[Int(way.name!)!].angle! + CGFloat(Float.pi / 2), duration: 0))
+            arrowSprite.append(arrow)
+            self.addChild(arrow)
+        }
+        showArrows()
+    }
+    
+    private func showArrows() {
+        for arrow in arrowSprite { //Hiding arrow
+            let sprites = self.nodes(at: arrow.position)
+            for sprite in sprites {
+                if let name = sprite.name {
+                    if let number = Int(name){
+                        if ways[number].wayTeam == .neutral {
+                            arrow.isHidden = true
+                        } else {
+                            arrow.isHidden = false
+                        }
+                        break
+                    }
+                }
+            }
         }
     }
     
@@ -174,7 +213,7 @@ extension ChateauScene {
                     let result = game.sendUnit(beginId : beginId, way : way)
                     if result.0 {
                         
-                        
+                        showArrows()
                         reloadGraphical()
                         
                         let unit = Unit(imageNamed: "unit")
@@ -183,13 +222,13 @@ extension ChateauScene {
                         let size = CGFloat(result.1) * 6.5
                         unit.size = CGSize(width: size, height: size)
                         print(CGFloat(23) / (self.view?.frame.height)!)
-                        unit.destinationPoint = CGPoint(x: result.2.x, y: result.2.y + 34)
+                        unit.destinationPoint = CGPoint(x: result.2.x, y: result.2.y + 32)
                         unit.position = game.base(id: beginId).position
                         unit.zPosition = Layer.unit
                         unit.color = getColorFor(team: way.wayTeam)
                         unit.colorBlendFactor = 1.0
                         unit.team = way.wayTeam
-                        unit.alpha = 0.6
+                        unit.alpha = 0.8
                         let borderBody = SKPhysicsBody(circleOfRadius: CGFloat(unit.poid))
                         unit.physicsBody = borderBody
                         

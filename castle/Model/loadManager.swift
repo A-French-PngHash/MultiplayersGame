@@ -52,11 +52,11 @@ class LoadManager {
                 let endPoint = CGPoint(x: x, y: y)
             
                 let team = base.team
-                let way = Way(beginPoint: beginPoint, endPoint: endPoint, destinationPoint: destinationPoint, destinationId: destinationId!, beginId : beginId!, wayTeam: team!)
+                let way = Way(beginPoint: beginPoint, endPoint: endPoint, destinationPoint: destinationPoint, destinationId: destinationId!, beginId : beginId!, wayTeam: team!, angle : 0)
                 return way
             }
         }
-        return Way(beginPoint: CGPoint(x: 0, y: 0), endPoint: CGPoint(x: 0, y: 0), destinationPoint: CGPoint(x: 0, y: 0), destinationId: 0, beginId: 0, wayTeam: .neutral)
+        return Way(beginPoint: CGPoint(x: 0, y: 0), endPoint: CGPoint(x: 0, y: 0), destinationPoint: CGPoint(x: 0, y: 0), destinationId: 0, beginId: 0, wayTeam: .neutral, angle : 0)
     }
     
     //MARK: - Base
