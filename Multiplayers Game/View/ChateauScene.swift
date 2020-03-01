@@ -61,7 +61,7 @@ class ChateauScene: SKScene {
             
             let baseShape = SKSpriteNode(imageNamed: "hexagone\(base.team!)")
             baseShape.position = base.position
-            baseShape.zPosition = Layer.base
+            baseShape.zPosition = ChateauLayer.base
             baseShape.size = CGSize(width: CGFloat(5 * Float(base.poid + 2)), height: CGFloat(4.5 * CGFloat(base.poid + 2)))
             //baseShape.fillColor = getColorFor(team: base.team)
             
@@ -103,9 +103,9 @@ class ChateauScene: SKScene {
             wayShape.fillColor = getColorFor(team: way.wayTeam)
             wayShape.alpha = 0.5
             wayShape.lineWidth = 0
-            wayShape.zPosition = Layer.normalWay
+            wayShape.zPosition = ChateauLayer.normalWay
             if way.wayTeam == .neutral {
-                wayShape.zPosition = Layer.neutralWay
+                wayShape.zPosition = ChateauLayer.neutralWay
             }
             ways[waysSprite.count].angle = CGFloat(angle)
             let rotate = SKAction.rotate(toAngle: CGFloat(angle), duration: 0)
@@ -123,7 +123,7 @@ class ChateauScene: SKScene {
         for way in waysSprite {
             let arrow = SKSpriteNode(imageNamed: "arrow")
             arrow.position = way.position
-            arrow.zPosition = Layer.arrow
+            arrow.zPosition = ChateauLayer.arrow
             arrow.size = CGSize(width: 50, height: 20)
             arrow.run(SKAction.rotate(toAngle: ways[Int(way.name!)!].angle! + CGFloat(Float.pi / 2), duration: 0))
             arrowSprite.append(arrow)
@@ -224,7 +224,7 @@ extension ChateauScene {
                         print(CGFloat(23) / (self.view?.frame.height)!)
                         unit.destinationPoint = CGPoint(x: result.2.x, y: result.2.y + 32)
                         unit.position = game.base(id: beginId).position
-                        unit.zPosition = Layer.unit
+                        unit.zPosition = ChateauLayer.unit
                         unit.color = getColorFor(team: way.wayTeam)
                         unit.colorBlendFactor = 1.0
                         unit.team = way.wayTeam
@@ -232,8 +232,8 @@ extension ChateauScene {
                         let borderBody = SKPhysicsBody(circleOfRadius: CGFloat(unit.poid))
                         unit.physicsBody = borderBody
                         
-                        unit.physicsBody?.contactTestBitMask = BitMask.unitCategory //Whith wich category do he send a notification
-                        unit.physicsBody?.categoryBitMask = BitMask.unitCategory //which category do he belong to
+                        unit.physicsBody?.contactTestBitMask = ChateauBitMask.unitCategory //Whith wich category do he send a notification
+                        unit.physicsBody?.categoryBitMask = ChateauBitMask.unitCategory //which category do he belong to
                         unit.physicsBody?.collisionBitMask = 0
                         
                         

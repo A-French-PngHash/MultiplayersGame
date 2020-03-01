@@ -9,5 +9,5 @@
 import Foundation
 
 enum Teams {
-    case orange, blue, green, yellow, neutral
+    case orange, blue, green, yellow, purple, pink, neutral
 }
