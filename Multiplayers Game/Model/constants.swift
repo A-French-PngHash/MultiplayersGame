@@ -25,3 +25,8 @@ enum ChateauBitMask {
 enum ChateauSize {
     static let maxSize : Int = 13
 }
+
+enum RaceBitMask {
+    static let carBitMask : UInt32 = 0x1 << 1
+    static let endBitMask : UInt32 = 0x1 << 2
+}

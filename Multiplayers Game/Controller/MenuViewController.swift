@@ -12,7 +12,7 @@ import GameplayKit
 
 class MenuViewController: UIViewController {
     
-    var scene : ChateauScene!
+    var scene : SKScene!
     var numberOfPlayer : Int!
     
     override func viewDidLoad() {
@@ -23,13 +23,23 @@ class MenuViewController: UIViewController {
         
         showMenu()
         updateButton()
-        NotificationCenter.default.addObserver(self, selector: #selector(win), name: NSNotification.Name(rawValue: "win"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(chateauWin), name: NSNotification.Name(rawValue: "chateauWin"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(raceWin), name: NSNotification.Name("raceWin"), object: nil)
+        
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
     
     @IBOutlet weak var replayButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet var menuButton: [UIButton]!
     @IBOutlet var menuLabel: [UILabel]!
+    
+    @IBAction func race(_ sender: Any) {
+        displayRaceScene()
+    }
     
     @IBAction func twoPlayer(_ sender: Any) {
         numberOfPlayer = 2
@@ -57,18 +67,43 @@ class MenuViewController: UIViewController {
         displayChateauScene()
     }
     
-    @objc func win() {
+    @objc func chateauWin() {
         replayButton.isHidden = false
+        replayButton.frame.origin.y = self.view.frame.height - 60
+    }
+    
+    @objc func raceWin() {
+        replayButton.isHidden = false
+        replayButton.frame.origin.y = 0
+    }
+    
+    private func displayRaceScene() {
+        hideMenu()
+        backButton.isHidden = false
+        backButton.frame.origin = CGPoint(x: 5, y: 0)
+        // Configure the view.
+        let skView = self.view as! SKView
+        skView.ignoresSiblingOrder = true
+        // Create and configure the scene.
+        scene = RaceScene(size: CGSize(width: self.view.frame.width, height: self.view.frame.height))
+        let scene = self.scene as! RaceScene
+        scene.numberOfPlayer = self.numberOfPlayer
+        scene.scaleMode = .aspectFill
+        
+        // Present the scene.
+        skView.presentScene(scene)
     }
 
     private func displayChateauScene() {
         hideMenu()
         backButton.isHidden = false
+        backButton.frame.origin.y = self.view.frame.height - 60
         // Configure the view.
         let skView = self.view as! SKView
         skView.ignoresSiblingOrder = true
         // Create and configure the scene.
         scene = ChateauScene(size: CGSize(width: self.view.frame.width, height: self.view.frame.height))
+        let scene = self.scene as! ChateauScene
         scene.numberOfPlayer = self.numberOfPlayer
         scene.scaleMode = .aspectFill
         
@@ -97,11 +132,13 @@ class MenuViewController: UIViewController {
     private func removeScene() {
         scene.removeFromParent()
         scene.removeAllChildren()
-        scene.timer.invalidate()
         scene.backgroundColor = .white
         showMenu()
         backButton.isHidden = true
         replayButton.isHidden = true
+        if let scene = self.scene as? ChateauScene {
+            scene.timer.invalidate()
+        }
     }
     
     private func updateButton() {

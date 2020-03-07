@@ -198,14 +198,17 @@ class ChateauScene: SKScene {
     
     //MARK: - End of game
     private func win(team : Teams) {
-        NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "win")))
+        NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "chateauWin")))
     }
     
 }
 
 extension ChateauScene {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
         if let touch = touches.first {
+            print(touch.location(in: self).x / self.size.width)
+            print(touch.location(in: self).y / self.size.height)
             for i in nodes(at: touch.location(in: self)){
                 if let name = i.name {
                     let way = ways[Int(name)!]

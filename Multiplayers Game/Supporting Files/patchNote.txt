@@ -1,0 +1,11 @@
+Created by Titouan Blossier on 03/02/2020.
+Copyright © 2020 Titouan Blossier. All rights reserved.
+
+                -------------Multiplayers Game Patch Note-------------
+
+V1.0.1 (05/03/2020):
+    - Ajustements du générateur de map pour qu'il prenne moins de temps à créer les maps quatres joueurs.
+
+V1.0 (01/03/2020) :
+    - Le jeu Multiplayers Game comporte un mode de jeu : "Chateau".
+    - On peut y joueur de 2 à quatre joueurs.
