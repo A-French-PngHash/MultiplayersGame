@@ -70,17 +70,19 @@ class MenuViewController: UIViewController {
     @objc func chateauWin() {
         replayButton.isHidden = false
         replayButton.frame.origin.y = self.view.frame.height - 60
+        replayButton.frame.origin.x = self.view.frame.width - 65
     }
     
     @objc func raceWin() {
         replayButton.isHidden = false
-        replayButton.frame.origin.y = 0
+        replayButton.frame.origin.y = 5
+        replayButton.frame.origin.x = self.view.frame.width - 65
     }
     
     private func displayRaceScene() {
         hideMenu()
         backButton.isHidden = false
-        backButton.frame.origin = CGPoint(x: 5, y: 0)
+        backButton.frame.origin = CGPoint(x: 5, y: 5)
         // Configure the view.
         let skView = self.view as! SKView
         skView.ignoresSiblingOrder = true
@@ -97,7 +99,8 @@ class MenuViewController: UIViewController {
     private func displayChateauScene() {
         hideMenu()
         backButton.isHidden = false
-        backButton.frame.origin.y = self.view.frame.height - 60
+        backButton.frame.origin.y = self.view.frame.height - 65
+        backButton.frame.origin.x = 5
         // Configure the view.
         let skView = self.view as! SKView
         skView.ignoresSiblingOrder = true

@@ -21,6 +21,7 @@ class RaceScene : SKScene {
     override func didMove(to view: SKView) {
         self.physicsWorld.contactDelegate = self as SKPhysicsContactDelegate
         self.physicsWorld.gravity = CGVector(dx: 0, dy: 0)
+        self.backgroundColor = UIColor(red: 1, green: 231/255, blue: 200/255, alpha: 1)
         
         intervalle = 0.800 / Double(numberOfPlayer + 1)
         
@@ -40,7 +41,7 @@ class RaceScene : SKScene {
         pathToDraw.addLine(to: CGPoint(x: CGFloat(0.100 + (Double(numberOfPlayer) * intervalle)) * self.size.width + 30, y: y))
         line.lineWidth = 10
         line.path = pathToDraw
-        line.strokeColor = SKColor.white
+        line.strokeColor = SKColor.gray
         
         line.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 0.800 * self.frame.width, height: 10), center: CGPoint(x: 0.500 * self.size.width, y: y))
         line.physicsBody?.categoryBitMask = RaceBitMask.endBitMask
@@ -73,7 +74,8 @@ class RaceScene : SKScene {
             pathToDraw.move(to: CGPoint(x: x, y: 0.100 * self.frame.size.height))
             pathToDraw.addLine(to: CGPoint(x: x, y: 0.950 * self.frame.size.height))
             yourline.path = pathToDraw
-            yourline.strokeColor = SKColor.red
+            yourline.strokeColor = SKColor.black
+            yourline.lineWidth = 5
             addChild(yourline)
         }
     }
@@ -120,7 +122,7 @@ class RaceScene : SKScene {
                         sprite.actualDestinationPoint = sprite.position
                     }
                     let destination = CGPoint(x: sprite.actualDestinationPoint.x,
-                                              y: (sprite.actualDestinationPoint.y / self.frame.height + 0.05) * self.frame.height)
+                                              y: (sprite.actualDestinationPoint.y / self.frame.height + 0.01) * self.frame.height)
                     sprite.actualDestinationPoint = destination
                     sprite.removeAllActions()
                     sprite.run(SKAction.move(to: destination, duration: 0.5))
@@ -140,6 +142,9 @@ extension RaceScene : SKPhysicsContactDelegate{
         let hide = SKAction.hide()
         let show = SKAction.unhide()
         let wait = SKAction.wait(forDuration: 0.4)
+        node?.removeAllActions()
+        node!.run(SKAction.move(to: CGPoint(x: node!.position.x, y: (0.900 * self.frame.height) + 14), duration: 0))
+
         let win = SKAction.run {
             self.win()
         }
