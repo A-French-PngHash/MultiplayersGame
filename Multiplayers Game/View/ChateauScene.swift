@@ -63,7 +63,6 @@ class ChateauScene: SKScene {
             baseShape.position = base.position
             baseShape.zPosition = ChateauLayer.base
             baseShape.size = CGSize(width: CGFloat(5 * Float(base.poid + 2)), height: CGFloat(4.5 * CGFloat(base.poid + 2)))
-            //baseShape.fillColor = getColorFor(team: base.team)
             
             self.addChild(baseShape)
             
@@ -100,7 +99,7 @@ class ChateauScene: SKScene {
             
             let wayShape = SKShapeNode(path: shapePath.cgPath, centered: true)
             wayShape.position = center//Définis le centre
-            wayShape.fillColor = getColorFor(team: way.wayTeam)
+            wayShape.fillColor = Function.getColorFor(team: way.wayTeam)
             wayShape.alpha = 0.5
             wayShape.lineWidth = 0
             wayShape.zPosition = ChateauLayer.normalWay
@@ -160,7 +159,7 @@ class ChateauScene: SKScene {
     
     private func reloadWaysColor() {
         for i in 0...ways.count - 1 {
-            waysSprite[i].fillColor = getColorFor(team: ways[i].wayTeam)
+            waysSprite[i].fillColor = Function.getColorFor(team: ways[i].wayTeam)
         }
     }
     
@@ -180,20 +179,6 @@ class ChateauScene: SKScene {
         let ye = way.endPoint.y
         let animationDuration = sqrt((xe-xb) * (xe - xb) + (ye - yb) * (ye - yb)) / 75
         return animationDuration
-    }
-    
-    private func getColorFor(team : Teams) -> UIColor{
-        if team == .yellow {
-            return UIColor(red: 252/255, green: 194/255, blue: 0, alpha: 1)
-        } else if team == .green {
-            return UIColor(red: 43/255, green: 208/255, blue: 0, alpha: 1)
-        } else if team == .orange {
-            return UIColor(red: 1, green: 124/255, blue: 0, alpha: 1)
-        } else if team == .blue {
-            return UIColor(red: 0, green: 153/255, blue: 1, alpha: 1)
-        } else{ //neutral
-            return UIColor(red: 224/255, green: 144/255, blue: 41/255, alpha: 0.5)
-        }
     }
     
     //MARK: - End of game
@@ -228,7 +213,7 @@ extension ChateauScene {
                         unit.destinationPoint = CGPoint(x: result.2.x, y: result.2.y + 32)
                         unit.position = game.base(id: beginId).position
                         unit.zPosition = ChateauLayer.unit
-                        unit.color = getColorFor(team: way.wayTeam)
+                        unit.color = Function.getColorFor(team: way.wayTeam)
                         unit.colorBlendFactor = 1.0
                         unit.team = way.wayTeam
                         unit.alpha = 0.8

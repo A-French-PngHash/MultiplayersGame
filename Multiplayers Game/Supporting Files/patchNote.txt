@@ -3,9 +3,20 @@ Copyright © 2020 Titouan Blossier. All rights reserved.
 
                 -------------Multiplayers Game Patch Note-------------
 
+
 V1.0.1 (05/03/2020):
     - Ajustements du générateur de map pour qu'il prenne moins de temps à créer les maps quatres joueurs.
 
 V1.0 (01/03/2020) :
     - Le jeu Multiplayers Game comporte un mode de jeu : "Chateau".
     - On peut y joueur de 2 à quatre joueurs.
+
+
+                -------------Multiplayers Game BETA Patch Note-------------
+V1.1.0 BETA (12/03/2020):
+    - Sortie d'un nouveau mode de jeu : le mode "race"
+    - Le minijeu est en version BETA et plus de contenu sera ajouter par la suite sur ce mode de jeu ainsi que des corectifs si nécéssaire
+
+Bugs :
+    - Quand click reload va a chateau
+    - La voiture n'est pas au bon endroit

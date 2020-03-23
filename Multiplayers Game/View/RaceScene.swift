@@ -17,8 +17,11 @@ class RaceScene : SKScene {
     var intervalle : Double!
     var endLine : SKShapeNode!
     let teams : Array<Teams> = [.orange, .pink, .yellow, .blue, .purple, .orange]
+    var infoLabel : SKLabelNode!
+    var gameStarted = false
     
     override func didMove(to view: SKView) {
+        print(14 / self.frame.height)
         self.physicsWorld.contactDelegate = self as SKPhysicsContactDelegate
         self.physicsWorld.gravity = CGVector(dx: 0, dy: 0)
         self.backgroundColor = UIColor(red: 1, green: 231/255, blue: 200/255, alpha: 1)
@@ -98,6 +101,51 @@ class RaceScene : SKScene {
         }
     }
     
+    func startCountdown() {
+        infoLabel = SKLabelNode()
+        infoLabel.fontName = "copperplate"
+        infoLabel.fontSize = 70
+        infoLabel.fontColor = .black
+        infoLabel.text = "3"
+        infoLabel.position = CGPoint(x: self.view!.frame.midX, y: self.view!.frame.midY)
+        self.addChild(infoLabel)
+        
+        let changeNumber = SKAction.run {
+            if let text = self.infoLabel.text{
+                if text == "1"{
+                    self.infoLabel.text = "GO !"
+                    self.infoLabel.fontColor = .red
+                    self.infoLabel.fontSize = 90
+                    self.gameStarted = true
+                } else if text != "GO !"{
+                    self.infoLabel.text = String(Int(text)! - 1)
+                }
+            }
+        }
+        let waitChangeNumber = SKAction.sequence([SKAction.wait(forDuration: 0.05),
+                                                  SKAction.fadeIn(withDuration: 0.1),
+                                                  SKAction.wait(forDuration: 0.75),
+                                                  SKAction.fadeOut(withDuration: 0.1),
+                                                  changeNumber])
+       
+        
+        let clignote = SKAction.sequence([SKAction.hide(),
+                                          SKAction.wait(forDuration: 0.05),
+                                           SKAction.unhide(),
+                                           SKAction.wait(forDuration: 0.05)])
+        let clignotementSerie = SKAction.sequence([clignote, clignote, clignote, clignote, clignote, clignote, clignote, clignote, clignote, clignote, clignote, clignote,clignote, clignote, clignote])
+        
+        let showGo = SKAction.sequence([SKAction.wait(forDuration: 0.05),
+                                        SKAction.fadeIn(withDuration: 0)])
+        
+        infoLabel.run(SKAction.sequence([waitChangeNumber,
+                                              waitChangeNumber,
+                                              waitChangeNumber,
+                                              showGo,
+                                              clignotementSerie,
+                                              SKAction.removeFromParent()]))
+    }
+    
     private func stopGame() {
         for i in buttonsSprite {
             i.isHidden = true
@@ -108,24 +156,38 @@ class RaceScene : SKScene {
         }
     }
     
-    private func win() {
+    private func win(team : Teams) {
+        infoLabel.fontColor = Function.getColorFor(team: team)
+        infoLabel.fontSize = 40
+        infoLabel.text = "\(team) team won"
+        self.addChild(infoLabel)
         NotificationCenter.default.post(Notification(name: Notification.Name("raceWin")))
+        
+        let hide = SKAction.hide()
+        let show = SKAction.unhide()
+        let wait = SKAction.wait(forDuration: 0.4)
+        let sequence = SKAction.sequence([hide, wait, show, wait])
+        let fullSequence = SKAction.sequence([sequence, sequence, sequence, sequence, sequence, sequence])
+        infoLabel.run(fullSequence)
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let touch = touches.first {
-            let nodes = self.nodes(at: touch.location(in: self))
-            if nodes.count > 0 {
-                if let button = nodes[0] as? RaceButton {
-                    let sprite = carsSprite![Int(button.name!)!]
-                    if sprite.actualDestinationPoint == nil {
-                        sprite.actualDestinationPoint = sprite.position
+        if gameStarted {
+            if let touch = touches.first {
+                let nodes = self.nodes(at: touch.location(in: self))
+                if nodes.count > 0 {
+                    if let button = nodes[0] as? RaceButton {
+                        let sprite = carsSprite![Int(button.name!)!]
+                        if sprite.actualDestinationPoint == nil {
+                            sprite.actualDestinationPoint = sprite.position
+                        }
+                        let destination = CGPoint(x: sprite.actualDestinationPoint.x,
+                                                  y: (sprite.actualDestinationPoint.y / self.frame.height + 0.015) * self.frame.height)
+                        sprite.actualDestinationPoint = destination
+                        sprite.removeAllActions()
+                        sprite.run(SKAction.move(to: destination, duration: 0.5))
                     }
-                    let destination = CGPoint(x: sprite.actualDestinationPoint.x,
-                                              y: (sprite.actualDestinationPoint.y / self.frame.height + 0.01) * self.frame.height)
-                    sprite.actualDestinationPoint = destination
-                    sprite.removeAllActions()
-                    sprite.run(SKAction.move(to: destination, duration: 0.5))
                 }
             }
         }
@@ -143,10 +205,10 @@ extension RaceScene : SKPhysicsContactDelegate{
         let show = SKAction.unhide()
         let wait = SKAction.wait(forDuration: 0.4)
         node?.removeAllActions()
-        node!.run(SKAction.move(to: CGPoint(x: node!.position.x, y: (0.900 * self.frame.height) + 14), duration: 0))
+        node!.run(SKAction.move(to: CGPoint(x: node!.position.x, y: (0.900 * self.frame.height) + (0.022 * self.frame.height)), duration: 0))
 
         let win = SKAction.run {
-            self.win()
+            self.win(team : node!.team)
         }
         let sequence = SKAction.sequence([hide, wait, show, wait])
         let fullSequence = SKAction.sequence([win, sequence, sequence, sequence, sequence, sequence, sequence])

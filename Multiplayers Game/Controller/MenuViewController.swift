@@ -5,7 +5,6 @@
 //  Created by Titouan Blossier on 03/02/2020.
 //  Copyright © 2020 Titouan Blossier. All rights reserved.
 //
-
 import UIKit
 import SpriteKit
 import GameplayKit
@@ -56,7 +55,11 @@ class MenuViewController: UIViewController {
     
     @IBAction func replayButtonPressed(_ sender: Any) {
         removeScene()
-        displayChateauScene()
+        if let _ = scene as? ChateauScene {
+            displayChateauScene()
+        } else if let _ = scene as? RaceScene {
+            displayRaceScene()
+        }
     }
     
     @IBAction func backbuttonPressed(_ sender: Any) {
@@ -94,6 +97,13 @@ class MenuViewController: UIViewController {
         
         // Present the scene.
         skView.presentScene(scene)
+        
+        let timerStartCountdown = Timer(timeInterval: 0.05, repeats: false) { _ in
+            let scene = self.scene as! RaceScene
+            scene.startCountdown()
+        }
+        timerStartCountdown.fire()
+        
     }
 
     private func displayChateauScene() {

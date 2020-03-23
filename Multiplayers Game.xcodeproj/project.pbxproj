@@ -17,6 +17,7 @@
 		5B623B1124016829001FB369 /* loadedMapData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B623B1024016829001FB369 /* loadedMapData.swift */; };
 		5B623B142401691C001FB369 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B623B132401691C001FB369 /* Game.swift */; };
 		5B623B1724017329001FB369 /* unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B623B1624017329001FB369 /* unit.swift */; };
+		5B62E2DE2428D25700ACA523 /* function.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B62E2DD2428D25700ACA523 /* function.swift */; };
 		5BAD59F1240AAB3D00638F4E /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAD59F0240AAB3D00638F4E /* MenuViewController.swift */; };
 		5BAD59F3240AB41B00638F4E /* ChateauxInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAD59F2240AB41B00638F4E /* ChateauxInfoViewController.swift */; };
 		5BB9961E240C3EC8000A2C4A /* patchNote.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5BB9961D240C3EC8000A2C4A /* patchNote.txt */; };
@@ -42,6 +43,7 @@
 		5B623B1024016829001FB369 /* loadedMapData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadedMapData.swift; sourceTree = "<group>"; };
 		5B623B132401691C001FB369 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		5B623B1624017329001FB369 /* unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = unit.swift; sourceTree = "<group>"; };
+		5B62E2DD2428D25700ACA523 /* function.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = function.swift; sourceTree = "<group>"; };
 		5BAD59F0240AAB3D00638F4E /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		5BAD59F2240AB41B00638F4E /* ChateauxInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChateauxInfoViewController.swift; sourceTree = "<group>"; };
 		5BB9961D240C3EC8000A2C4A /* patchNote.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = patchNote.txt; sourceTree = "<group>"; usesTabs = 0; };
@@ -99,6 +101,7 @@
 				5B623B0D240163FD001FB369 /* constants.swift */,
 				5BB99620240C4139000A2C4A /* Race */,
 				5B610C6A240C234F005AC4B6 /* Chateau */,
+				5B62E2DD2428D25700ACA523 /* function.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				5BC1466B2408854500B1D84D /* mapGenerator.swift in Sources */,
 				5B623B142401691C001FB369 /* Game.swift in Sources */,
 				5BAD59F1240AAB3D00638F4E /* MenuViewController.swift in Sources */,
+				5B62E2DE2428D25700ACA523 /* function.swift in Sources */,
 				5BFA05862411914D0032FA81 /* RaceCar.swift in Sources */,
 				5B623B1124016829001FB369 /* loadedMapData.swift in Sources */,
 				5BBD936323EC75EA00CFD739 /* wayData.swift in Sources */,
