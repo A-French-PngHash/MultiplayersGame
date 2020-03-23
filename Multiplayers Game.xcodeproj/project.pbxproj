@@ -12,38 +12,48 @@
 		5B4FED5823E8A6D300C300A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B4FED5623E8A6D300C300A0 /* Main.storyboard */; };
 		5B4FED5A23E8A6D500C300A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B4FED5923E8A6D500C300A0 /* Assets.xcassets */; };
 		5B4FED5D23E8A6D500C300A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B4FED5B23E8A6D500C300A0 /* LaunchScreen.storyboard */; };
+		5B610C6C240C238E005AC4B6 /* RaceScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B610C6B240C238E005AC4B6 /* RaceScene.swift */; };
 		5B623B0E240163FD001FB369 /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B623B0D240163FD001FB369 /* constants.swift */; };
 		5B623B1124016829001FB369 /* loadedMapData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B623B1024016829001FB369 /* loadedMapData.swift */; };
 		5B623B142401691C001FB369 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B623B132401691C001FB369 /* Game.swift */; };
 		5B623B1724017329001FB369 /* unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B623B1624017329001FB369 /* unit.swift */; };
+		5B62E2DE2428D25700ACA523 /* function.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B62E2DD2428D25700ACA523 /* function.swift */; };
 		5BAD59F1240AAB3D00638F4E /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAD59F0240AAB3D00638F4E /* MenuViewController.swift */; };
 		5BAD59F3240AB41B00638F4E /* ChateauxInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAD59F2240AB41B00638F4E /* ChateauxInfoViewController.swift */; };
+		5BB9961E240C3EC8000A2C4A /* patchNote.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5BB9961D240C3EC8000A2C4A /* patchNote.txt */; };
+		5BB99622240C414D000A2C4A /* RaceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB99621240C414D000A2C4A /* RaceButton.swift */; };
 		5BBD935C23EC749400CFD739 /* loadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBD935B23EC749400CFD739 /* loadManager.swift */; };
 		5BBD935E23EC74D500CFD739 /* baseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBD935D23EC74D500CFD739 /* baseData.swift */; };
 		5BBD936123EC750C00CFD739 /* teams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBD936023EC750C00CFD739 /* teams.swift */; };
 		5BBD936323EC75EA00CFD739 /* wayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBD936223EC75EA00CFD739 /* wayData.swift */; };
 		5BC1466B2408854500B1D84D /* mapGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC1466A2408854500B1D84D /* mapGenerator.swift */; };
+		5BFA05862411914D0032FA81 /* RaceCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFA05852411914D0032FA81 /* RaceCar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5B4FED4923E8A6D300C300A0 /* Multiplayers Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Multiplayers Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B4FED4C23E8A6D300C300A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5B4FED5223E8A6D300C300A0 /* ChateauScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChateauScene.swift; sourceTree = "<group>"; };
+		5B4FED5223E8A6D300C300A0 /* ChateauScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChateauScene.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		5B4FED5723E8A6D300C300A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5B4FED5923E8A6D500C300A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B4FED5C23E8A6D500C300A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B4FED5E23E8A6D500C300A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B610C6B240C238E005AC4B6 /* RaceScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceScene.swift; sourceTree = "<group>"; };
 		5B623B0D240163FD001FB369 /* constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
 		5B623B1024016829001FB369 /* loadedMapData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadedMapData.swift; sourceTree = "<group>"; };
 		5B623B132401691C001FB369 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		5B623B1624017329001FB369 /* unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = unit.swift; sourceTree = "<group>"; };
+		5B62E2DD2428D25700ACA523 /* function.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = function.swift; sourceTree = "<group>"; };
 		5BAD59F0240AAB3D00638F4E /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		5BAD59F2240AB41B00638F4E /* ChateauxInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChateauxInfoViewController.swift; sourceTree = "<group>"; };
+		5BB9961D240C3EC8000A2C4A /* patchNote.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = patchNote.txt; sourceTree = "<group>"; usesTabs = 0; };
+		5BB99621240C414D000A2C4A /* RaceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceButton.swift; sourceTree = "<group>"; };
 		5BBD935B23EC749400CFD739 /* loadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadManager.swift; sourceTree = "<group>"; };
 		5BBD935D23EC74D500CFD739 /* baseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = baseData.swift; sourceTree = "<group>"; };
 		5BBD936023EC750C00CFD739 /* teams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = teams.swift; sourceTree = "<group>"; };
 		5BBD936223EC75EA00CFD739 /* wayData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wayData.swift; sourceTree = "<group>"; };
 		5BC1466A2408854500B1D84D /* mapGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapGenerator.swift; sourceTree = "<group>"; };
+		5BFA05852411914D0032FA81 /* RaceCar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceCar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,13 +97,11 @@
 		5B4FED6423E8A6F100C300A0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5BC1466A2408854500B1D84D /* mapGenerator.swift */,
-				5BBD936423EC75EE00CFD739 /* Entity Data */,
-				5B4FED6823E8A70600C300A0 /* Level Data */,
-				5BBD935B23EC749400CFD739 /* loadManager.swift */,
 				5BBD936023EC750C00CFD739 /* teams.swift */,
 				5B623B0D240163FD001FB369 /* constants.swift */,
-				5B623B132401691C001FB369 /* Game.swift */,
+				5BB99620240C4139000A2C4A /* Race */,
+				5B610C6A240C234F005AC4B6 /* Chateau */,
+				5B62E2DD2428D25700ACA523 /* function.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -102,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				5B4FED5223E8A6D300C300A0 /* ChateauScene.swift */,
+				5B610C6B240C238E005AC4B6 /* RaceScene.swift */,
 				5B4FED5B23E8A6D500C300A0 /* LaunchScreen.storyboard */,
 				5B4FED5623E8A6D300C300A0 /* Main.storyboard */,
 			);
@@ -123,6 +132,7 @@
 				5B4FED4C23E8A6D300C300A0 /* AppDelegate.swift */,
 				5B4FED5E23E8A6D500C300A0 /* Info.plist */,
 				5B4FED5923E8A6D500C300A0 /* Assets.xcassets */,
+				5BB9961D240C3EC8000A2C4A /* patchNote.txt */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -133,6 +143,27 @@
 				5B623B1024016829001FB369 /* loadedMapData.swift */,
 			);
 			path = "Level Data";
+			sourceTree = "<group>";
+		};
+		5B610C6A240C234F005AC4B6 /* Chateau */ = {
+			isa = PBXGroup;
+			children = (
+				5BC1466A2408854500B1D84D /* mapGenerator.swift */,
+				5BBD936423EC75EE00CFD739 /* Entity Data */,
+				5B4FED6823E8A70600C300A0 /* Level Data */,
+				5BBD935B23EC749400CFD739 /* loadManager.swift */,
+				5B623B132401691C001FB369 /* Game.swift */,
+			);
+			path = Chateau;
+			sourceTree = "<group>";
+		};
+		5BB99620240C4139000A2C4A /* Race */ = {
+			isa = PBXGroup;
+			children = (
+				5BB99621240C414D000A2C4A /* RaceButton.swift */,
+				5BFA05852411914D0032FA81 /* RaceCar.swift */,
+			);
+			path = Race;
 			sourceTree = "<group>";
 		};
 		5BBD936423EC75EE00CFD739 /* Entity Data */ = {
@@ -204,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B4FED5823E8A6D300C300A0 /* Main.storyboard in Resources */,
+				5BB9961E240C3EC8000A2C4A /* patchNote.txt in Resources */,
 				5B4FED5A23E8A6D500C300A0 /* Assets.xcassets in Resources */,
 				5B4FED5D23E8A6D500C300A0 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -221,11 +253,15 @@
 				5BC1466B2408854500B1D84D /* mapGenerator.swift in Sources */,
 				5B623B142401691C001FB369 /* Game.swift in Sources */,
 				5BAD59F1240AAB3D00638F4E /* MenuViewController.swift in Sources */,
+				5B62E2DE2428D25700ACA523 /* function.swift in Sources */,
+				5BFA05862411914D0032FA81 /* RaceCar.swift in Sources */,
 				5B623B1124016829001FB369 /* loadedMapData.swift in Sources */,
 				5BBD936323EC75EA00CFD739 /* wayData.swift in Sources */,
+				5B610C6C240C238E005AC4B6 /* RaceScene.swift in Sources */,
 				5B4FED5323E8A6D300C300A0 /* ChateauScene.swift in Sources */,
 				5BBD935C23EC749400CFD739 /* loadManager.swift in Sources */,
 				5BAD59F3240AB41B00638F4E /* ChateauxInfoViewController.swift in Sources */,
+				5BB99622240C414D000A2C4A /* RaceButton.swift in Sources */,
 				5BBD935E23EC74D500CFD739 /* baseData.swift in Sources */,
 				5B4FED4D23E8A6D300C300A0 /* AppDelegate.swift in Sources */,
 				5B623B0E240163FD001FB369 /* constants.swift in Sources */,

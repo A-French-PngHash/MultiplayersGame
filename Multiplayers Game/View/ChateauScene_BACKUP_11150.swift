@@ -182,10 +182,15 @@ class ChateauScene: SKScene {
     }
     
     //MARK: - End of game
-
+<<<<<<< HEAD
+    private func win() {
+        NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "win")))
+=======
     private func win(team : Teams) {
         NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "chateauWin")))
+>>>>>>> race
     }
+    
 }
 
 extension ChateauScene {

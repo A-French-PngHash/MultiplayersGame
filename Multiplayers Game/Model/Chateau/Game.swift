@@ -29,7 +29,7 @@ class Game {
     
     private func increasePoid() {
         for base in bases{
-            if base.poid != Size.maxSize && base.team != .neutral{
+            if base.poid != ChateauSize.maxSize && base.team != .neutral{
                 base.poid += 1
             }
         }
@@ -55,8 +55,8 @@ class Game {
             if base.id == destinationId {
                 if base.team == unit.team { //La base etait a un joueur qui a envoyé des renforts dessus
                     base.poid += unit.poid
-                    if base.poid > Size.maxSize {
-                        base.poid = Size.maxSize
+                    if base.poid > ChateauSize.maxSize {
+                        base.poid = ChateauSize.maxSize
                     }
                 } else {
                     base.poid -= unit.poid

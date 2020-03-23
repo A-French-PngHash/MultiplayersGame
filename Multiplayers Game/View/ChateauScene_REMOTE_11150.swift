@@ -182,10 +182,10 @@ class ChateauScene: SKScene {
     }
     
     //MARK: - End of game
-
     private func win(team : Teams) {
         NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "chateauWin")))
     }
+    
 }
 
 extension ChateauScene {
@@ -231,24 +231,19 @@ extension ChateauScene {
                         path.move(to: unit.position)
                         path.addLine(to: unit.destinationPoint)
                         let moveAnimation = SKAction.follow(path.cgPath, asOffset: false, orientToPath: false, duration: TimeInterval(animationDuration))
-                        unitSprites.append(unit)
+                        //let moveAnimation = SKAction.follow(path.cgPath, duration: TimeInterval(animationDuration))
+                        print(path)
+                        
+                        //let moveAnimation = SKAction.move(to: unit.destinationPoint, duration: TimeInterval(animationDuration))
+                        //print("destination : \(unit.destinationPoint)")
                         self.addChild(unit)
                         
                         let endAnimation = SKAction.run {
                             print(unit.position)
                             let result =  self.game.unitArrived(beginId: beginId, unit: unit, destinationId: way.destinationId)
 
-                            self.unitSprites.remove(at: self.unitSprites.firstIndex(of : unit)!)
-                            if result.0{
-                                var win = true
-                                for i in self.unitSprites {
-                                    if i.team != result.1 {
-                                        win = false
-                                    }
-                                }
-                                if win {
-                                    self.win()
-                                }
+                            if result.0 {
+                                self.win(team: result.1)
                             }
                             
                             unit.removeFromParent()

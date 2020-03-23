@@ -27,7 +27,7 @@ class MapGenerator {
             if players == 3 {
                 numberOfChateau = 7
             } else if players == 4 {
-                numberOfChateau = 9
+                numberOfChateau = 8
             }
             for i in 0...numberOfChateau - 1{ //Génération des emplacements
                 let castle = Castle()

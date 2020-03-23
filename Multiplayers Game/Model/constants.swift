@@ -9,7 +9,7 @@
 import UIKit
 
 
-enum Layer {
+enum ChateauLayer {
     static let arrow : CGFloat = 0
     static let neutralWay : CGFloat = 1
     static let normalWay : CGFloat = 2
@@ -18,10 +18,15 @@ enum Layer {
     static let labelWin : CGFloat = 5
 }
 
-enum BitMask {
+enum ChateauBitMask {
     static let unitCategory : UInt32 = 0x1 << 1
 }
 
-enum Size {
+enum ChateauSize {
     static let maxSize : Int = 13
+}
+
+enum RaceBitMask {
+    static let carBitMask : UInt32 = 0x1 << 1
+    static let endBitMask : UInt32 = 0x1 << 2
 }

@@ -61,8 +61,9 @@ class ChateauScene: SKScene {
             
             let baseShape = SKSpriteNode(imageNamed: "hexagone\(base.team!)")
             baseShape.position = base.position
-            baseShape.zPosition = ChateauLayer.base
+            baseShape.zPosition = Layer.base
             baseShape.size = CGSize(width: CGFloat(5 * Float(base.poid + 2)), height: CGFloat(4.5 * CGFloat(base.poid + 2)))
+            //baseShape.fillColor = getColorFor(team: base.team)
             
             self.addChild(baseShape)
             
@@ -99,12 +100,12 @@ class ChateauScene: SKScene {
             
             let wayShape = SKShapeNode(path: shapePath.cgPath, centered: true)
             wayShape.position = center//Définis le centre
-            wayShape.fillColor = Function.getColorFor(team: way.wayTeam)
+            wayShape.fillColor = getColorFor(team: way.wayTeam)
             wayShape.alpha = 0.5
             wayShape.lineWidth = 0
-            wayShape.zPosition = ChateauLayer.normalWay
+            wayShape.zPosition = Layer.normalWay
             if way.wayTeam == .neutral {
-                wayShape.zPosition = ChateauLayer.neutralWay
+                wayShape.zPosition = Layer.neutralWay
             }
             ways[waysSprite.count].angle = CGFloat(angle)
             let rotate = SKAction.rotate(toAngle: CGFloat(angle), duration: 0)
@@ -122,7 +123,7 @@ class ChateauScene: SKScene {
         for way in waysSprite {
             let arrow = SKSpriteNode(imageNamed: "arrow")
             arrow.position = way.position
-            arrow.zPosition = ChateauLayer.arrow
+            arrow.zPosition = Layer.arrow
             arrow.size = CGSize(width: 50, height: 20)
             arrow.run(SKAction.rotate(toAngle: ways[Int(way.name!)!].angle! + CGFloat(Float.pi / 2), duration: 0))
             arrowSprite.append(arrow)
@@ -159,7 +160,7 @@ class ChateauScene: SKScene {
     
     private func reloadWaysColor() {
         for i in 0...ways.count - 1 {
-            waysSprite[i].fillColor = Function.getColorFor(team: ways[i].wayTeam)
+            waysSprite[i].fillColor = getColorFor(team: ways[i].wayTeam)
         }
     }
     
@@ -181,19 +182,30 @@ class ChateauScene: SKScene {
         return animationDuration
     }
     
-    //MARK: - End of game
-
-    private func win(team : Teams) {
-        NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "chateauWin")))
+    private func getColorFor(team : Teams) -> UIColor{
+        if team == .yellow {
+            return UIColor(red: 252/255, green: 194/255, blue: 0, alpha: 1)
+        } else if team == .green {
+            return UIColor(red: 43/255, green: 208/255, blue: 0, alpha: 1)
+        } else if team == .orange {
+            return UIColor(red: 1, green: 124/255, blue: 0, alpha: 1)
+        } else if team == .blue {
+            return UIColor(red: 0, green: 153/255, blue: 1, alpha: 1)
+        } else{ //neutral
+            return UIColor(red: 224/255, green: 144/255, blue: 41/255, alpha: 0.5)
+        }
     }
+    
+    //MARK: - End of game
+    private func win(team : Teams) {
+        NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "win")))
+    }
+    
 }
 
 extension ChateauScene {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
         if let touch = touches.first {
-            print(touch.location(in: self).x / self.size.width)
-            print(touch.location(in: self).y / self.size.height)
             for i in nodes(at: touch.location(in: self)){
                 if let name = i.name {
                     let way = ways[Int(name)!]
@@ -212,16 +224,16 @@ extension ChateauScene {
                         print(CGFloat(23) / (self.view?.frame.height)!)
                         unit.destinationPoint = CGPoint(x: result.2.x, y: result.2.y + 32)
                         unit.position = game.base(id: beginId).position
-                        unit.zPosition = ChateauLayer.unit
-                        unit.color = Function.getColorFor(team: way.wayTeam)
+                        unit.zPosition = Layer.unit
+                        unit.color = getColorFor(team: way.wayTeam)
                         unit.colorBlendFactor = 1.0
                         unit.team = way.wayTeam
                         unit.alpha = 0.8
                         let borderBody = SKPhysicsBody(circleOfRadius: CGFloat(unit.poid))
                         unit.physicsBody = borderBody
                         
-                        unit.physicsBody?.contactTestBitMask = ChateauBitMask.unitCategory //Whith wich category do he send a notification
-                        unit.physicsBody?.categoryBitMask = ChateauBitMask.unitCategory //which category do he belong to
+                        unit.physicsBody?.contactTestBitMask = BitMask.unitCategory //Whith wich category do he send a notification
+                        unit.physicsBody?.categoryBitMask = BitMask.unitCategory //which category do he belong to
                         unit.physicsBody?.collisionBitMask = 0
                         
                         
@@ -231,24 +243,19 @@ extension ChateauScene {
                         path.move(to: unit.position)
                         path.addLine(to: unit.destinationPoint)
                         let moveAnimation = SKAction.follow(path.cgPath, asOffset: false, orientToPath: false, duration: TimeInterval(animationDuration))
-                        unitSprites.append(unit)
+                        //let moveAnimation = SKAction.follow(path.cgPath, duration: TimeInterval(animationDuration))
+                        print(path)
+                        
+                        //let moveAnimation = SKAction.move(to: unit.destinationPoint, duration: TimeInterval(animationDuration))
+                        //print("destination : \(unit.destinationPoint)")
                         self.addChild(unit)
                         
                         let endAnimation = SKAction.run {
                             print(unit.position)
                             let result =  self.game.unitArrived(beginId: beginId, unit: unit, destinationId: way.destinationId)
 
-                            self.unitSprites.remove(at: self.unitSprites.firstIndex(of : unit)!)
-                            if result.0{
-                                var win = true
-                                for i in self.unitSprites {
-                                    if i.team != result.1 {
-                                        win = false
-                                    }
-                                }
-                                if win {
-                                    self.win()
-                                }
+                            if result.0 {
+                                self.win(team: result.1)
                             }
                             
                             unit.removeFromParent()
