@@ -183,7 +183,7 @@ class ChateauScene: SKScene {
     
     //MARK: - End of game
 
-    private func win(team : Teams) {
+    private func win() {
         NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "chateauWin")))
     }
 }

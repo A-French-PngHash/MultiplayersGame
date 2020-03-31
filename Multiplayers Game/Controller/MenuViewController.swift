@@ -14,6 +14,12 @@ class MenuViewController: UIViewController {
     var scene : SKScene!
     var numberOfPlayer : Int!
     
+    var menuButton : Array<UIButton> {
+        get {
+            return menuPlayerButton + otherMenuButton
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.backButton.isHidden = true
@@ -33,7 +39,8 @@ class MenuViewController: UIViewController {
     
     @IBOutlet weak var replayButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
-    @IBOutlet var menuButton: [UIButton]!
+    @IBOutlet var menuPlayerButton: [UIButton]!
+    @IBOutlet var otherMenuButton: [UIButton]!
     @IBOutlet var menuLabel: [UILabel]!
     
     @IBAction func race(_ sender: Any) {
@@ -50,6 +57,14 @@ class MenuViewController: UIViewController {
     }
     @IBAction func Player(_ sender: Any) {
         numberOfPlayer = 4
+        updateButton()
+    }
+    @IBAction func fivePlayer(_ sender: Any) {
+        numberOfPlayer = 5
+        updateButton()
+    }
+    @IBAction func sixPlayer(_ sender: Any) {
+        numberOfPlayer = 6
         updateButton()
     }
     
@@ -155,12 +170,9 @@ class MenuViewController: UIViewController {
     }
     
     private func updateButton() {
-        for i in 0...2 { //The first players button
+        for i in 0...4 { //The first players button
             if i + 2 == numberOfPlayer {
-                menuButton[i].imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-                
-            } else {
-                menuButton[i].imageEdgeInsets = UIEdgeInsets(top: 7, left: 7, bottom: 7, right: 7)
+                menuPlayerButton[i].imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
             }
         }
     }

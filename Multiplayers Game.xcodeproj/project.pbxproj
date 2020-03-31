@@ -109,8 +109,7 @@
 		5B4FED6523E8A6F600C300A0 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5B4FED5223E8A6D300C300A0 /* ChateauScene.swift */,
-				5B610C6B240C238E005AC4B6 /* RaceScene.swift */,
+				5BD1CDE62433861900C56E99 /* Scenes */,
 				5B4FED5B23E8A6D500C300A0 /* LaunchScreen.storyboard */,
 				5B4FED5623E8A6D300C300A0 /* Main.storyboard */,
 			);
@@ -174,6 +173,15 @@
 				5B623B1624017329001FB369 /* unit.swift */,
 			);
 			path = "Entity Data";
+			sourceTree = "<group>";
+		};
+		5BD1CDE62433861900C56E99 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				5B4FED5223E8A6D300C300A0 /* ChateauScene.swift */,
+				5B610C6B240C238E005AC4B6 /* RaceScene.swift */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

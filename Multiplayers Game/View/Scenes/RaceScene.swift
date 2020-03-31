@@ -16,7 +16,7 @@ class RaceScene : SKScene {
     var carsSprite : Array<RaceCar>!
     var intervalle : Double!
     var endLine : SKShapeNode!
-    let teams : Array<Teams> = [.orange, .pink, .yellow, .blue, .purple, .orange]
+    let teams : Array<Teams> = [.orange, .pink, .yellow, .blue, .purple, .green]
     var infoLabel : SKLabelNode!
     var gameStarted = false
     
@@ -57,11 +57,15 @@ class RaceScene : SKScene {
     
     private func displayButtons() {
         let buttonPosition = [[0.900, 0.100], [0.100, 0.100], [0.100, 0.850], [0.900, 0.850], [0.100, 0.500,], [0.100, 0.500]]
-        for i in 0...numberOfPlayer - 1 {
+        for i in 0...numberOfPlayer - 1{
             let button = RaceButton(imageNamed: "\(teams[i])Arrow")
             button.team = teams[i]
             button.position = CGPoint(x: CGFloat(buttonPosition[i][0]) * self.size.width, y: CGFloat(buttonPosition[i][1]) * self.size.height)
-            button.size = CGSize(width: 60, height: 60)
+            if numberOfPlayer == 6 {
+                button.size = CGSize(width: 50, height: 50)
+            } else {
+                button.size = CGSize(width: 60, height: 60)
+            }
             button.name = String(i)
             buttonsSprite.append(button)
             self.addChild(button)
