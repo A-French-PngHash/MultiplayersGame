@@ -16,7 +16,7 @@ class RaceScene : SKScene {
     var carsSprite : Array<RaceCar>!
     var intervalle : Double!
     var endLine : SKShapeNode!
-    let teams : Array<Teams> = [.orange, .pink, .yellow, .blue, .purple, .green]
+    let teams : Array<Teams> = [.green, .yellow, .orange, .blue, .pink, .purple]
     var infoLabel : SKLabelNode!
     var gameStarted = false
     

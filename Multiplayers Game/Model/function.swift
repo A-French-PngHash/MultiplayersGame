@@ -17,6 +17,10 @@ class Function {
             return UIColor(red: 1, green: 124/255, blue: 0, alpha: 1)
         } else if team == .blue {
             return UIColor(red: 0, green: 153/255, blue: 1, alpha: 1)
+        } else if team == .purple {
+            return UIColor(red: 185/255, green: 1/255, blue: 1, alpha: 1)
+        } else if team == .pink {
+            return UIColor(red: 1, green: 0, blue: 1, alpha: 1)
         } else{ //neutral
             return UIColor(red: 224/255, green: 144/255, blue: 41/255, alpha: 0.5)
         }

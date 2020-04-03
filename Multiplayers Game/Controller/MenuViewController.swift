@@ -12,8 +12,13 @@ import GameplayKit
 class MenuViewController: UIViewController {
     
     var scene : SKScene!
-    var numberOfPlayer : Int!
-    
+    var numberOfPlayer : Int {
+        get {
+            return selectedPlayer.count
+        }
+    }
+    var selectedPlayer : Array<Teams>!
+    let teams : Array<Teams> = [.green, .yellow, .orange, .blue, .pink, .purple]
     var menuButton : Array<UIButton> {
         get {
             return menuPlayerButton + otherMenuButton
@@ -24,7 +29,8 @@ class MenuViewController: UIViewController {
         super.viewDidLoad()
         self.backButton.isHidden = true
         self.replayButton.isHidden = true
-        self.numberOfPlayer = 2
+        self.selectedPlayer = [.green, .yellow]
+        self.warningLabel.alpha = 0
         
         showMenu()
         updateButton()
@@ -41,32 +47,62 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet var menuPlayerButton: [UIButton]!
     @IBOutlet var otherMenuButton: [UIButton]!
-    @IBOutlet var menuLabel: [UILabel]!
+    @IBOutlet var menuLabel: [UILabel]! //To hide them when a mini game start
+    @IBOutlet weak var warningLabel: UILabel!
     
     @IBAction func race(_ sender: Any) {
         displayRaceScene()
     }
     
-    @IBAction func twoPlayer(_ sender: Any) {
-        numberOfPlayer = 2
+    @IBAction func greenPlayer(_ sender: Any) {
+        if selectedPlayer.contains(.green){
+            selectedPlayer.remove(at: selectedPlayer.firstIndex(of: .green)!)
+        } else {
+            selectedPlayer.append(.green)
+        }
         updateButton()
     }
-    @IBAction func threePlayer(_ sender: Any) {
-        numberOfPlayer = 3
+    @IBAction func yellowPlayer(_ sender: Any) {
+        if selectedPlayer.contains(.yellow){
+            selectedPlayer.remove(at: selectedPlayer.firstIndex(of: .yellow)!)
+        } else {
+            selectedPlayer.append(.yellow)
+        }
         updateButton()
     }
-    @IBAction func Player(_ sender: Any) {
-        numberOfPlayer = 4
+    @IBAction func orangePlayer(_ sender: Any) {
+        if selectedPlayer.contains(.orange){
+            selectedPlayer.remove(at: selectedPlayer.firstIndex(of: .orange)!)
+        } else {
+            selectedPlayer.append(.orange)
+        }
         updateButton()
     }
-    @IBAction func fivePlayer(_ sender: Any) {
-        numberOfPlayer = 5
+    @IBAction func bluePlayer(_ sender: Any) {
+        if selectedPlayer.contains(.blue){
+            selectedPlayer.remove(at: selectedPlayer.firstIndex(of: .blue)!)
+        } else {
+            selectedPlayer.append(.blue)
+        }
         updateButton()
     }
-    @IBAction func sixPlayer(_ sender: Any) {
-        numberOfPlayer = 6
+    @IBAction func pinkPlayer(_ sender: Any) {
+        if selectedPlayer.contains(.pink){
+            selectedPlayer.remove(at: selectedPlayer.firstIndex(of: .pink)!)
+        } else {
+            selectedPlayer.append(.pink)
+        }
         updateButton()
     }
+    @IBAction func purplePlayer(_ sender: Any) {
+        if selectedPlayer.contains(.purple){
+            selectedPlayer.remove(at: selectedPlayer.firstIndex(of: .purple)!)
+        } else {
+            selectedPlayer.append(.purple)
+        }
+        updateButton()
+    }
+    
     
     @IBAction func replayButtonPressed(_ sender: Any) {
         removeScene()
@@ -98,45 +134,53 @@ class MenuViewController: UIViewController {
     }
     
     private func displayRaceScene() {
-        hideMenu()
-        backButton.isHidden = false
-        backButton.frame.origin = CGPoint(x: 5, y: 5)
-        // Configure the view.
-        let skView = self.view as! SKView
-        skView.ignoresSiblingOrder = true
-        // Create and configure the scene.
-        scene = RaceScene(size: CGSize(width: self.view.frame.width, height: self.view.frame.height))
-        let scene = self.scene as! RaceScene
-        scene.numberOfPlayer = self.numberOfPlayer
-        scene.scaleMode = .aspectFill
-        
-        // Present the scene.
-        skView.presentScene(scene)
-        
-        let timerStartCountdown = Timer(timeInterval: 0.05, repeats: false) { _ in
+        if selectedPlayer.count < 1 {
+            displayWarningMessage(min: 1, max: 6)
+        } else {
+            hideMenu()
+            backButton.isHidden = false
+            backButton.frame.origin = CGPoint(x: 5, y: 5)
+            // Configure the view.
+            let skView = self.view as! SKView
+            skView.ignoresSiblingOrder = true
+            // Create and configure the scene.
+            scene = RaceScene(size: CGSize(width: self.view.frame.width, height: self.view.frame.height))
             let scene = self.scene as! RaceScene
-            scene.startCountdown()
+            scene.numberOfPlayer = self.numberOfPlayer
+            scene.scaleMode = .aspectFill
+            
+            // Present the scene.
+            skView.presentScene(scene)
+            
+            let timerStartCountdown = Timer(timeInterval: 0.05, repeats: false) { _ in
+                let scene = self.scene as! RaceScene
+                scene.startCountdown()
+            }
+            timerStartCountdown.fire()
         }
-        timerStartCountdown.fire()
-        
     }
 
     private func displayChateauScene() {
-        hideMenu()
-        backButton.isHidden = false
-        backButton.frame.origin.y = self.view.frame.height - 65
-        backButton.frame.origin.x = 5
-        // Configure the view.
-        let skView = self.view as! SKView
-        skView.ignoresSiblingOrder = true
-        // Create and configure the scene.
-        scene = ChateauScene(size: CGSize(width: self.view.frame.width, height: self.view.frame.height))
-        let scene = self.scene as! ChateauScene
-        scene.numberOfPlayer = self.numberOfPlayer
-        scene.scaleMode = .aspectFill
-        
-        // Present the scene.
-        skView.presentScene(scene)
+        if selectedPlayer!.count > 4 || selectedPlayer!.count < 2 {
+            displayWarningMessage(min: 2, max: 4)
+        } else {
+            hideMenu()
+            backButton.isHidden = false
+            backButton.frame.origin.y = self.view.frame.height - 65
+            backButton.frame.origin.x = 5
+            // Configure the view.
+            let skView = self.view as! SKView
+            skView.ignoresSiblingOrder = true
+            // Create and configure the scene.
+            scene = ChateauScene(size: CGSize(width: self.view.frame.width, height: self.view.frame.height))
+            let scene = self.scene as! ChateauScene
+            scene.numberOfPlayer = self.numberOfPlayer
+            scene.scaleMode = .aspectFill
+            scene.playersTeam = self.selectedPlayer
+            
+            // Present the scene.
+            skView.presentScene(scene)
+        }
     }
     
     private func showMenu() {
@@ -170,10 +214,23 @@ class MenuViewController: UIViewController {
     }
     
     private func updateButton() {
-        for i in 0...4 { //The first players button
-            if i + 2 == numberOfPlayer {
-                menuPlayerButton[i].imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        for team in teams {
+            let index = self.teams.firstIndex(of: team)!
+            if selectedPlayer.contains(team) { //Joueur sélectionné
+                menuPlayerButton[index].setImage(UIImage(named: "\(team)PlayerSelected"), for: UIControl.State.normal)
+            } else { //joueur non selectionné
+                menuPlayerButton[index].setImage(UIImage(named: "\(team)NotSelected"), for: UIControl.State.normal)
             }
+        }
+    }
+    
+    private func displayWarningMessage(min : Int, max : Int) {
+        self.warningLabel.text = "⚠️Ce jeu se joue seulement de \(min) à \(max) joueurs ⚠️"
+        self.warningLabel.alpha = 1
+        let timer = Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { _ in
+            UIView.animate(withDuration: 1, animations: {
+                self.warningLabel.alpha = 0
+            })
         }
     }
 }

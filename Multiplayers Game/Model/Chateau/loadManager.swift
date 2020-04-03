@@ -15,9 +15,9 @@ class LoadManager {
     var data : (Array<Castle>, Array<Ways>)!
     var size : CGSize!
     
-    func loadMapFor(player : Int, size : CGSize) {
+    func loadMapFor(player : Int, size : CGSize, team : Array<Teams>) {
         
-        self.data = MapGenerator.shared.generateMap(players: player)
+        self.data = MapGenerator.shared.generateMap(players: player, team : team)
         self.size = size
         
         var bases : Array<Base> = []

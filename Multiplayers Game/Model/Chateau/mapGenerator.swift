@@ -12,7 +12,7 @@ class MapGenerator {
     static let shared = MapGenerator()
     private init() { }
     
-    func generateMap(players : Int) -> (Array<Castle>, Array<Ways>){
+    func generateMap(players : Int, team : Array<Teams>) -> (Array<Castle>, Array<Ways>){
         var combinationPossible = false
         var castles : Array<Castle> = []
         var ways : Array<Ways> = []
@@ -123,9 +123,8 @@ class MapGenerator {
                     if stayTwo {
                         combinationPossible = false
                     }
-                    let teams : Array<Teams> = [.green, .yellow, .orange, .blue]
                     for i in 0...players - 1 {
-                        castles[i].team = teams[i]
+                        castles[i].team = team[i]
                     }
                     return(castles, ways)
                 }

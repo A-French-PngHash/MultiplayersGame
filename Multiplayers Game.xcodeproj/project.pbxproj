@@ -19,7 +19,6 @@
 		5B623B1724017329001FB369 /* unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B623B1624017329001FB369 /* unit.swift */; };
 		5B62E2DE2428D25700ACA523 /* function.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B62E2DD2428D25700ACA523 /* function.swift */; };
 		5BAD59F1240AAB3D00638F4E /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAD59F0240AAB3D00638F4E /* MenuViewController.swift */; };
-		5BAD59F3240AB41B00638F4E /* ChateauxInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAD59F2240AB41B00638F4E /* ChateauxInfoViewController.swift */; };
 		5BB9961E240C3EC8000A2C4A /* patchNote.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5BB9961D240C3EC8000A2C4A /* patchNote.txt */; };
 		5BB99622240C414D000A2C4A /* RaceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB99621240C414D000A2C4A /* RaceButton.swift */; };
 		5BBD935C23EC749400CFD739 /* loadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBD935B23EC749400CFD739 /* loadManager.swift */; };
@@ -45,7 +44,6 @@
 		5B623B1624017329001FB369 /* unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = unit.swift; sourceTree = "<group>"; };
 		5B62E2DD2428D25700ACA523 /* function.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = function.swift; sourceTree = "<group>"; };
 		5BAD59F0240AAB3D00638F4E /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
-		5BAD59F2240AB41B00638F4E /* ChateauxInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChateauxInfoViewController.swift; sourceTree = "<group>"; };
 		5BB9961D240C3EC8000A2C4A /* patchNote.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = patchNote.txt; sourceTree = "<group>"; usesTabs = 0; };
 		5BB99621240C414D000A2C4A /* RaceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceButton.swift; sourceTree = "<group>"; };
 		5BBD935B23EC749400CFD739 /* loadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadManager.swift; sourceTree = "<group>"; };
@@ -120,7 +118,6 @@
 			isa = PBXGroup;
 			children = (
 				5BAD59F0240AAB3D00638F4E /* MenuViewController.swift */,
-				5BAD59F2240AB41B00638F4E /* ChateauxInfoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -268,7 +265,6 @@
 				5B610C6C240C238E005AC4B6 /* RaceScene.swift in Sources */,
 				5B4FED5323E8A6D300C300A0 /* ChateauScene.swift in Sources */,
 				5BBD935C23EC749400CFD739 /* loadManager.swift in Sources */,
-				5BAD59F3240AB41B00638F4E /* ChateauxInfoViewController.swift in Sources */,
 				5BB99622240C414D000A2C4A /* RaceButton.swift in Sources */,
 				5BBD935E23EC74D500CFD739 /* baseData.swift in Sources */,
 				5B4FED4D23E8A6D300C300A0 /* AppDelegate.swift in Sources */,

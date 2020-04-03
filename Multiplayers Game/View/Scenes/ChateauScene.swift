@@ -31,6 +31,7 @@ class ChateauScene: SKScene {
     private var arrowSprite : Array<SKSpriteNode>!
     private var unitSprites : Array<Unit>!
     var timer : Timer!
+    var playersTeam : Array<Teams>!
     
     override func didMove(to view: SKView) {
         self.physicsWorld.contactDelegate = self as SKPhysicsContactDelegate
@@ -47,7 +48,7 @@ class ChateauScene: SKScene {
     //MARk: - Load map
     
     private func loadMap() {
-        LoadManager.shared.loadMapFor(player: self.numberOfPlayer, size: self.size)
+        LoadManager.shared.loadMapFor(player: self.numberOfPlayer, size: self.size, team : self.playersTeam)
         setupWays()
         setupBases()
         setupArrows()

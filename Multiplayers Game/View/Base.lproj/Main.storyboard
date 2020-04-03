@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,48 +15,16 @@
             <objects>
                 <viewController id="BV1-FR-VrT" customClass="MenuViewController" customModule="Multiplayers_Game" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M5e-Qe-3dy">
-                                <rect key="frame" x="3" y="66" width="85" height="85"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="85" id="PLh-cA-1RS"/>
-                                    <constraint firstAttribute="height" constant="85" id="Zh9-rn-2xW"/>
-                                </constraints>
-                                <state key="normal" image="2 player icon"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="twoPlayer:" destination="BV1-FR-VrT" eventType="touchUpInside" id="Ta8-EE-5hz"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AiO-gp-MSd">
-                                <rect key="frame" x="75" y="136" width="85" height="85"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="85" id="FCt-rB-Q3h"/>
-                                    <constraint firstAttribute="height" constant="85" id="VKC-5Z-tKG"/>
-                                </constraints>
-                                <state key="normal" image="3 player icon"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="threePlayer:" destination="BV1-FR-VrT" eventType="touchUpInside" id="XWk-by-m1F"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Multiplayers Game" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RyW-qp-pyV">
-                                <rect key="frame" x="82.5" y="20" width="210" height="36"/>
+                                <rect key="frame" x="102" y="20" width="210" height="36"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="25"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AtU-13-Pjt">
-                                <rect key="frame" x="5" y="603" width="58" height="59"/>
+                                <rect key="frame" x="5" y="672" width="58" height="59"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="58" id="gBn-zS-H25"/>
                                     <constraint firstAttribute="height" constant="59" id="uJN-QF-FaF"/>
@@ -67,7 +35,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jto-8r-JjT">
-                                <rect key="frame" x="312" y="603" width="58" height="59"/>
+                                <rect key="frame" x="351" y="672" width="58" height="59"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="59" id="Dbr-vD-GHw"/>
                                     <constraint firstAttribute="width" constant="58" id="Fan-0G-PSO"/>
@@ -78,35 +46,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created by Titouan Blossier" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fud-9a-Gxl">
-                                <rect key="frame" x="118" y="648" width="139" height="15"/>
+                                <rect key="frame" x="137.66666666666666" y="717" width="138.99999999999997" height="15"/>
                                 <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="11"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQN-Tk-YzG">
-                                <rect key="frame" x="145" y="66" width="85" height="85"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="85" id="WKV-dt-ZsX"/>
-                                    <constraint firstAttribute="height" constant="85" id="pKa-h4-1PF"/>
-                                </constraints>
-                                <state key="normal" image="4 player icon"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.74901038409999998" green="0.74901479479999999" blue="0.74902635809999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="Player:" destination="BV1-FR-VrT" eventType="touchUpInside" id="WtF-XL-XQM"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KPR-rX-IIj">
-                                <rect key="frame" x="28" y="241" width="90" height="90"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KPR-rX-IIj">
+                                <rect key="frame" x="20" y="197" width="90" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="Tnb-1h-dcR"/>
                                     <constraint firstAttribute="height" constant="90" id="e5r-bH-rZT"/>
@@ -116,21 +62,21 @@
                                     <action selector="startChateau:" destination="BV1-FR-VrT" eventType="touchUpInside" id="GbL-pC-KOB"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Chateaux" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GTo-rZ-19f">
-                                <rect key="frame" x="36.5" y="339" width="73" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chateaux" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GTo-rZ-19f">
+                                <rect key="frame" x="28.666666666666671" y="295" width="73" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JmK-8V-9aB">
-                                <rect key="frame" x="92" y="245" width="22" height="22"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JmK-8V-9aB">
+                                <rect key="frame" x="84" y="201" width="22" height="22"/>
                                 <accessibility key="accessibilityConfiguration" identifier="chateau"/>
                                 <connections>
                                     <segue destination="h9A-lE-oc9" kind="show" id="j8e-tO-ZCK"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpz-gC-qZj">
-                                <rect key="frame" x="148" y="241" width="90" height="90"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpz-gC-qZj">
+                                <rect key="frame" x="140" y="197" width="90" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="Ijs-bB-j0j"/>
                                     <constraint firstAttribute="height" constant="90" id="Z43-ub-Ew4"/>
@@ -140,74 +86,121 @@
                                     <action selector="race:" destination="BV1-FR-VrT" eventType="touchUpInside" id="vZf-ZN-puv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wv-Xp-U3g">
-                                <rect key="frame" x="212" y="245" width="22" height="22"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wv-Xp-U3g">
+                                <rect key="frame" x="204" y="201" width="22" height="22"/>
                                 <accessibility key="accessibilityConfiguration" identifier="chateau"/>
                                 <connections>
                                     <segue destination="KUx-qL-SIq" kind="show" id="QAh-CO-h6U"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Race" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7e-Ar-feH">
-                                <rect key="frame" x="173.5" y="339" width="39" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Race" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7e-Ar-feH">
+                                <rect key="frame" x="165.66666666666666" y="295" width="39" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OVQ-D8-Dw3">
-                                <rect key="frame" x="215" y="136" width="85" height="85"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbM-pi-Ha3">
+                                <rect key="frame" x="5" y="67" width="52" height="80"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="85" id="BBX-Yr-X4N"/>
-                                    <constraint firstAttribute="width" constant="85" id="ieB-Aq-8u2"/>
+                                    <constraint firstAttribute="width" constant="52" id="Le1-tX-AUk"/>
+                                    <constraint firstAttribute="height" constant="80" id="Lhf-CQ-XAE"/>
                                 </constraints>
-                                <state key="normal" image="5 player icon"/>
+                                <state key="normal" title="Button" image="greenPlayerNotSelected"/>
                                 <connections>
-                                    <action selector="fivePlayer:" destination="BV1-FR-VrT" eventType="touchUpInside" id="YlP-0F-kZU"/>
+                                    <action selector="greenPlayer:" destination="BV1-FR-VrT" eventType="touchUpInside" id="xW9-bu-ndr"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bpb-Kf-2gU">
-                                <rect key="frame" x="287" y="66" width="85" height="85"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="85" id="36c-Go-NRH"/>
-                                    <constraint firstAttribute="width" constant="85" id="HtT-za-KG9"/>
-                                </constraints>
-                                <state key="normal" title="Button" image="6 player icon"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CaF-Gi-PpG">
+                                <rect key="frame" x="67" y="67" width="52" height="80"/>
+                                <state key="normal" title="Button" image="yellowPlayerSelected"/>
                                 <connections>
-                                    <action selector="sixPlayer:" destination="BV1-FR-VrT" eventType="touchUpInside" id="Y3D-b7-DYy"/>
+                                    <action selector="yellowPlayer:" destination="BV1-FR-VrT" eventType="touchUpInside" id="fDN-iO-5O9"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8i6-sz-j77">
+                                <rect key="frame" x="129" y="67" width="52" height="80"/>
+                                <state key="normal" title="Button" image="orangePlayerSelected"/>
+                                <connections>
+                                    <action selector="orangePlayer:" destination="BV1-FR-VrT" eventType="touchUpInside" id="gDB-2O-G01"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dyF-RZ-TfK">
+                                <rect key="frame" x="191" y="67" width="52" height="80"/>
+                                <state key="normal" title="Button" image="bluePlayerSelected"/>
+                                <connections>
+                                    <action selector="bluePlayer:" destination="BV1-FR-VrT" eventType="touchUpInside" id="y71-q6-RZn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOP-wK-cPo">
+                                <rect key="frame" x="253" y="67" width="52" height="80"/>
+                                <state key="normal" title="Button" image="pinkPlayerSelected"/>
+                                <connections>
+                                    <action selector="pinkPlayer:" destination="BV1-FR-VrT" eventType="touchUpInside" id="y3h-sD-gUc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E60-aY-lkT">
+                                <rect key="frame" x="315" y="67" width="52" height="80"/>
+                                <state key="normal" title="Button" image="purplePlayerSelected"/>
+                                <connections>
+                                    <action selector="purplePlayer:" destination="BV1-FR-VrT" eventType="touchUpInside" id="d4n-Zy-Wk5"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⚠️Ce jeu se joue seulement de 2 à 4 joueurs ⚠️" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I6Q-Tw-mwD">
+                                <rect key="frame" x="10" y="152" width="394" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="1" green="0.037429042764917875" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="CaF-Gi-PpG" firstAttribute="height" secondItem="8i6-sz-j77" secondAttribute="height" id="0uA-Sy-KMY"/>
                             <constraint firstItem="4qk-I5-YsI" firstAttribute="bottom" secondItem="fud-9a-Gxl" secondAttribute="bottom" constant="4" id="5qS-7r-Z62"/>
+                            <constraint firstItem="zbM-pi-Ha3" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" constant="5" id="6A6-0z-TVl"/>
+                            <constraint firstItem="hOP-wK-cPo" firstAttribute="leading" secondItem="dyF-RZ-TfK" secondAttribute="trailing" constant="10" id="75J-jh-8zw"/>
                             <constraint firstItem="cpz-gC-qZj" firstAttribute="leading" secondItem="KPR-rX-IIj" secondAttribute="trailing" constant="30" id="7Bh-FP-MTW"/>
                             <constraint firstItem="KPR-rX-IIj" firstAttribute="centerX" secondItem="GTo-rZ-19f" secondAttribute="centerX" id="7GC-dP-hQr"/>
                             <constraint firstItem="cpz-gC-qZj" firstAttribute="top" secondItem="6wv-Xp-U3g" secondAttribute="bottom" constant="-26" id="7GO-aK-iD1"/>
-                            <constraint firstItem="AiO-gp-MSd" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" constant="-70" id="7o8-7K-3iE"/>
                             <constraint firstItem="AtU-13-Pjt" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" constant="5" id="8h2-6M-bpQ"/>
+                            <constraint firstItem="dyF-RZ-TfK" firstAttribute="leading" secondItem="8i6-sz-j77" secondAttribute="trailing" constant="10" id="9jb-QX-1Ze"/>
+                            <constraint firstItem="zbM-pi-Ha3" firstAttribute="centerY" secondItem="CaF-Gi-PpG" secondAttribute="centerY" id="9qh-Va-FK6"/>
+                            <constraint firstItem="dyF-RZ-TfK" firstAttribute="centerY" secondItem="hOP-wK-cPo" secondAttribute="centerY" id="BFx-nU-mHa"/>
                             <constraint firstItem="GTo-rZ-19f" firstAttribute="top" secondItem="KPR-rX-IIj" secondAttribute="bottom" constant="8" id="BZR-Bn-hrI"/>
-                            <constraint firstItem="OVQ-D8-Dw3" firstAttribute="centerY" secondItem="AiO-gp-MSd" secondAttribute="centerY" id="CBt-tf-588"/>
+                            <constraint firstItem="zbM-pi-Ha3" firstAttribute="top" secondItem="4qk-I5-YsI" secondAttribute="top" constant="47" id="CfH-IV-m42"/>
+                            <constraint firstItem="hOP-wK-cPo" firstAttribute="height" secondItem="E60-aY-lkT" secondAttribute="height" id="Ev3-hg-9m4"/>
+                            <constraint firstItem="8i6-sz-j77" firstAttribute="height" secondItem="dyF-RZ-TfK" secondAttribute="height" id="ITs-jm-VsI"/>
                             <constraint firstItem="4qk-I5-YsI" firstAttribute="trailing" secondItem="Jto-8r-JjT" secondAttribute="trailing" constant="5" id="JJz-Tb-Hra"/>
-                            <constraint firstItem="KPR-rX-IIj" firstAttribute="top" secondItem="M5e-Qe-3dy" secondAttribute="bottom" constant="90" id="Pa9-Ag-jsL"/>
-                            <constraint firstItem="AiO-gp-MSd" firstAttribute="top" secondItem="RyW-qp-pyV" secondAttribute="bottom" constant="80" id="Q8Z-Nh-0I6"/>
+                            <constraint firstItem="dyF-RZ-TfK" firstAttribute="width" secondItem="hOP-wK-cPo" secondAttribute="width" id="Pxg-yZ-ppa"/>
+                            <constraint firstItem="4qk-I5-YsI" firstAttribute="trailing" secondItem="I6Q-Tw-mwD" secondAttribute="trailing" constant="10" id="RI9-c6-NMx"/>
+                            <constraint firstItem="CaF-Gi-PpG" firstAttribute="leading" secondItem="zbM-pi-Ha3" secondAttribute="trailing" constant="10" id="RgS-HW-v9V"/>
                             <constraint firstItem="4qk-I5-YsI" firstAttribute="bottom" secondItem="AtU-13-Pjt" secondAttribute="bottom" constant="5" id="Rl3-wa-roO"/>
-                            <constraint firstItem="dQN-Tk-YzG" firstAttribute="centerY" secondItem="bpb-Kf-2gU" secondAttribute="centerY" id="Sgk-dK-Uar"/>
-                            <constraint firstItem="dQN-Tk-YzG" firstAttribute="centerY" secondItem="M5e-Qe-3dy" secondAttribute="centerY" id="SjD-IL-JJk"/>
-                            <constraint firstItem="M5e-Qe-3dy" firstAttribute="top" secondItem="RyW-qp-pyV" secondAttribute="bottom" constant="10" id="Ue5-MB-8yQ"/>
+                            <constraint firstItem="8i6-sz-j77" firstAttribute="width" secondItem="dyF-RZ-TfK" secondAttribute="width" id="VIe-ss-zyc"/>
+                            <constraint firstItem="dyF-RZ-TfK" firstAttribute="height" secondItem="hOP-wK-cPo" secondAttribute="height" id="Vcz-Ia-iya"/>
+                            <constraint firstItem="hOP-wK-cPo" firstAttribute="centerY" secondItem="E60-aY-lkT" secondAttribute="centerY" id="WCo-XL-s2G"/>
+                            <constraint firstItem="KPR-rX-IIj" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" constant="20" id="Weu-hF-XB3"/>
                             <constraint firstItem="JmK-8V-9aB" firstAttribute="leading" secondItem="KPR-rX-IIj" secondAttribute="trailing" constant="-26" id="YIA-B6-MOb"/>
-                            <constraint firstItem="OVQ-D8-Dw3" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" constant="70" id="ctv-xV-r6s"/>
+                            <constraint firstItem="zbM-pi-Ha3" firstAttribute="width" secondItem="CaF-Gi-PpG" secondAttribute="width" id="Yxs-XZ-L4t"/>
+                            <constraint firstItem="I6Q-Tw-mwD" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" constant="10" id="Zal-g1-OOy"/>
+                            <constraint firstItem="CaF-Gi-PpG" firstAttribute="width" secondItem="8i6-sz-j77" secondAttribute="width" id="a3Y-bF-5Bz"/>
                             <constraint firstItem="RyW-qp-pyV" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="dTW-8T-aXZ"/>
-                            <constraint firstItem="dQN-Tk-YzG" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="et7-zh-CeF"/>
+                            <constraint firstItem="8i6-sz-j77" firstAttribute="centerY" secondItem="dyF-RZ-TfK" secondAttribute="centerY" id="eOo-gS-Wnk"/>
+                            <constraint firstItem="KPR-rX-IIj" firstAttribute="top" secondItem="I6Q-Tw-mwD" secondAttribute="bottom" constant="5" id="f9r-Pn-6Td"/>
                             <constraint firstItem="fud-9a-Gxl" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="gHC-jF-Hhu"/>
-                            <constraint firstItem="4qk-I5-YsI" firstAttribute="trailing" secondItem="bpb-Kf-2gU" secondAttribute="trailing" constant="3" id="gxm-h6-xW6"/>
                             <constraint firstItem="6wv-Xp-U3g" firstAttribute="leading" secondItem="cpz-gC-qZj" secondAttribute="trailing" constant="-26" id="hck-l2-iCb"/>
+                            <constraint firstItem="zbM-pi-Ha3" firstAttribute="height" secondItem="CaF-Gi-PpG" secondAttribute="height" id="i8g-kq-2fi"/>
+                            <constraint firstItem="8i6-sz-j77" firstAttribute="leading" secondItem="CaF-Gi-PpG" secondAttribute="trailing" constant="10" id="ic1-LO-2rx"/>
                             <constraint firstItem="4qk-I5-YsI" firstAttribute="bottom" secondItem="Jto-8r-JjT" secondAttribute="bottom" constant="5" id="jBK-Yg-wGu"/>
                             <constraint firstItem="k7e-Ar-feH" firstAttribute="centerX" secondItem="cpz-gC-qZj" secondAttribute="centerX" id="jjQ-8c-gHT"/>
                             <constraint firstItem="RyW-qp-pyV" firstAttribute="top" secondItem="4qk-I5-YsI" secondAttribute="top" id="lXV-X4-Yml"/>
                             <constraint firstItem="KPR-rX-IIj" firstAttribute="centerY" secondItem="cpz-gC-qZj" secondAttribute="centerY" id="nVf-TZ-DZ7"/>
+                            <constraint firstItem="I6Q-Tw-mwD" firstAttribute="top" secondItem="zbM-pi-Ha3" secondAttribute="bottom" constant="5" id="ohi-u4-KqG"/>
                             <constraint firstItem="KPR-rX-IIj" firstAttribute="top" secondItem="JmK-8V-9aB" secondAttribute="bottom" constant="-26" id="ows-Qt-yCQ"/>
                             <constraint firstItem="k7e-Ar-feH" firstAttribute="top" secondItem="cpz-gC-qZj" secondAttribute="bottom" constant="8" id="plw-k5-qVJ"/>
-                            <constraint firstItem="M5e-Qe-3dy" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" constant="3" id="qGN-2t-yAh"/>
+                            <constraint firstItem="KPR-rX-IIj" firstAttribute="top" secondItem="zbM-pi-Ha3" secondAttribute="bottom" constant="50" id="svQ-07-VWN"/>
+                            <constraint firstItem="E60-aY-lkT" firstAttribute="leading" secondItem="hOP-wK-cPo" secondAttribute="trailing" constant="10" id="wMs-BP-yUh"/>
+                            <constraint firstItem="hOP-wK-cPo" firstAttribute="width" secondItem="E60-aY-lkT" secondAttribute="width" id="xUF-yo-qtP"/>
+                            <constraint firstItem="CaF-Gi-PpG" firstAttribute="centerY" secondItem="8i6-sz-j77" secondAttribute="centerY" id="xdl-Cf-ChQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                         <connections>
@@ -218,18 +211,21 @@
                     <connections>
                         <outlet property="backButton" destination="AtU-13-Pjt" id="nNM-VI-VIo"/>
                         <outlet property="replayButton" destination="Jto-8r-JjT" id="MaD-Em-mqe"/>
+                        <outlet property="warningLabel" destination="I6Q-Tw-mwD" id="CpS-Vc-oml"/>
                         <outletCollection property="menuLabel" destination="GTo-rZ-19f" collectionClass="NSMutableArray" id="eak-zb-Z8r"/>
                         <outletCollection property="menuLabel" destination="RyW-qp-pyV" collectionClass="NSMutableArray" id="93K-wX-6ih"/>
                         <outletCollection property="menuLabel" destination="k7e-Ar-feH" collectionClass="NSMutableArray" id="GJy-JR-xoW"/>
-                        <outletCollection property="menuPlayerButton" destination="M5e-Qe-3dy" collectionClass="NSMutableArray" id="QaS-Av-Gea"/>
-                        <outletCollection property="menuPlayerButton" destination="AiO-gp-MSd" collectionClass="NSMutableArray" id="0qK-RR-DEF"/>
-                        <outletCollection property="menuPlayerButton" destination="dQN-Tk-YzG" collectionClass="NSMutableArray" id="50h-2h-Abb"/>
-                        <outletCollection property="menuPlayerButton" destination="OVQ-D8-Dw3" collectionClass="NSMutableArray" id="BxV-vy-V9k"/>
-                        <outletCollection property="menuPlayerButton" destination="bpb-Kf-2gU" collectionClass="NSMutableArray" id="810-aL-iCi"/>
                         <outletCollection property="otherMenuButton" destination="KPR-rX-IIj" collectionClass="NSMutableArray" id="9kK-oI-HZ4"/>
                         <outletCollection property="otherMenuButton" destination="JmK-8V-9aB" collectionClass="NSMutableArray" id="qwo-8n-tmG"/>
                         <outletCollection property="otherMenuButton" destination="cpz-gC-qZj" collectionClass="NSMutableArray" id="5wn-Rv-nPb"/>
                         <outletCollection property="otherMenuButton" destination="6wv-Xp-U3g" collectionClass="NSMutableArray" id="NX4-b0-b4u"/>
+                        <outletCollection property="menuPlayerButton" destination="zbM-pi-Ha3" collectionClass="NSMutableArray" id="csF-O3-LrC"/>
+                        <outletCollection property="menuPlayerButton" destination="CaF-Gi-PpG" collectionClass="NSMutableArray" id="1Vf-n9-N1l"/>
+                        <outletCollection property="menuPlayerButton" destination="8i6-sz-j77" collectionClass="NSMutableArray" id="AoC-2A-dEa"/>
+                        <outletCollection property="menuPlayerButton" destination="dyF-RZ-TfK" collectionClass="NSMutableArray" id="eV9-hT-sPd"/>
+                        <outletCollection property="menuPlayerButton" destination="hOP-wK-cPo" collectionClass="NSMutableArray" id="3V5-5Z-5ua"/>
+                        <outletCollection property="menuPlayerButton" destination="E60-aY-lkT" collectionClass="NSMutableArray" id="XF9-wL-vzS"/>
+                        <outletCollection property="menuLabel" destination="I6Q-Tw-mwD" collectionClass="NSMutableArray" id="pmM-9A-AYf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
@@ -241,16 +237,16 @@
             </objects>
             <point key="canvasLocation" x="-95.200000000000003" y="-10.344827586206897"/>
         </scene>
-        <!--Chateaux Info View Controller-->
+        <!--View Controller-->
         <scene sceneID="DL3-e7-LUY">
             <objects>
-                <viewController id="h9A-lE-oc9" customClass="ChateauxInfoViewController" customModule="Multiplayers_Game" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="h9A-lE-oc9" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PDO-xS-EOk">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H8B-NY-vy3">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="Chateaux" id="wwQ-uJ-EBs">
                                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="zBh-Ol-uPP">
@@ -262,14 +258,14 @@
                                 </items>
                             </navigationBar>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Exemple" translatesAutoresizingMaskIntoConstraints="NO" id="QYe-sd-17m">
-                                <rect key="frame" x="17" y="70" width="341" height="193"/>
+                                <rect key="frame" x="36.666666666666657" y="70" width="341" height="193"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="341" id="Vh2-a5-bZM"/>
                                     <constraint firstAttribute="height" constant="193" id="lET-yF-lM8"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yOt-yd-KPd">
-                                <rect key="frame" x="5" y="268" width="365" height="394"/>
+                                <rect key="frame" x="5" y="268" width="404" height="463"/>
                                 <string key="text">"Chateaux" est un jeu de stratégie à 2, 3 ou 4 joueurs. Votre but est de capturer toute les chateaux des autres joueurs. Chaque joueur a une couleur. Chaque map est généré aléatoirement, vous aurez donc tout le temps de nouvelles maps. L’image ci dessus est un exemple de map possible à deux joueurs. Pour capturer les autres chateau il faut cliquer sur les routes de votre couleur. Cliquer sur une route va envoyer la moitié des unités présentes dans votre chateau en direction de la base au bout de la route. Chaque chateau gagne une unité par seconde à l’exception des chateaux marron qui sont considérés comme neutre (jusqu’a ce que quelqu’un les capturent). ⚠️: Chaque chateau a une capacité d’accueil maximale, ne laissez donc pas trainé trop longtemps vos unités dans vos chateaux ;)
 Bon jeu !</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -296,16 +292,16 @@ Bon jeu !</string>
             </objects>
             <point key="canvasLocation" x="777" y="-500"/>
         </scene>
-        <!--Chateaux Info View Controller-->
+        <!--View Controller-->
         <scene sceneID="zUH-rb-6re">
             <objects>
-                <viewController id="KUx-qL-SIq" customClass="ChateauxInfoViewController" customModule="Multiplayers_Game" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="KUx-qL-SIq" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pRb-m6-54Q">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cO3-rC-vrk">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="Race" id="zXG-Dm-N34">
                                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="eRv-tZ-0pr">
@@ -317,7 +313,7 @@ Bon jeu !</string>
                                 </items>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Dr-eK-0Hk">
-                                <rect key="frame" x="5" y="366" width="365" height="296"/>
+                                <rect key="frame" x="5" y="435" width="404" height="296"/>
                                 <string key="text">Race est un jeu d'action ou le but est de remporter la course. Pour faire avancer votre voiture, il faut appuyer sur le bouton de votre couleur. Le premier qui touche la ligne d'arrivée gagne ! Bonne chance !</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                 <nil key="textColor"/>
@@ -342,15 +338,16 @@ Bon jeu !</string>
         </scene>
     </scenes>
     <resources>
-        <image name="2 player icon" width="902" height="900"/>
-        <image name="3 player icon" width="902" height="900"/>
-        <image name="4 player icon" width="902" height="900"/>
-        <image name="5 player icon" width="902" height="900"/>
-        <image name="6 player icon" width="902" height="900"/>
         <image name="Exemple" width="1110" height="623"/>
+        <image name="bluePlayerSelected" width="650" height="1000"/>
         <image name="castleIcon" width="500" height="500"/>
+        <image name="greenPlayerNotSelected" width="650" height="1000"/>
+        <image name="orangePlayerSelected" width="650" height="1000"/>
+        <image name="pinkPlayerSelected" width="650" height="1000"/>
+        <image name="purplePlayerSelected" width="650" height="1000"/>
         <image name="raceIcon" width="500" height="500"/>
         <image name="reloadButton" width="184" height="186"/>
         <image name="retour" width="92" height="93"/>
+        <image name="yellowPlayerSelected" width="650" height="1000"/>
     </resources>
 </document>
