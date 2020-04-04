@@ -105,7 +105,7 @@
                                     <constraint firstAttribute="width" constant="52" id="Le1-tX-AUk"/>
                                     <constraint firstAttribute="height" constant="80" id="Lhf-CQ-XAE"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="greenPlayerNotSelected"/>
+                                <state key="normal" title="Button" image="greenNotSelected"/>
                                 <connections>
                                     <action selector="greenPlayer:" destination="BV1-FR-VrT" eventType="touchUpInside" id="xW9-bu-ndr"/>
                                 </connections>
@@ -147,7 +147,7 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⚠️Ce jeu se joue seulement de 2 à 4 joueurs ⚠️" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I6Q-Tw-mwD">
                                 <rect key="frame" x="10" y="152" width="394" height="40"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="1" green="0.037429042764917875" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -237,10 +237,10 @@
             </objects>
             <point key="canvasLocation" x="-95.200000000000003" y="-10.344827586206897"/>
         </scene>
-        <!--View Controller-->
+        <!--Info View Controller-->
         <scene sceneID="DL3-e7-LUY">
             <objects>
-                <viewController id="h9A-lE-oc9" sceneMemberID="viewController">
+                <viewController id="h9A-lE-oc9" customClass="InfoViewController" customModule="Multiplayers_Game" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PDO-xS-EOk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -251,7 +251,7 @@
                                     <navigationItem title="Chateaux" id="wwQ-uJ-EBs">
                                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="zBh-Ol-uPP">
                                             <connections>
-                                                <action selector="finished:" destination="h9A-lE-oc9" id="CFa-0Q-5mW"/>
+                                                <action selector="finished:" destination="h9A-lE-oc9" id="542-0p-qBh"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -290,12 +290,12 @@ Bon jeu !</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bkE-pD-2ja" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="777" y="-500"/>
+            <point key="canvasLocation" x="776.81159420289862" y="-500.54347826086962"/>
         </scene>
-        <!--View Controller-->
+        <!--Info View Controller-->
         <scene sceneID="zUH-rb-6re">
             <objects>
-                <viewController id="KUx-qL-SIq" sceneMemberID="viewController">
+                <viewController id="KUx-qL-SIq" customClass="InfoViewController" customModule="Multiplayers_Game" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pRb-m6-54Q">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -306,7 +306,7 @@ Bon jeu !</string>
                                     <navigationItem title="Race" id="zXG-Dm-N34">
                                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="eRv-tZ-0pr">
                                             <connections>
-                                                <action selector="finished:" destination="KUx-qL-SIq" id="hQH-Yt-zSN"/>
+                                                <action selector="finished:" destination="KUx-qL-SIq" id="C2C-iy-WRL"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -341,7 +341,7 @@ Bon jeu !</string>
         <image name="Exemple" width="1110" height="623"/>
         <image name="bluePlayerSelected" width="650" height="1000"/>
         <image name="castleIcon" width="500" height="500"/>
-        <image name="greenPlayerNotSelected" width="650" height="1000"/>
+        <image name="greenNotSelected" width="650" height="1000"/>
         <image name="orangePlayerSelected" width="650" height="1000"/>
         <image name="pinkPlayerSelected" width="650" height="1000"/>
         <image name="purplePlayerSelected" width="650" height="1000"/>

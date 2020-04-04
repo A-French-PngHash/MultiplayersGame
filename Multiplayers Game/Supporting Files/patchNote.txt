@@ -35,16 +35,14 @@ V1.0 (01/03/2020) :
 
                 -------------Multiplayers Game BETA Patch Note-------------
 
-    - Correction de bugs :
-        - La couleur d'arrière plan gris avant d'avoir joué a un mini jeu après chaque lancement
-        - Les couleurs des voitures ne correspondent pas avec les couleur choisies pour le mode de jeu "race"
-
 V1.2.0 BETA :
     - Nouveau mode de sélection du nombre de joueurs
+    - On peut maintenant sélectionner des couleurs spécifiques
     - La description pour le mini jeu "race" finie
     - Changement de certains nom de variable nottament pour les boutons du menu
     - Ajout des modes 5 et 6 joueurs. Ils sont pour l'instant seulement disponible sur le jeu race.
     - Added the possibility to play with pink or purple in chateaux game mode
+    - Le dessin des voitures a été refait
 
 V1.1.0 BETA (12/03/2020):
     - Sortie d'un nouveau mode de jeu : le mode "race"

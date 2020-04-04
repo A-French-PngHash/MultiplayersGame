@@ -31,6 +31,15 @@ class MenuViewController: UIViewController {
         self.replayButton.isHidden = true
         self.selectedPlayer = [.green, .yellow]
         self.warningLabel.alpha = 0
+        self.view.backgroundColor = .white
+        let skView = self.view as! SKView
+        skView.backgroundColor = .white
+        let scene = BeginScene()
+        skView.presentScene(scene)
+        
+        scene.backgroundColor = .white
+        scene.removeFromParent()
+        
         
         showMenu()
         updateButton()
@@ -148,7 +157,7 @@ class MenuViewController: UIViewController {
             let scene = self.scene as! RaceScene
             scene.numberOfPlayer = self.numberOfPlayer
             scene.scaleMode = .aspectFill
-            
+            scene.teams = selectedPlayer
             // Present the scene.
             skView.presentScene(scene)
             

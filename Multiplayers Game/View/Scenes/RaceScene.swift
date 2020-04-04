@@ -16,7 +16,7 @@ class RaceScene : SKScene {
     var carsSprite : Array<RaceCar>!
     var intervalle : Double!
     var endLine : SKShapeNode!
-    let teams : Array<Teams> = [.green, .yellow, .orange, .blue, .pink, .purple]
+    var teams : Array<Teams>!
     var infoLabel : SKLabelNode!
     var gameStarted = false
     
@@ -93,7 +93,8 @@ class RaceScene : SKScene {
             car.team = teams[i]
             let x = CGFloat(0.100 + (Double(i + 1) * intervalle)) * self.frame.size.width
             car.position = CGPoint(x: x, y: 0.100 * self.frame.size.height)
-            car.size = CGSize(width: 50, height: 50)
+            car.size = CGSize(width: 40, height: 40)
+            car.zRotation = CGFloat(1/2 * Float.pi)
             
             car.physicsBody = SKPhysicsBody(circleOfRadius: 25)
             car.physicsBody?.categoryBitMask = RaceBitMask.carBitMask

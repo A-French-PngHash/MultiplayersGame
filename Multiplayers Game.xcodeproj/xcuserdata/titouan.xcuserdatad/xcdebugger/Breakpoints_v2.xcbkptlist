@@ -6,7 +6,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             scope = "0"
@@ -610,7 +610,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Multiplayers Game/View/Scenes/RaceScene.swift"
-            timestampString = "607622266.191054"
+            timestampString = "607715037.426461"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "62"
