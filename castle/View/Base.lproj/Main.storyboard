@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Game View Controller-->
+        <scene sceneID="tXr-a1-R10">
+            <objects>
+                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="castle" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M5e-Qe-3dy">
+                                <rect key="frame" x="27" y="64" width="80" height="80"/>
+                                <state key="normal" image="2players"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="twoPlayer:" destination="BV1-FR-VrT" eventType="touchUpInside" id="Ta8-EE-5hz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AiO-gp-MSd">
+                                <rect key="frame" x="167" y="64" width="80" height="80"/>
+                                <state key="normal" image="3players"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="threePlayer:" destination="BV1-FR-VrT" eventType="touchUpInside" id="XWk-by-m1F"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Multiplayers Game" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RyW-qp-pyV">
+                                <rect key="frame" x="102" y="20" width="210" height="36"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="25"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AtU-13-Pjt">
+                                <rect key="frame" x="5" y="672" width="58" height="59"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="58" id="gBn-zS-H25"/>
+                                    <constraint firstAttribute="height" constant="59" id="uJN-QF-FaF"/>
+                                </constraints>
+                                <state key="normal" image="retour"/>
+                                <connections>
+                                    <action selector="backbuttonPressed:" destination="BV1-FR-VrT" eventType="touchUpInside" id="KIp-KV-MCd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jto-8r-JjT">
+                                <rect key="frame" x="351" y="672" width="58" height="59"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="59" id="Dbr-vD-GHw"/>
+                                    <constraint firstAttribute="width" constant="58" id="Fan-0G-PSO"/>
+                                </constraints>
+                                <state key="normal" image="reloadButton"/>
+                                <connections>
+                                    <action selector="replayButtonPressed:" destination="BV1-FR-VrT" eventType="touchUpInside" id="Fr8-Dw-UHO"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created by Titouan Blossier" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fud-9a-Gxl">
+                                <rect key="frame" x="137.66666666666666" y="717" width="138.99999999999997" height="15"/>
+                                <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="11"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQN-Tk-YzG">
+                                <rect key="frame" x="307" y="64" width="80" height="80"/>
+                                <state key="normal" image="4players"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.74901038409999998" green="0.74901479479999999" blue="0.74902635809999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="Player:" destination="BV1-FR-VrT" eventType="touchUpInside" id="WtF-XL-XQM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="4qk-I5-YsI" firstAttribute="bottom" secondItem="fud-9a-Gxl" secondAttribute="bottom" constant="4" id="5qS-7r-Z62"/>
+                            <constraint firstItem="AtU-13-Pjt" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" constant="5" id="8h2-6M-bpQ"/>
+                            <constraint firstItem="AiO-gp-MSd" firstAttribute="leading" secondItem="M5e-Qe-3dy" secondAttribute="trailing" constant="60" id="FGM-PC-1KV"/>
+                            <constraint firstItem="4qk-I5-YsI" firstAttribute="trailing" secondItem="Jto-8r-JjT" secondAttribute="trailing" constant="5" id="JJz-Tb-Hra"/>
+                            <constraint firstItem="AiO-gp-MSd" firstAttribute="top" secondItem="RyW-qp-pyV" secondAttribute="bottom" constant="8" id="KQi-rt-yvN"/>
+                            <constraint firstItem="4qk-I5-YsI" firstAttribute="bottom" secondItem="AtU-13-Pjt" secondAttribute="bottom" constant="5" id="Rl3-wa-roO"/>
+                            <constraint firstItem="dQN-Tk-YzG" firstAttribute="leading" secondItem="AiO-gp-MSd" secondAttribute="trailing" constant="60" id="Tg1-jx-pIO"/>
+                            <constraint firstItem="AiO-gp-MSd" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="WTW-8N-meX"/>
+                            <constraint firstItem="RyW-qp-pyV" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="dTW-8T-aXZ"/>
+                            <constraint firstItem="fud-9a-Gxl" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="gHC-jF-Hhu"/>
+                            <constraint firstItem="4qk-I5-YsI" firstAttribute="bottom" secondItem="Jto-8r-JjT" secondAttribute="bottom" constant="5" id="jBK-Yg-wGu"/>
+                            <constraint firstItem="RyW-qp-pyV" firstAttribute="top" secondItem="4qk-I5-YsI" secondAttribute="top" id="lXV-X4-Yml"/>
+                            <constraint firstItem="M5e-Qe-3dy" firstAttribute="centerY" secondItem="AiO-gp-MSd" secondAttribute="centerY" id="pmj-U4-42n"/>
+                            <constraint firstItem="AiO-gp-MSd" firstAttribute="centerY" secondItem="dQN-Tk-YzG" secondAttribute="centerY" id="zJH-T0-diz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="7iP-MH-SKi" appends="YES" id="Q17-e0-vze"/>
+                            <outletCollection property="gestureRecognizers" destination="7iP-MH-SKi" appends="YES" id="IRM-jx-hGX"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="AtU-13-Pjt" id="nNM-VI-VIo"/>
+                        <outlet property="label" destination="RyW-qp-pyV" id="VlL-ya-Ilt"/>
+                        <outlet property="replayButton" destination="Jto-8r-JjT" id="MaD-Em-mqe"/>
+                        <outletCollection property="button" destination="dQN-Tk-YzG" collectionClass="NSMutableArray" id="CmO-ye-qGb"/>
+                        <outletCollection property="button" destination="AiO-gp-MSd" collectionClass="NSMutableArray" id="bEK-yb-omu"/>
+                        <outletCollection property="button" destination="M5e-Qe-3dy" collectionClass="NSMutableArray" id="Veq-NQ-3od"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="7iP-MH-SKi">
+                    <connections>
+                        <outlet property="delegate" destination="BV1-FR-VrT" id="Wog-tl-2T9"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="2players" width="80" height="80"/>
+        <image name="3players" width="80" height="80"/>
+        <image name="4players" width="80" height="80"/>
+        <image name="reloadButton" width="184" height="186"/>
+        <image name="retour" width="92" height="93"/>
+    </resources>
+</document>
