@@ -19,9 +19,11 @@ class RaceScene : SKScene {
     var teams : Array<Teams>!
     var infoLabel : SKLabelNode!
     var gameStarted = false
+    var timer : Timer!
+    var startTime : Double!
+    var timerLabel : SKLabelNode!
     
     override func didMove(to view: SKView) {
-        print(14 / self.frame.height)
         self.physicsWorld.contactDelegate = self as SKPhysicsContactDelegate
         self.physicsWorld.gravity = CGVector(dx: 0, dy: 0)
         self.backgroundColor = UIColor(red: 1, green: 231/255, blue: 200/255, alpha: 1)
@@ -39,7 +41,7 @@ class RaceScene : SKScene {
     private func drawEnd() {
         let line = SKShapeNode()
         let pathToDraw = CGMutablePath()
-        let y = 0.950 * self.size.height
+        let y = 0.920 * self.size.height
         pathToDraw.move(to: CGPoint(x: CGFloat(0.100 + (Double(1) * intervalle)) * self.size.width - 30, y: y))
         pathToDraw.addLine(to: CGPoint(x: CGFloat(0.100 + (Double(numberOfPlayer) * intervalle)) * self.size.width + 30, y: y))
         line.lineWidth = 10
@@ -56,8 +58,8 @@ class RaceScene : SKScene {
     }
     
     private func displayButtons() {
-        let buttonPosition = [[0.900, 0.100], [0.100, 0.100], [0.100, 0.850], [0.900, 0.850], [0.100, 0.500,], [0.100, 0.500]]
-        for i in 0...numberOfPlayer - 1{
+        let buttonPosition = [[0.900, 0.100], [0.100, 0.100], [0.100, 0.850], [0.900, 0.850], [0.100, 0.500,], [0.900, 0.500]]
+        for i in 0...teams.count - 1{
             let button = RaceButton(imageNamed: "\(teams[i])Arrow")
             button.team = teams[i]
             button.position = CGPoint(x: CGFloat(buttonPosition[i][0]) * self.size.width, y: CGFloat(buttonPosition[i][1]) * self.size.height)
@@ -72,6 +74,16 @@ class RaceScene : SKScene {
         }
     }
     
+    func setupTimer() {
+        timerLabel = SKLabelNode()
+        timerLabel.fontSize = 40
+        timerLabel.fontColor = .black
+        timerLabel.position = CGPoint(x: self.view!.frame.midX, y: self.view!.frame.maxY - 40)
+        timerLabel.text = "0:00"
+        
+        self.addChild(timerLabel)
+    }
+    
     private func drawRoads() {
         for i in 0...numberOfPlayer - 1 {
             let x = CGFloat(0.100 + (Double(i + 1) * intervalle)) * self.frame.size.width
@@ -79,7 +91,7 @@ class RaceScene : SKScene {
             let yourline = SKShapeNode()
             let pathToDraw = CGMutablePath()
             pathToDraw.move(to: CGPoint(x: x, y: 0.100 * self.frame.size.height))
-            pathToDraw.addLine(to: CGPoint(x: x, y: 0.950 * self.frame.size.height))
+            pathToDraw.addLine(to: CGPoint(x: x, y: 0.920 * self.frame.size.height))
             yourline.path = pathToDraw
             yourline.strokeColor = SKColor.black
             yourline.lineWidth = 5
@@ -106,6 +118,16 @@ class RaceScene : SKScene {
         }
     }
     
+    private func startTimer() {
+        self.timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: { _ in
+            let time = Date().timeIntervalSinceReferenceDate - self.startTime
+            let timeString = String(format: "%.2f", time)
+            self.timerLabel.text = timeString
+            
+            //self.timerLabel.text = "\(self.time[0]):\(self.time[1])\(self.time[2])"
+        })
+    }
+    
     func startCountdown() {
         infoLabel = SKLabelNode()
         infoLabel.fontName = "copperplate"
@@ -122,6 +144,8 @@ class RaceScene : SKScene {
                     self.infoLabel.fontColor = .red
                     self.infoLabel.fontSize = 90
                     self.gameStarted = true
+                    self.startTime = Date().timeIntervalSinceReferenceDate
+                    self.startTimer()
                 } else if text != "GO !"{
                     self.infoLabel.text = String(Int(text)! - 1)
                 }
@@ -152,6 +176,7 @@ class RaceScene : SKScene {
     }
     
     private func stopGame() {
+        timer.invalidate()
         for i in buttonsSprite {
             i.isHidden = true
             i.isUserInteractionEnabled = false
@@ -210,7 +235,7 @@ extension RaceScene : SKPhysicsContactDelegate{
         let show = SKAction.unhide()
         let wait = SKAction.wait(forDuration: 0.4)
         node?.removeAllActions()
-        node!.run(SKAction.move(to: CGPoint(x: node!.position.x, y: (0.900 * self.frame.height) + (0.022 * self.frame.height)), duration: 0))
+        node!.run(SKAction.move(to: CGPoint(x: node!.position.x, y: (0.885 * self.frame.height)), duration: 0))
 
         let win = SKAction.run {
             self.win(team : node!.team)

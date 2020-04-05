@@ -170,6 +170,7 @@ class ChateauScene: SKScene {
         }
         basesSprite = []
         setupBases()
+        showArrows()
         reloadWaysColor()
     }
     

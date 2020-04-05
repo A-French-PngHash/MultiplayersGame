@@ -2,13 +2,6 @@ Created by Titouan Blossier on 03/02/2020.
 Copyright © 2020 Titouan Blossier. All rights reserved.
 
                 -------------Multiplayers Game : A venir-------------
-
-        - Possibilité de choisir quel est la couleur des joueurs actuelement en train de jouer (Version d'arrivée prévu : 1.2.0)
-        - Mode 5 et 6 joueurs (Version d'arrivée prévu : 1.2.0)
-
-        - Une icone pour le jeu et un écran de lancement plus beau (Version d'arrivée prévu : 1.2.1)
-        - Un timer pour le mode de jeu "race" (Version d'arrivée prévu : 1.2.1)
-
         - Une collection view pour remplacer les boutons actuel de sélection de jeu (Version d'arrivée prévu : 1.2.2)
         - Un jeu de type snake pouvant se jouer jusqu'a 6 joueurs (Version d'arrivée prévu : 1.2.2)
 
@@ -20,6 +13,12 @@ Copyright © 2020 Titouan Blossier. All rights reserved.
 
 
                 -------------Multiplayers Game Patch Note-------------
+
+V1.2.0 (04/04/2020) :
+    - Nouveau mode de sélection du nombre de joueurs
+    - On peut maintenant sélectionner des couleurs spécifiques
+    - Ajout des modes 5 et 6 joueurs. Ils sont pour l'instant seulement disponible sur le jeu race.
+    - Le dessin des voitures a été refait
 
 V1.1.0 (23/03/2020):
     - Le mode de jeu "Race" est sorti ! Faites la course avec vos amis et voyez lequel est le plus rapide !
@@ -35,8 +34,15 @@ V1.0 (01/03/2020) :
 
                 -------------Multiplayers Game BETA Patch Note-------------
 
+V1.2.1 BETA :
+    - Correction d'un bug dans le mode de jeu "race" qui faisait qu'un bouton n'apparaissait pas
+    - Correction d'un bug dans le mode de jeu "chateaux" qui faisait que les flèches pouvait ne pas apparaitre
+    - Ajout d'une icone au jeu
+    - Meilleur interface utilisateur pour certaines tailles d'écran
+    - Ajout d'un timer pour le mode de jeu race
+
+
 V1.2.0 BETA :
-    - Nouveau mode de sélection du nombre de joueurs
     - On peut maintenant sélectionner des couleurs spécifiques
     - La description pour le mini jeu "race" finie
     - Changement de certains nom de variable nottament pour les boutons du menu

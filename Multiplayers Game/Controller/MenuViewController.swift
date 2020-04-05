@@ -164,6 +164,7 @@ class MenuViewController: UIViewController {
             let timerStartCountdown = Timer(timeInterval: 0.05, repeats: false) { _ in
                 let scene = self.scene as! RaceScene
                 scene.startCountdown()
+                scene.setupTimer()
             }
             timerStartCountdown.fire()
         }
