@@ -8,6 +8,7 @@ Copyright © 2020 Titouan Blossier. All rights reserved.
         - Un menu de réglage (Version d'arrivée prévu : V1.3.0)
         - Des sons pour les différents mini jeu (Version d'arrivée prévu : V1.3.0)
         - Un thème sombre (Version d'arrivée prévu : V1.3.0)
+        - Des réglages spécifiques a chaque mode de jeu (nottament un mode partie rapide)
 
         - Des intelligences artificiels (Version d'arrivée prévu : 2.0 - La version de sortie peut évoluer)
 
@@ -36,7 +37,7 @@ V1.0 (01/03/2020) :
 
 V1.2.1 BETA :
     - Correction d'un bug dans le mode de jeu "race" qui faisait qu'un bouton n'apparaissait pas
-    - Correction d'un bug dans le mode de jeu "chateaux" qui faisait que les flèches pouvait ne pas apparaitre
+    - Correction d'un bug dans le mode de jeu "chateaux" qui faisait que les flèches pouvait ne pas apparaitre pendant un certain temp
     - Ajout d'une icone au jeu
     - Meilleur interface utilisateur pour certaines tailles d'écran
     - Ajout d'un timer pour le mode de jeu race

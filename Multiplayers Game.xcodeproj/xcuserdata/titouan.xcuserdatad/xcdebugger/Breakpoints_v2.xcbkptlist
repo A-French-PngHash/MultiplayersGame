@@ -610,11 +610,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Multiplayers Game/View/Scenes/RaceScene.swift"
-            timestampString = "607788552.873798"
+            timestampString = "607715037.426461"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "displayButtons()"
             landmarkType = "7">
          </BreakpointContent>
@@ -625,13 +625,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Multiplayers Game/View/Scenes/RaceScene.swift"
-            timestampString = "607788552.8741291"
+            filePath = "Multiplayers GameTests/ChateauGameTests.swift"
+            timestampString = "607977165.344709"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "displayButtons()"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "testGivenBaseIsNotMaxWhenTimePassThenBaseWeightShouldBeBiggerThanBefore()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -641,13 +641,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Multiplayers Game/View/Scenes/ChateauScene.swift"
-            timestampString = "607787097.434691"
+            filePath = "Multiplayers Game/Model/Chateau/Game.swift"
+            timestampString = "607977165.345026"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
-            landmarkName = "setupArrows()"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "increasePoid()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -657,29 +657,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Multiplayers Game/View/Scenes/ChateauScene.swift"
-            timestampString = "607787097.4347349"
+            filePath = "Multiplayers GameTests/ChateauGameTests.swift"
+            timestampString = "607977165.345549"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
-            landmarkName = "setupArrows()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Multiplayers Game/View/Scenes/ChateauScene.swift"
-            timestampString = "607787097.434772"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
-            landmarkName = "setupArrows()"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "testGivenBaseIsNotMaxWhenTimePassThenBaseWeightShouldBeBiggerThanBefore()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

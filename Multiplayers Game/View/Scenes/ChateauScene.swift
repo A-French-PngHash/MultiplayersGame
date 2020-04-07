@@ -188,6 +188,21 @@ class ChateauScene: SKScene {
     private func win() {
         NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "chateauWin")))
     }
+    
+    private func checkWin() {
+        let result = game.checkWin()
+        if result.0{
+            var win = true
+            for i in self.unitSprites { //Checking if a unit is not on it way to a base
+                if i.team != result.1 {
+                    win = false
+                }
+            }
+            if win {
+                self.win()
+            }
+        }
+    }
 }
 
 extension ChateauScene {
@@ -238,20 +253,10 @@ extension ChateauScene {
                         
                         let endAnimation = SKAction.run {
                             print(unit.position)
-                            let result =  self.game.unitArrived(beginId: beginId, unit: unit, destinationId: way.destinationId)
+                            self.game.unitArrived(beginId: beginId, unit: unit, destinationId: way.destinationId)
 
                             self.unitSprites.remove(at: self.unitSprites.firstIndex(of : unit)!)
-                            if result.0{
-                                var win = true
-                                for i in self.unitSprites {
-                                    if i.team != result.1 {
-                                        win = false
-                                    }
-                                }
-                                if win {
-                                    self.win()
-                                }
-                            }
+                            self.checkWin()
                             
                             unit.removeFromParent()
                             self.reloadGraphical()

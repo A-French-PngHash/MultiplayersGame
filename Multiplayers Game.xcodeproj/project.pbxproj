@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B3553DF243B754D00ED912E /* ChateauGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3553DE243B754D00ED912E /* ChateauGameTests.swift */; };
 		5B4FED4D23E8A6D300C300A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4FED4C23E8A6D300C300A0 /* AppDelegate.swift */; };
 		5B4FED5323E8A6D300C300A0 /* ChateauScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4FED5223E8A6D300C300A0 /* ChateauScene.swift */; };
 		5B4FED5823E8A6D300C300A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B4FED5623E8A6D300C300A0 /* Main.storyboard */; };
@@ -31,7 +32,20 @@
 		5BFA05862411914D0032FA81 /* RaceCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFA05852411914D0032FA81 /* RaceCar.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5B3553E1243B754D00ED912E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B4FED4123E8A6D300C300A0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5B4FED4823E8A6D300C300A0;
+			remoteInfo = "Multiplayers Game";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		5B3553DC243B754D00ED912E /* Multiplayers GameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Multiplayers GameTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B3553DE243B754D00ED912E /* ChateauGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChateauGameTests.swift; sourceTree = "<group>"; };
+		5B3553E0243B754D00ED912E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B4FED4923E8A6D300C300A0 /* Multiplayers Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Multiplayers Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B4FED4C23E8A6D300C300A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B4FED5223E8A6D300C300A0 /* ChateauScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChateauScene.swift; sourceTree = "<group>"; wrapsLines = 0; };
@@ -59,6 +73,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5B3553D9243B754D00ED912E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5B4FED4623E8A6D300C300A0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -69,10 +90,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B3553DD243B754D00ED912E /* Multiplayers GameTests */ = {
+			isa = PBXGroup;
+			children = (
+				5B3553DE243B754D00ED912E /* ChateauGameTests.swift */,
+				5B3553E0243B754D00ED912E /* Info.plist */,
+			);
+			path = "Multiplayers GameTests";
+			sourceTree = "<group>";
+		};
 		5B4FED4023E8A6D300C300A0 = {
 			isa = PBXGroup;
 			children = (
 				5B4FED4B23E8A6D300C300A0 /* Multiplayers Game */,
+				5B3553DD243B754D00ED912E /* Multiplayers GameTests */,
 				5B4FED4A23E8A6D300C300A0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -81,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				5B4FED4923E8A6D300C300A0 /* Multiplayers Game.app */,
+				5B3553DC243B754D00ED912E /* Multiplayers GameTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -190,6 +222,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5B3553DB243B754D00ED912E /* Multiplayers GameTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B3553E5243B754D00ED912E /* Build configuration list for PBXNativeTarget "Multiplayers GameTests" */;
+			buildPhases = (
+				5B3553D8243B754D00ED912E /* Sources */,
+				5B3553D9243B754D00ED912E /* Frameworks */,
+				5B3553DA243B754D00ED912E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5B3553E2243B754D00ED912E /* PBXTargetDependency */,
+			);
+			name = "Multiplayers GameTests";
+			productName = "Multiplayers GameTests";
+			productReference = 5B3553DC243B754D00ED912E /* Multiplayers GameTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		5B4FED4823E8A6D300C300A0 /* Multiplayers Game */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5B4FED6123E8A6D500C300A0 /* Build configuration list for PBXNativeTarget "Multiplayers Game" */;
@@ -217,6 +267,10 @@
 				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = "Titouan Blossier";
 				TargetAttributes = {
+					5B3553DB243B754D00ED912E = {
+						CreatedOnToolsVersion = 10.3;
+						TestTargetID = 5B4FED4823E8A6D300C300A0;
+					};
 					5B4FED4823E8A6D300C300A0 = {
 						CreatedOnToolsVersion = 10.3;
 					};
@@ -236,11 +290,19 @@
 			projectRoot = "";
 			targets = (
 				5B4FED4823E8A6D300C300A0 /* Multiplayers Game */,
+				5B3553DB243B754D00ED912E /* Multiplayers GameTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5B3553DA243B754D00ED912E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5B4FED4723E8A6D300C300A0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -255,6 +317,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5B3553D8243B754D00ED912E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B3553DF243B754D00ED912E /* ChateauGameTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5B4FED4523E8A6D300C300A0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -282,6 +352,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		5B3553E2243B754D00ED912E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5B4FED4823E8A6D300C300A0 /* Multiplayers Game */;
+			targetProxy = 5B3553E1243B754D00ED912E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		5B4FED5623E8A6D300C300A0 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -302,6 +380,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		5B3553E3243B754D00ED912E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9S68YAA779;
+				INFOPLIST_FILE = "Multiplayers GameTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Multiplayers-GameTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Multiplayers Game.app/Multiplayers Game";
+			};
+			name = Debug;
+		};
+		5B3553E4243B754D00ED912E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9S68YAA779;
+				INFOPLIST_FILE = "Multiplayers GameTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Multiplayers-GameTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Multiplayers Game.app/Multiplayers Game";
+			};
+			name = Release;
+		};
 		5B4FED5F23E8A6D500C300A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -421,7 +539,8 @@
 		5B4FED6223E8A6D500C300A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3M2A92WN59;
@@ -442,7 +561,8 @@
 		5B4FED6323E8A6D500C300A0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3M2A92WN59;
@@ -463,6 +583,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5B3553E5243B754D00ED912E /* Build configuration list for PBXNativeTarget "Multiplayers GameTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B3553E3243B754D00ED912E /* Debug */,
+				5B3553E4243B754D00ED912E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		5B4FED4423E8A6D300C300A0 /* Build configuration list for PBXProject "Multiplayers Game" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

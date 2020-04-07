@@ -50,7 +50,7 @@ class Game {
         return(true, unitPoid, way.destinationPoint)
     }
     
-    func unitArrived(beginId : Int, unit : Unit, destinationId : Int) -> (Bool, Teams){
+    func unitArrived(beginId : Int, unit : Unit, destinationId : Int){
         for base in bases {
             if base.id == destinationId {
                 if base.team == unit.team { //La base etait a un joueur qui a envoyé des renforts dessus
@@ -74,10 +74,8 @@ class Game {
                         }
                     }
                 }
-                return checkWin()
             }
         }
-        return(false, .neutral)
     }
     
     func base(id : Int) -> Base {
@@ -89,7 +87,7 @@ class Game {
         return Base() //Never happen
     }
     
-    private func checkWin() -> (Bool, Teams) {
+    func checkWin() -> (Bool, Teams) {
         var team : Teams!
         for i in bases {
             if i.team != .neutral && team == nil {
