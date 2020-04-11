@@ -91,7 +91,7 @@ class ChateauGameTests: XCTestCase {
     
     func testGivenSendedUnitOfNotMaxSizeAndBaseSizeGreaterThanUnitSizeWhenUnitArriveToStrangerBaseThenBaseWeightShouldCorrespond() {
         let weight = Int.random(in: 1...5)
-        MapData.shared.bases[1].poid = Int.random(in: weight...ChateauSize.maxSize)
+        MapData.shared.bases[1].poid = Int.random(in: weight + 1...ChateauSize.maxSize)
         let unit = createUnit(team: .yellow, poid: weight)
         let final = MapData.shared.bases[1].poid - weight
         
