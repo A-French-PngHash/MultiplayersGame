@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B156E6E24431BBE006C1772 /* SnakeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B156E6D24431BBE006C1772 /* SnakeButton.swift */; };
+		5B2720922442588400870F44 /* SnakeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2720912442588400870F44 /* SnakeScene.swift */; };
 		5B3553DF243B754D00ED912E /* ChateauGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3553DE243B754D00ED912E /* ChateauGameTests.swift */; };
 		5B4FED4D23E8A6D300C300A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4FED4C23E8A6D300C300A0 /* AppDelegate.swift */; };
 		5B4FED5323E8A6D300C300A0 /* ChateauScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4FED5223E8A6D300C300A0 /* ChateauScene.swift */; };
@@ -43,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5B156E6D24431BBE006C1772 /* SnakeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnakeButton.swift; sourceTree = "<group>"; };
+		5B2720912442588400870F44 /* SnakeScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnakeScene.swift; sourceTree = "<group>"; };
 		5B3553DC243B754D00ED912E /* Multiplayers GameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Multiplayers GameTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B3553DE243B754D00ED912E /* ChateauGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChateauGameTests.swift; sourceTree = "<group>"; };
 		5B3553E0243B754D00ED912E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -90,6 +94,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B156E6B24431BAF006C1772 /* Snake */ = {
+			isa = PBXGroup;
+			children = (
+				5B156E6D24431BBE006C1772 /* SnakeButton.swift */,
+			);
+			path = Snake;
+			sourceTree = "<group>";
+		};
 		5B3553DD243B754D00ED912E /* Multiplayers GameTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +143,7 @@
 		5B4FED6423E8A6F100C300A0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5B156E6B24431BAF006C1772 /* Snake */,
 				5BBD936023EC750C00CFD739 /* teams.swift */,
 				5B623B0D240163FD001FB369 /* constants.swift */,
 				5BB99620240C4139000A2C4A /* Race */,
@@ -215,6 +228,7 @@
 				5B4FED5223E8A6D300C300A0 /* ChateauScene.swift */,
 				5B610C6B240C238E005AC4B6 /* RaceScene.swift */,
 				5BB0AE3A2438A008005A15B3 /* beginScene.swift */,
+				5B2720912442588400870F44 /* SnakeScene.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -337,11 +351,13 @@
 				5BAD59F1240AAB3D00638F4E /* MenuViewController.swift in Sources */,
 				5B62E2DE2428D25700ACA523 /* function.swift in Sources */,
 				5BFA05862411914D0032FA81 /* RaceCar.swift in Sources */,
+				5B2720922442588400870F44 /* SnakeScene.swift in Sources */,
 				5B623B1124016829001FB369 /* loadedMapData.swift in Sources */,
 				5BBD936323EC75EA00CFD739 /* wayData.swift in Sources */,
 				5B610C6C240C238E005AC4B6 /* RaceScene.swift in Sources */,
 				5B4FED5323E8A6D300C300A0 /* ChateauScene.swift in Sources */,
 				5BBD935C23EC749400CFD739 /* loadManager.swift in Sources */,
+				5B156E6E24431BBE006C1772 /* SnakeButton.swift in Sources */,
 				5BB99622240C414D000A2C4A /* RaceButton.swift in Sources */,
 				5BB0AE3B2438A008005A15B3 /* beginScene.swift in Sources */,
 				5BBD935E23EC74D500CFD739 /* baseData.swift in Sources */,

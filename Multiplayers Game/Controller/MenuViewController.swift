@@ -130,6 +130,9 @@ class MenuViewController: UIViewController {
         displayChateauScene()
     }
     
+    @IBAction func startSnake(_ sender: Any) {
+        displaySnakeScene()
+    }
     @objc func chateauWin() {
         replayButton.isHidden = false
         replayButton.frame.origin.y = self.view.frame.height - 60
@@ -186,6 +189,29 @@ class MenuViewController: UIViewController {
             let scene = self.scene as! ChateauScene
             scene.numberOfPlayer = self.numberOfPlayer
             scene.scaleMode = .aspectFill
+            scene.playersTeam = self.selectedPlayer
+            
+            // Present the scene.
+            skView.presentScene(scene)
+        }
+    }
+    
+    private func displaySnakeScene() {
+        if selectedPlayer!.count > 6 || selectedPlayer!.count < 2 {
+            displayWarningMessage(min: 2, max: 6)
+        } else {
+            hideMenu()
+            backButton.frame.origin.y = self.view.frame.height - 65
+            backButton.frame.origin.x = 5
+            
+            // Configure the view.
+            let skView = self.view as! SKView
+            skView.ignoresSiblingOrder = true
+            
+            // Create and configure the scene.
+            scene = SnakeScene(size: CGSize(width: self.view.frame.width, height: self.view.frame.height))
+            let scene = self.scene as! SnakeScene
+            scene.numberOfPlayer = self.numberOfPlayer
             scene.playersTeam = self.selectedPlayer
             
             // Present the scene.

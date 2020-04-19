@@ -25,4 +25,8 @@ class Function {
             return UIColor(red: 224/255, green: 144/255, blue: 41/255, alpha: 0.5)
         }
     }
+    
+    public static func posFor(x : CGFloat, y : CGFloat, size : CGSize) -> CGPoint{
+        return CGPoint(x: x * size.width, y: y * size.height)
+    }
 }

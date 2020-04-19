@@ -154,6 +154,14 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="63R-IZ-STr">
+                                <rect key="frame" x="299" y="225" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="startSnake:" destination="BV1-FR-VrT" eventType="touchUpInside" id="TFD-ib-Q6J"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
@@ -243,6 +251,7 @@
                         <outletCollection property="menuPlayerButton" destination="hOP-wK-cPo" collectionClass="NSMutableArray" id="3V5-5Z-5ua"/>
                         <outletCollection property="menuPlayerButton" destination="E60-aY-lkT" collectionClass="NSMutableArray" id="XF9-wL-vzS"/>
                         <outletCollection property="menuLabel" destination="I6Q-Tw-mwD" collectionClass="NSMutableArray" id="pmM-9A-AYf"/>
+                        <outletCollection property="otherMenuButton" destination="63R-IZ-STr" collectionClass="NSMutableArray" id="u3Y-G5-bnF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>

@@ -62,7 +62,7 @@ class RaceScene : SKScene {
         for i in 0...teams.count - 1{
             let button = RaceButton(imageNamed: "\(teams[i])Arrow")
             button.team = teams[i]
-            button.position = CGPoint(x: CGFloat(buttonPosition[i][0]) * self.size.width, y: CGFloat(buttonPosition[i][1]) * self.size.height)
+            button.position = Function.posFor(x: CGFloat(buttonPosition[i][0]), y: CGFloat(buttonPosition[i][1]), size: self.size)
             if numberOfPlayer == 6 {
                 button.size = CGSize(width: 50, height: 50)
             } else {

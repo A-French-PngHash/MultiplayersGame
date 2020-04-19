@@ -73,19 +73,6 @@ class LoadManager {
     
     
     //MARK: - Tool functions
-    private func getTeam(teamColor : String) -> Teams {
-        var team : Teams = .orange
-        if teamColor == "green" {
-            team = .green
-        } else if teamColor == "blue" {
-            team = .blue
-        } else if teamColor == "yellow" {
-            team = .yellow
-        } else if teamColor == "neutral" {
-            team = .neutral
-        }
-        return team
-    }
     
     private func posFor(x : CGFloat, y : CGFloat) -> CGPoint{
         return CGPoint(x: x * size.width, y: size.height - (y * size.height))
