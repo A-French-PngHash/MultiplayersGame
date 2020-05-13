@@ -74,7 +74,7 @@ class RaceScene : SKScene {
         }
     }
     
-    func setupTimer() {
+    func setupTimerLabel() {
         timerLabel = SKLabelNode()
         timerLabel.fontSize = 40
         timerLabel.fontColor = .black
@@ -123,8 +123,6 @@ class RaceScene : SKScene {
             let time = Date().timeIntervalSinceReferenceDate - self.startTime
             let timeString = String(format: "%.2f", time)
             self.timerLabel.text = timeString
-            
-            //self.timerLabel.text = "\(self.time[0]):\(self.time[1])\(self.time[2])"
         })
     }
     

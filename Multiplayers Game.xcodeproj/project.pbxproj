@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B0E93D1246B424700D83BA7 /* GameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0E93D0246B424700D83BA7 /* GameCollectionViewCell.swift */; };
 		5B156E6E24431BBE006C1772 /* SnakeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B156E6D24431BBE006C1772 /* SnakeButton.swift */; };
 		5B2720922442588400870F44 /* SnakeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2720912442588400870F44 /* SnakeScene.swift */; };
 		5B3553DF243B754D00ED912E /* ChateauGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3553DE243B754D00ED912E /* ChateauGameTests.swift */; };
@@ -21,6 +22,7 @@
 		5B623B142401691C001FB369 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B623B132401691C001FB369 /* Game.swift */; };
 		5B623B1724017329001FB369 /* unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B623B1624017329001FB369 /* unit.swift */; };
 		5B62E2DE2428D25700ACA523 /* function.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B62E2DD2428D25700ACA523 /* function.swift */; };
+		5B663DEF246C5B85008C655D /* GameCellDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B663DEE246C5B85008C655D /* GameCellDelegateProtocol.swift */; };
 		5BAD59F1240AAB3D00638F4E /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAD59F0240AAB3D00638F4E /* MenuViewController.swift */; };
 		5BB0AE3B2438A008005A15B3 /* beginScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB0AE3A2438A008005A15B3 /* beginScene.swift */; };
 		5BB0AE3D2438FB53005A15B3 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB0AE3C2438FB53005A15B3 /* InfoViewController.swift */; };
@@ -45,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5B0E93D0246B424700D83BA7 /* GameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollectionViewCell.swift; sourceTree = "<group>"; };
 		5B156E6D24431BBE006C1772 /* SnakeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnakeButton.swift; sourceTree = "<group>"; };
 		5B2720912442588400870F44 /* SnakeScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnakeScene.swift; sourceTree = "<group>"; };
 		5B3553DC243B754D00ED912E /* Multiplayers GameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Multiplayers GameTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,6 +66,7 @@
 		5B623B132401691C001FB369 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		5B623B1624017329001FB369 /* unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = unit.swift; sourceTree = "<group>"; };
 		5B62E2DD2428D25700ACA523 /* function.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = function.swift; sourceTree = "<group>"; };
+		5B663DEE246C5B85008C655D /* GameCellDelegateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCellDelegateProtocol.swift; sourceTree = "<group>"; };
 		5BAD59F0240AAB3D00638F4E /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		5BB0AE3A2438A008005A15B3 /* beginScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = beginScene.swift; sourceTree = "<group>"; };
 		5BB0AE3C2438FB53005A15B3 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +147,7 @@
 		5B4FED6423E8A6F100C300A0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5B663DEE246C5B85008C655D /* GameCellDelegateProtocol.swift */,
 				5B156E6B24431BAF006C1772 /* Snake */,
 				5BBD936023EC750C00CFD739 /* teams.swift */,
 				5B623B0D240163FD001FB369 /* constants.swift */,
@@ -168,6 +173,7 @@
 			children = (
 				5BAD59F0240AAB3D00638F4E /* MenuViewController.swift */,
 				5BB0AE3C2438FB53005A15B3 /* InfoViewController.swift */,
+				5B0E93D0246B424700D83BA7 /* GameCollectionViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -360,6 +366,8 @@
 				5B156E6E24431BBE006C1772 /* SnakeButton.swift in Sources */,
 				5BB99622240C414D000A2C4A /* RaceButton.swift in Sources */,
 				5BB0AE3B2438A008005A15B3 /* beginScene.swift in Sources */,
+				5B663DEF246C5B85008C655D /* GameCellDelegateProtocol.swift in Sources */,
+				5B0E93D1246B424700D83BA7 /* GameCollectionViewCell.swift in Sources */,
 				5BBD935E23EC74D500CFD739 /* baseData.swift in Sources */,
 				5B4FED4D23E8A6D300C300A0 /* AppDelegate.swift in Sources */,
 				5B623B0E240163FD001FB369 /* constants.swift in Sources */,

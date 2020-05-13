@@ -19,18 +19,26 @@ class MenuViewController: UIViewController {
     }
     var selectedPlayer : Array<Teams>!
     let teams : Array<Teams> = [.green, .yellow, .orange, .blue, .pink, .purple]
-    var menuButton : Array<UIButton> {
-        get {
-            return menuPlayerButton + otherMenuButton
-        }
-    }
+    var collectionViewGameCellContent : Array<Dictionary<String, Any>> = [
+        ["GameName" : "Chateau", "GameImageName" : "castleIcon", "InfoController" : UIViewController()],
+        ["GameName" : "Race", "GameImageName" : "raceIcon", "InfoController" : UIViewController()]
+    ]
+    /*Contain in each element all the carasteristics of a table view cell :
+        - GameName (String) -> Name of the game
+        - GameImageName (String) -> Name of the image which represent the game (images can be found in the asset file)
+        - InfoController (ViewController) -> Controller to present when the info button is pressed
+ */
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        self.backButton.isHidden = true
-        self.replayButton.isHidden = true
-        self.selectedPlayer = [.green, .yellow]
-        self.warningLabel.alpha = 0
+        self.backButton.isHidden = true //Hide game button
+        self.replayButton.isHidden = true //Hide game button
+        
+        self.selectedPlayer = [.green, .yellow] //Selecting at the start the yellow and green players
+        
+        self.warningLabel.alpha = 0 //Hiding the warning about the number of player require to play a game
+        
         self.view.backgroundColor = .white
         let skView = self.view as! SKView
         skView.backgroundColor = .white
@@ -41,7 +49,7 @@ class MenuViewController: UIViewController {
         scene.removeFromParent()
         
         
-        showMenu()
+        //showMenu()
         updateButton()
         NotificationCenter.default.addObserver(self, selector: #selector(chateauWin), name: NSNotification.Name(rawValue: "chateauWin"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(raceWin), name: NSNotification.Name("raceWin"), object: nil)
@@ -52,12 +60,16 @@ class MenuViewController: UIViewController {
         return true
     }
     
+    //MARK: - Outlets
+    
     @IBOutlet weak var replayButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet var menuPlayerButton: [UIButton]!
-    @IBOutlet var otherMenuButton: [UIButton]!
     @IBOutlet var menuLabel: [UILabel]! //To hide them when a mini game start
     @IBOutlet weak var warningLabel: UILabel!
+    @IBOutlet weak var gamesCollectionView: UICollectionView!
+    
+    //MARK: - @IBAction
     
     @IBAction func race(_ sender: Any) {
         displayRaceScene()
@@ -71,6 +83,7 @@ class MenuViewController: UIViewController {
         }
         updateButton()
     }
+    
     @IBAction func yellowPlayer(_ sender: Any) {
         if selectedPlayer.contains(.yellow){
             selectedPlayer.remove(at: selectedPlayer.firstIndex(of: .yellow)!)
@@ -79,6 +92,7 @@ class MenuViewController: UIViewController {
         }
         updateButton()
     }
+    
     @IBAction func orangePlayer(_ sender: Any) {
         if selectedPlayer.contains(.orange){
             selectedPlayer.remove(at: selectedPlayer.firstIndex(of: .orange)!)
@@ -87,6 +101,7 @@ class MenuViewController: UIViewController {
         }
         updateButton()
     }
+    
     @IBAction func bluePlayer(_ sender: Any) {
         if selectedPlayer.contains(.blue){
             selectedPlayer.remove(at: selectedPlayer.firstIndex(of: .blue)!)
@@ -95,6 +110,7 @@ class MenuViewController: UIViewController {
         }
         updateButton()
     }
+    
     @IBAction func pinkPlayer(_ sender: Any) {
         if selectedPlayer.contains(.pink){
             selectedPlayer.remove(at: selectedPlayer.firstIndex(of: .pink)!)
@@ -103,6 +119,7 @@ class MenuViewController: UIViewController {
         }
         updateButton()
     }
+    
     @IBAction func purplePlayer(_ sender: Any) {
         if selectedPlayer.contains(.purple){
             selectedPlayer.remove(at: selectedPlayer.firstIndex(of: .purple)!)
@@ -111,7 +128,6 @@ class MenuViewController: UIViewController {
         }
         updateButton()
     }
-    
     
     @IBAction func replayButtonPressed(_ sender: Any) {
         removeScene()
@@ -126,13 +142,7 @@ class MenuViewController: UIViewController {
         removeScene()
     }
     
-    @IBAction func startChateau(_ sender: Any) {
-        displayChateauScene()
-    }
-    
-    @IBAction func startSnake(_ sender: Any) {
-        displaySnakeScene()
-    }
+    //MARK: - @objc functions
     @objc func chateauWin() {
         replayButton.isHidden = false
         replayButton.frame.origin.y = self.view.frame.height - 60
@@ -144,7 +154,8 @@ class MenuViewController: UIViewController {
         replayButton.frame.origin.y = 5
         replayButton.frame.origin.x = self.view.frame.width - 65
     }
-    
+
+    //MARK: - Display functions
     private func displayRaceScene() {
         if selectedPlayer.count < 1 {
             displayWarningMessage(min: 1, max: 6)
@@ -167,7 +178,7 @@ class MenuViewController: UIViewController {
             let timerStartCountdown = Timer(timeInterval: 0.05, repeats: false) { _ in
                 let scene = self.scene as! RaceScene
                 scene.startCountdown()
-                scene.setupTimer()
+                scene.setupTimerLabel()
             }
             timerStartCountdown.fire()
         }
@@ -220,7 +231,8 @@ class MenuViewController: UIViewController {
     }
     
     private func showMenu() {
-        for i in menuButton {
+        gamesCollectionView.isHidden = false
+        for i in menuPlayerButton {
             i.isHidden = false
         }
         for i in menuLabel {
@@ -229,7 +241,8 @@ class MenuViewController: UIViewController {
     }
     
     private func hideMenu() {
-        for i in menuButton {
+        gamesCollectionView.isHidden = true
+        for i in menuPlayerButton {
             i.isHidden = true
         }
         for i in menuLabel {
@@ -249,6 +262,8 @@ class MenuViewController: UIViewController {
         }
     }
     
+    //MARK: - Menu utils
+    
     private func updateButton() {
         for team in teams {
             let index = self.teams.firstIndex(of: team)!
@@ -267,6 +282,43 @@ class MenuViewController: UIViewController {
             UIView.animate(withDuration: 1, animations: {
                 self.warningLabel.alpha = 0
             })
+        }
+    }
+}
+
+//MARK: - Collection View Delegate
+extension MenuViewController : UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return collectionViewGameCellContent.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "gameCell", for: indexPath) as? GameCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        
+        let gameName = collectionViewGameCellContent[indexPath.row]["GameName"] as? String
+        cell.delegate = self
+        cell.gameNameLabel.text = gameName
+        cell.gameImageButton.setImage(UIImage(named: collectionViewGameCellContent[indexPath.row]["GameImageName"] as! String), for: .normal)
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("selected")
+    }
+    
+}
+
+//MARK: - Collection View Game Cell Delegate
+extension MenuViewController : UICollectionViewGameCellDelegate {
+    func gameButtonPressedFor(gameName: String) {
+        if gameName == "Chateau" {
+            self.displayChateauScene()
+        } else if gameName == "Race" {
+            self.displayRaceScene()
+        } else if gameName == "Snake" {
+            self.displaySnakeScene()
         }
     }
 }
