@@ -2,14 +2,17 @@ Created by Titouan Blossier on 03/02/2020.
 Copyright © 2020 Titouan Blossier. All rights reserved.
 
                 -------------Multiplayers Game : A venir-------------
-        - Une collection view pour remplacer les boutons actuel de sélection de jeu (Version d'arrivée prévu : 1.2.2)
         - Un jeu de type snake pouvant se jouer jusqu'a 6 joueurs (Version d'arrivée prévu : 1.2.2)
-        - Réglage d'un bug qui fait que le dernier bouton de sélection n'est pas visible sur les plus petit modèles (Version d'arrivée prévu : 1.2.2)
+
+        - Correction bug timer Race quand app fermée (Version d'arrivée prévu : 1.2.3)
+        - HighScore pour le mode de jeu Race (Version d'arrivée prévu : 1.2.3)
 
         - Un menu de réglage (Version d'arrivée prévu : V1.3.0)
         - Des sons pour les différents mini jeu (Version d'arrivée prévu : V1.3.0)
         - Un thème sombre (Version d'arrivée prévu : V1.3.0)
         - Des réglages spécifiques a chaque mode de jeu (nottament un mode partie rapide)
+
+        - Traduction du jeu en Anglais (option pouvant s'activer dans les réglages)(Version d'arrivée prévu : 1.3.1)
 
         - Des intelligences artificiels (Version d'arrivée prévu : 2.0 - La version de sortie peut évoluer)
 
@@ -19,7 +22,7 @@ Copyright © 2020 Titouan Blossier. All rights reserved.
 V1.2.1 (05/04/2020):
     - Correction d'un bug dans le mode de jeu "race" qui faisait qu'un bouton n'apparaissait pas
     - Correction d'un bug dans le mode de jeu "chateaux" qui faisait que les flèches pouvait ne pas apparaitre pendant un certain temp
-    - Ajout d'une icone au jeu
+    - Création d'une pour le jeu
     - Meilleur interface utilisateur pour certaines tailles d'écran
     - Ajout d'un timer pour le mode de jeu race
 
@@ -45,6 +48,10 @@ V1.0 (01/03/2020) :
 
 V1.2.2 BETA :
     - Correction d'un bug qui faisait que les textes pouvait ne pas être affiché correctement selon les réglages et le type de l'appareil
+    - Réglage d'un bug qui fait que le dernier bouton de sélection n'est pas visible sur les plus petit modèles
+    - La sélection des jeux est maintenant gérée par une collection view (ce qui ne change pas tellement pour l'utilisateur) qui permet de :
+            - Mieux gérer les différentes tailles d'écran, plus de risques que un bouton ne soit pas visibles
+            - Gérer automatiquement le scroll pour afficher plus de boutons
 
 
 V1.2.1 BETA :

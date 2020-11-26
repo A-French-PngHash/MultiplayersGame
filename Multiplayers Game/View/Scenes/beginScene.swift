@@ -8,7 +8,7 @@
 import SpriteKit
 import Foundation
 
-class BeginScene : SKScene {
+class BeginScene : SKScene { //This scene is here to disable the grey background at the start of the app
     override func didMove(to view: SKView) {
         self.backgroundColor = .white
     }

@@ -13,9 +13,13 @@ class GameCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var infoButton: UIButton!
     @IBOutlet weak var gameNameLabel: UILabel!
     var delegate : UICollectionViewGameCellDelegate!
+    var segueName : String!
     
     @IBAction func startGameButtonPressed(_ sender: Any) {
-        delegate.gameButtonPressedFor(gameName: self.gameNameLabel.text!)
+        delegate.gameButtonPressed(for: self.gameNameLabel.text!)
+    }
+    @IBAction func infoButtonPressed(_ sender: Any) {
+        delegate.infoButtonPressed(for: self.segueName)
     }
     
 }

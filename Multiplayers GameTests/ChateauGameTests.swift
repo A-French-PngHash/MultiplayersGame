@@ -35,6 +35,7 @@ class ChateauGameTests: XCTestCase {
         thirdBase.team = .yellow
         
         MapData.shared.bases = [firstBase, secondBase]
+        
         /*
          Map :
          Y(2)
@@ -45,7 +46,6 @@ class ChateauGameTests: XCTestCase {
  
  
  */
-        
     }
     
     func createUnit(team : Teams, poid : Int) -> Multiplayers_Game.Unit{
@@ -121,5 +121,24 @@ class ChateauGameTests: XCTestCase {
         let rightWeight = game.base(id: 1).poid == weight
         XCTAssert(rightTeam && rightWeight)
     }
+    
+    func testGivenNoTeamWonWhenCallingCheckWinThenAnswerIsFalseAndNil() {
+        //At the begining, in the setup function, a map is set up where no one win. We don't need to do any special setup here
+        let result = game.checkWin()
+        
+        XCTAssertFalse(result.0)
+        XCTAssertNil(result.1)
+    }
 
+    func testGivenGreenTeamWonWhenCallingCheckWinThenAnswerIsTrueAndGreen() {
+        let firstBase = Base()
+        firstBase.id = 0
+        firstBase.team = .green
+        MapData.shared.bases = [firstBase]
+        
+        let result = game.checkWin()
+        
+        XCTAssertTrue(result.0)
+        XCTAssertEqual(result.1, .green)
+    }
 }

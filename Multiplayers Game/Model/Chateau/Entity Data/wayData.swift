@@ -8,7 +8,7 @@
 import UIKit
 import Foundation
 
-struct Way : Equatable{
+struct Way{
     let beginPoint : CGPoint
     let endPoint : CGPoint //Where the segment end
     let destinationPoint : CGPoint //The segment is separeated in two therefore the true final destination point is not where the segment stop but further

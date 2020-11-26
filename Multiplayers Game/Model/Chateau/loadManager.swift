@@ -44,6 +44,7 @@ class LoadManager {
                 for i in bases {
                     if i.id == destinationId {
                         destinationPoint = i.position
+                        break
                     }
                 }
                 let x = (beginPoint.x - destinationPoint.x ) / 2 + destinationPoint.x

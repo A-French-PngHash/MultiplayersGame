@@ -34,6 +34,7 @@ class ChateauScene: SKScene {
     var playersTeam : Array<Teams>!
     
     override func didMove(to view: SKView) {
+        
         self.physicsWorld.contactDelegate = self as SKPhysicsContactDelegate
         self.backgroundColor = UIColor(red: 1, green: 231/255, blue: 200/255, alpha: 1)
         game = Game()
@@ -92,7 +93,6 @@ class ChateauScene: SKScene {
             let angle = atan2(Float(firstPointY) - Float(ye), firstPointX - Float(xe)) * 2
             
             let distanceBetweenPoint = sqrt((xe-xb) * (xe - xb) + (ye - yb) * (ye - yb))
-            //print(distanceBetweenPoint)
             
             let shapePath = UIBezierPath(rect: CGRect(
                 origin: CGPoint(x: xb, y: yb),
@@ -208,65 +208,76 @@ class ChateauScene: SKScene {
 extension ChateauScene {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        if let touch = touches.first {
-            print(touch.location(in: self).x / self.size.width)
-            print(touch.location(in: self).y / self.size.height)
-            for i in nodes(at: touch.location(in: self)){
-                if let name = i.name {
-                    let way = ways[Int(name)!]
-                    let beginId = way.beginId
-                    let result = game.sendUnit(beginId : beginId, way : way)
-                    if result.0 {
-                        
-                        showArrows()
-                        reloadGraphical()
-                        
-                        let unit = Unit(imageNamed: "unit")
-                        unit.poid = result.1
-                        
-                        let size = CGFloat(result.1) * 6.5
-                        unit.size = CGSize(width: size, height: size)
-                        print(CGFloat(23) / (self.view?.frame.height)!)
-                        unit.destinationPoint = CGPoint(x: result.2.x, y: result.2.y + 32)
-                        unit.position = game.base(id: beginId).position
-                        unit.zPosition = ChateauLayer.unit
-                        unit.color = Function.getColorFor(team: way.wayTeam)
-                        unit.colorBlendFactor = 1.0
-                        unit.team = way.wayTeam
-                        unit.alpha = 0.8
-                        let borderBody = SKPhysicsBody(circleOfRadius: CGFloat(unit.poid))
-                        unit.physicsBody = borderBody
-                        
-                        unit.physicsBody?.contactTestBitMask = ChateauBitMask.unitCategory //Whith wich category do he send a notification
-                        unit.physicsBody?.categoryBitMask = ChateauBitMask.unitCategory //which category do he belong to
-                        unit.physicsBody?.collisionBitMask = 0
-                        
-                        
-                        let animationDuration = getAnimationDuration(way: way)
-                        
-                        let path = UIBezierPath()
-                        path.move(to: unit.position)
-                        path.addLine(to: unit.destinationPoint)
-                        let moveAnimation = SKAction.follow(path.cgPath, asOffset: false, orientToPath: false, duration: TimeInterval(animationDuration))
-                        unitSprites.append(unit)
-                        self.addChild(unit)
-                        
-                        let endAnimation = SKAction.run {
-                            print(unit.position)
-                            self.game.unitArrived(beginId: beginId, unit: unit, destinationId: way.destinationId)
-
-                            self.unitSprites.remove(at: self.unitSprites.firstIndex(of : unit)!)
-                            self.checkWin()
-                            
-                            unit.removeFromParent()
-                            self.reloadGraphical()
-                        }
-                        unit.run(SKAction.sequence([moveAnimation, endAnimation]))
-                    }
-                    break
-                }
-            
+        guard let touch = touches.first else {
+            return
+        }
+        
+        for i in nodes(at: touch.location(in: self)){
+            guard let name = i.name else{
+                continue
             }
+            let way = ways[Int(name)!]
+            let beginId = way.beginId
+            let result = game.sendUnit(beginId : beginId, way : way) //First element is if the transfer is accepted or not
+            //Second element is the weight of the new unit
+            //Third element is the destination point
+            
+            guard result.0 else { //Transfer not accepted
+                return
+            }
+            showArrows()
+            reloadGraphical()
+            
+            let unit = Unit(imageNamed: "unit")
+            unit.poid = result.1
+            
+            let size = CGFloat(result.1) * 6.5
+            unit.size = CGSize(width: size, height: size)
+            
+            var maxDimensions = self.view!.frame.width
+            if self.view!.frame.height > maxDimensions {
+                maxDimensions = self.view!.frame.height
+            }
+            
+            let ye = unit.position.y
+            let yb = result.2.y
+            let distanceBetweenPoint = abs(ye - yb)
+            unit.destinationPoint = CGPoint(x: result.2.x, y: result.2.y + 25)
+            
+            unit.position = game.base(id: beginId).position
+            unit.zPosition = ChateauLayer.unit
+            unit.color = Function.getColorFor(team: way.wayTeam)
+            unit.colorBlendFactor = 1.0
+            unit.team = way.wayTeam
+            unit.alpha = 0.8
+            let borderBody = SKPhysicsBody(circleOfRadius: CGFloat(unit.poid))
+            unit.physicsBody = borderBody
+            
+            unit.physicsBody?.contactTestBitMask = ChateauBitMask.unitCategory //Whith wich category do he send a notification
+            unit.physicsBody?.categoryBitMask = ChateauBitMask.unitCategory //which category do he belong to
+            unit.physicsBody?.collisionBitMask = 0
+            
+            
+            let animationDuration = getAnimationDuration(way: way)
+            
+            let path = UIBezierPath()
+            path.move(to: unit.position)
+            path.addLine(to: unit.destinationPoint)
+            let moveAnimation = SKAction.follow(path.cgPath, asOffset: false, orientToPath: false, duration: TimeInterval(animationDuration))
+            unitSprites.append(unit)
+            self.addChild(unit)
+            
+            let endAnimation = SKAction.run {
+                self.game.unitArrived(beginId: beginId, unit: unit, destinationId: way.destinationId)
+
+                self.unitSprites.remove(at: self.unitSprites.firstIndex(of : unit)!)
+                self.checkWin()
+                
+                unit.removeFromParent()
+                self.reloadGraphical()
+            }
+            unit.run(SKAction.sequence([moveAnimation, endAnimation]))
+            return
         }
     }
 }

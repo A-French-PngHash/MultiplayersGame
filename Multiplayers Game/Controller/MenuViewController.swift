@@ -20,18 +20,19 @@ class MenuViewController: UIViewController {
     var selectedPlayer : Array<Teams>!
     let teams : Array<Teams> = [.green, .yellow, .orange, .blue, .pink, .purple]
     var collectionViewGameCellContent : Array<Dictionary<String, Any>> = [
-        ["GameName" : "Chateau", "GameImageName" : "castleIcon", "InfoController" : UIViewController()],
-        ["GameName" : "Race", "GameImageName" : "raceIcon", "InfoController" : UIViewController()]
+        ["GameName" : "Chateau", "GameImageName" : "castleIcon", "SegueIdentifier" : "segueToCastleInfo"],
+        ["GameName" : "Race", "GameImageName" : "raceIcon", "SegueIdentifier" : "segueToRaceInfo"],
+        ["GameName" : "Snake", "GameImageName" : "blueButton", "SegueIdentifier" : "segueToRaceInfo"]
     ]
-    /*Contain in each element all the carasteristics of a table view cell :
+    /*Contain in each element all the carasteristics of a game table view cell :
         - GameName (String) -> Name of the game
         - GameImageName (String) -> Name of the image which represent the game (images can be found in the asset file)
-        - InfoController (ViewController) -> Controller to present when the info button is pressed
+        - SegueIdentifier (String) -> Controller to present when the info button is pressed
  */
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
+        
         self.backButton.isHidden = true //Hide game button
         self.replayButton.isHidden = true //Hide game button
         
@@ -47,7 +48,6 @@ class MenuViewController: UIViewController {
         
         scene.backgroundColor = .white
         scene.removeFromParent()
-        
         
         //showMenu()
         updateButton()
@@ -301,18 +301,15 @@ extension MenuViewController : UICollectionViewDelegate, UICollectionViewDataSou
         cell.delegate = self
         cell.gameNameLabel.text = gameName
         cell.gameImageButton.setImage(UIImage(named: collectionViewGameCellContent[indexPath.row]["GameImageName"] as! String), for: .normal)
+        cell.segueName = collectionViewGameCellContent[indexPath.row]["SegueIdentifier"] as! String
         return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("selected")
     }
     
 }
 
 //MARK: - Collection View Game Cell Delegate
 extension MenuViewController : UICollectionViewGameCellDelegate {
-    func gameButtonPressedFor(gameName: String) {
+    func gameButtonPressed(for gameName: String) {
         if gameName == "Chateau" {
             self.displayChateauScene()
         } else if gameName == "Race" {
@@ -320,5 +317,9 @@ extension MenuViewController : UICollectionViewGameCellDelegate {
         } else if gameName == "Snake" {
             self.displaySnakeScene()
         }
+    }
+    
+    func infoButtonPressed(for segue: String) {
+        self.performSegue(withIdentifier: segue, sender: nil)
     }
 }

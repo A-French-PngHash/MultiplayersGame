@@ -9,5 +9,6 @@
 import Foundation
 
 protocol UICollectionViewGameCellDelegate {
-    func gameButtonPressedFor(gameName : String) -> ()
+    func gameButtonPressed(for gameName : String) -> ()
+    func infoButtonPressed(for segue : String) -> ()
 }

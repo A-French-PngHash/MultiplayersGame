@@ -87,13 +87,13 @@ class Game {
         return Base() //Never happen
     }
     
-    func checkWin() -> (Bool, Teams) {
+    func checkWin() -> (Bool, Teams?) {
         var team : Teams!
         for i in bases {
             if i.team != .neutral && team == nil {
                 team = i.team
             } else if i.team != team && i.team != .neutral{
-                return (false, .neutral)
+                return (false, nil)
             }
         }
         return (true, team)

@@ -19,7 +19,6 @@ class MapGenerator {
         var compteur = 0
         while combinationPossible == false {
             compteur += 1
-            print("generate \(compteur)")
             castles = []
             ways = []
             var restart = false //Security break
